@@ -1,24 +1,26 @@
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+
 const SocialMediaIcons = () => {
     return (
         <div className="flex justify-center md:justify-start my-10 gap-7">
             <a
                 className="hover:opacity-50 transition duration-500"
-                href="LINKEDIN.com"
+                href="https://www.linkedin.com/in/harley-zhang-3ba53b2a9"
                 target="_blank"
                 rel="noreferrer"
             >
-                <img alt="linkedin-link" src="../assets/linkedin.png" />
+                <FaLinkedinIn size={22} />
             </a>
             <a
                 className="hover:opacity-50 transition duration-500"
-                href="github.com"
+                href="https://github.com/harley-zhang"
                 target="_blank"
                 rel="noreferrer"
             >
-                <img alt="github-link" src="../assets/github.png" />
+                <FaGithub size={22} />
             </a>
         </div>
     )
 }
 
-export default SocialMediaIcons
+export default SocialMediaIcons;

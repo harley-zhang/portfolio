@@ -1,4 +1,4 @@
-import SocialMediaIcons from ".../components/SocialMediaIcons";
+import SocialMediaIcons from "../components/SocialMediaIcons";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
 import AnchorLink from "react-anchor-link-smooth-scroll";
@@ -23,7 +23,7 @@ const Landing = ({ setSelectedPage }) => {
             </div>
 
             {/* LANDING TEXT */}
-            <div className="z-30 basis-2/5 mt-12 md:mt-32">
+            <div className={`z-30 basis-2/5 mt-12 md:mt-32 mx-[5%]`}>
                 {/* HEADINGS */}
                 <motion.div
                     initial="hidden"
@@ -35,13 +35,12 @@ const Landing = ({ setSelectedPage }) => {
                         visible: { opacity: 1, x: 0 }
                     }}
                 >
-                    <p className="text-6xl font-helvetica z-10 text-center md:text-start">
+                    <p className="text-6xl font-helvetica font-semibold z-10 text-center md:text-start">
                         Harley Zhang
                     </p>
 
                     <p className="mt-10 font-playfair mb-7 text-md text-center md:text-start">
-                        Adipiscing arcu, in aliquam fringilla cursus. Elit arcu elementum
-                        viverra malesuada sem ac faucibus dolor. Sagittis scelerisque.
+                        Interested in web development, data science, computer engineering, and environmental sustainability.
                     </p>
                 </motion.div>
 
@@ -58,18 +57,18 @@ const Landing = ({ setSelectedPage }) => {
                     }}
                 >
                     <AnchorLink
-                        className="bg-gradient-rainblue text-deep-blue rounded-sm py-3 px-7 font-semibold hover:bg-blue hover:text-white transition duration-500"
+                        className="bg-dark-blue text-blue rounded-sm py-3 px-7 font-semibold hover:bg-blue hover:text-white transition duration-500"
                         onClick={() => setSelectedPage("contact")}
                         href="#contact"
                     >
                         Contact Me
                     </AnchorLink>
                     <AnchorLink
-                        className="rounded-r-sm bg-gradient-rainblue py-0.5 pr-0.5"
+                        className="rounded-r-sm bg-dark-blue py-0.5 pr-0.5"
                         onClick={() => setSelectedPage("contact")}
                         href="google.com"
                     >
-                        <div className="bg-deep-blue hover:text-red transition duration-500 w-full h-full flex items-center justify-center font-playfair px-10"
+                        <div className="bg-blue text-dark-blue hover:text-red transition duration-500 w-full h-full flex items-center justify-center font-helvetica px-10"
                         >
                             Resume
                         </div>
