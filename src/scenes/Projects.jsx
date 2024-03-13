@@ -53,9 +53,15 @@ const Projects = () => {
                         <LineGradient width="w-1/3" />
                     </div>
                 </div>
-                <p className="mt-10 mb-10">
+                <p className="mt-10 mb-10 font-playfair">
                     alskdjasldkjasdlkasjdlaskdjaslkdjasldkjasldkasjdolj
                 </p>
+                <Project title="Project 1" />
+                <Project title="Project 2" />
+
+                {/* ROW 2 */}
+                <Project title="Project 1" />
+                <Project title="Project 2" />
             </motion.div>
 
             {/* PROJECTS */}
