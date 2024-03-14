@@ -7,4 +7,4 @@
     <br><br>
 </div>
   
-My personal portfolio website made with React.js and Tailwind CSS.
+My personal portfolio website. Made using React.js and Tailwind CSS.
