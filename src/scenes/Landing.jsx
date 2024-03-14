@@ -8,8 +8,8 @@ const Landing = ({ setSelectedPage }) => {
     const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
     return (
-        <section
-            id="home"
+        <section 
+            id="home" 
             className="md:flex md:justify-between md:items-center gap-16 md:h-full py-10"
         >
 
@@ -57,22 +57,21 @@ const Landing = ({ setSelectedPage }) => {
                     }}
                 >
                     <AnchorLink
-                        className="bg-dark-blue text-blue rounded-sm py-3 px-7 font-semibold hover:bg-blue hover:text-white transition duration-500"
+                        className="bg-dark-blue text-blue rounded-sm py-3 px-7 font-semibold hover:opacity-80 transition duration-500"
                         onClick={() => setSelectedPage("contact")}
                         href="#contact"
                     >
                         Contact Me
                     </AnchorLink>
-                    <AnchorLink
+                    <a
                         className="rounded-r-sm bg-dark-blue py-0.5 pr-0.5"
-                        onClick={() => setSelectedPage("contact")}
-                        href="google.com"
+                        href="https://drive.google.com" target="_blank" rel="noopener noreferrer"
                     >
-                        <div className="bg-blue text-dark-blue hover:text-red transition duration-500 w-full h-full flex items-center justify-center font-helvetica px-10"
+                        <div className="bg-blue text-dark-blue transition duration-500 w-full h-full flex items-center justify-center font-helvetica px-10"
                         >
                             Resume
                         </div>
-                    </AnchorLink>
+                    </a>
                 </motion.div>
 
                 <motion.div
