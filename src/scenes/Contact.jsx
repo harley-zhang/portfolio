@@ -106,7 +106,7 @@ const Contact = () => {
                         )}
 
                         <textarea
-                            className="font-helvetica w-full bg-white font-medium placeholder-light-blue p-3 my-5"
+                            className="font-helvetica w-full bg-white font-medium placeholder-light-blue p-3 mt-5"
                             type="text"
                             placeholder="Message"
                             rows="4"
@@ -125,7 +125,7 @@ const Contact = () => {
 
                         <button
                             type="submit"
-                            className="font-helvetica py-3 px-7 bg-navy-blue font-semibold text-white hover:opacity-80 transition duration-500"
+                            className="font-helvetica py-3 px-7 mt-5 bg-navy-blue font-semibold text-light-blue hover:opacity-80 transition duration-500"
                         >
                             Connect
                         </button>

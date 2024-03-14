@@ -1,8 +1,8 @@
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
-const SocialMediaIcons = () => {
+const SocialMediaIcons = ({ className }) => {
     return (
-        <div className="flex justify-center md:justify-start my-10 gap-7">
+        <div className={`flex justify-center md:justify-start my-10 gap-7 ${className}`}>
             <a
                 className="hover:opacity-50 transition duration-500"
                 href="https://www.linkedin.com/in/harley-zhang-3ba53b2a9"
