@@ -2,7 +2,6 @@ import Navbar from "./scenes/Navbar";
 import { useEffect, useState } from "react";
 import Landing from "./scenes/Landing";
 import Projects from "./scenes/Projects";
-import Contact from "./scenes/Contact";
 import useMediaQuery from "./hooks/useMediaQuery";
 import LineGradient from "./components/LineGradient";
 
@@ -31,10 +30,6 @@ function App() {
       <LineGradient />
       <div className="w-5/6 mx-auto">
         <Projects />
-      </div>
-      <LineGradient />
-      <div className="w-5/6 mx-auto">
-        <Contact />
       </div>
     </div>
   );

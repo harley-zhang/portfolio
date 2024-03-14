@@ -6,15 +6,16 @@ const Link = ({ page, selectedPage, setSelectedPage }) => {
     const lowerCasePage = page.toLowerCase();
     return (
         <AnchorLink 
-            className = {`${selectedPage === lowerCasePage ? "text-yellow" : ""}
-                hover:text-trans-blue transition duration-500}`}
-                href = {`#${lowerCasePage}`}
-                onClick = {() => setSelectedPage(lowerCasePage)}
-            >
-                {page}
+            className={`inline-block ${selectedPage === lowerCasePage ? "underline" : ""}
+                hover:underline`}
+            href={`#${lowerCasePage}`}
+            onClick={() => setSelectedPage(lowerCasePage)}
+        >
+            {page}
         </AnchorLink>
     );
 };
+
 
 const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
     const [isMenuToggled, setIsMenuToggled] = useState(false);
@@ -28,7 +29,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
 
                 {/* DESKTOP NAV*/}
                 {isAboveSmallScreens ? (
-                    <div className = "flex justify-between gap-16 font-helvetica text-sm font-medium">
+                    <div className = "flex justify-between gap-16 font-helvetica text-md font-medium">
                         <Link
                             page="Home"
                             selectedPage={selectedPage}
@@ -68,7 +69,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
                     </div>
 
                     {/* MENU ITEMS */}
-                    <div className = "flex flex-col gap-10 ml-[33%] text-xl">
+                    <div className = "flex flex-col gap-10 ml-[33%] text-sm">
                         <Link
                             page="Home"
                             selectedPage={selectedPage}
