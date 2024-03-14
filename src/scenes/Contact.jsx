@@ -6,10 +6,11 @@ const Contact = () => {
     const {
         register,
         trigger,
-        formState: { errors }
+        formState: { errors },
     } = useForm();
 
     const onSubmit = async (e) => {
+        console.log("~ e", e);
         const isValid = await trigger();
         if (!isValid) {
             e.preventDefault();
@@ -17,7 +18,7 @@ const Contact = () => {
     }
 
     return (
-        <section id="contact" className="py-48">
+        <section id="contact" className="contact py-48">
             {/* HEADINGS */}
             <motion.div
                 className="flex justify-end w-full"
@@ -26,7 +27,7 @@ const Contact = () => {
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.5 }}
                 variants={{
-                    hidden: { opacity: 0, x: -50 },
+                    hidden: { opacity: 0, x: 50 },
                     visible: { opacity: 1, x: 0 },
                 }}
             >
@@ -84,8 +85,8 @@ const Contact = () => {
                         />
                         {errors.name && (
                             <p className="text-red mt-1">
-                                {errors.name.type === 'required' && "This field is required."}
-                                {errors.name.type === 'maxLength' && "Max length is 100 characters."}
+                                {errors.name.type === "required" && "This field is required."}
+                                {errors.name.type === "maxLength" && "Max length is 100 characters."}
                             </p>
                         )}
 
@@ -95,13 +96,13 @@ const Contact = () => {
                             placeholder="Email"
                             {...register("email", {
                                 required: true,
-                                pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]\.[A-Z]{2,}$/i,
+                                pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                             })}
                         />
-                        {errors.name && (
+                        {errors.email && (
                             <p className="text-red mt-1">
-                                {errors.email.type === 'required' && "This field is required."}
-                                {errors.email.type === 'maxLength' && "Invalid email address."}
+                                {errors.email.type === "required" && "This field is required."}
+                                {errors.email.type === "pattern" && "Invalid email address."}
                             </p>
                         )}
 
