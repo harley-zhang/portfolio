@@ -57,17 +57,17 @@ const Landing = ({ setSelectedPage }) => {
                     }}
                 >
                     <AnchorLink
-                        className="bg-dark-blue text-blue rounded-sm py-3 px-7 font-semibold hover:opacity-80 transition duration-500"
+                        className="bg-navy-blue text-light-blue rounded-sm py-3 px-7 font-semibold hover:opacity-80 transition duration-500"
                         onClick={() => setSelectedPage("contact")}
                         href="#contact"
                     >
                         Contact Me
                     </AnchorLink>
                     <a
-                        className="rounded-r-sm bg-dark-blue py-0.5 pr-0.5"
+                        className="rounded-r-sm bg-navy-blue py-0.5 pr-0.5"
                         href="https://drive.google.com" target="_blank" rel="noopener noreferrer"
                     >
-                        <div className="bg-blue text-dark-blue transition duration-500 w-full h-full flex items-center justify-center font-helvetica px-10"
+                        <div className="bg-light-blue text-navy-blue transition duration-500 w-full h-full flex items-center justify-center font-helvetica px-10"
                         >
                             Resume
                         </div>

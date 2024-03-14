@@ -19,8 +19,7 @@ const projectVariant = {
 };
 
 const Project = ({ title, subtitle, url }) => {
-    const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-80 transition duration-500
-      bg-dark-blue z-30 flex flex-col justify-center items-center text-center p-16 text-white font-semibold`;
+    const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-80 transition duration-500 bg-navy-blue z-30 flex flex-col justify-center items-center text-center p-16 text-white font-semibold`;
     const projectTitle = title.split(" ").join("-").toLowerCase();
   
     return (
