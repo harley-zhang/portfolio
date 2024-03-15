@@ -8,3 +8,11 @@
 </div>
   
 My personal portfolio website. Made using React.js and Tailwind CSS.
+
+## Features
+
+- **Animations:** Smooth transitions and animations throughout the website.
+  
+- **Projects:** Showcases, summarizes, and explains projects with hyperlinks.
+  
+- **Contact Section using FormSubmit:** Integrated contact form powered by FormSubmit.
