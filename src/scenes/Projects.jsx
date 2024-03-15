@@ -1,6 +1,6 @@
 import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
-import { SiGoogleearthengine, SiTailwindcss } from "react-icons/si";
+import { SiGoogleearthengine, SiTailwindcss, SiOpenai } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaReact } from "react-icons/fa";
 
@@ -32,6 +32,12 @@ const Project = ({ title, subtitle, url }) => {
               <div className="mt-2 flex">
                 <SiGoogleearthengine className="text-xl m-2" size={32}/>
                 <IoLogoJavascript className="text-xl m-2" size={32}/>
+              </div>
+            )}
+            {title === "Lumos AI" && (
+              <div className="mt-2 flex">
+                <SiOpenai className="text-xl m-2" size={32}/>
+                <FaReact className="text-xl m-2" size={32}/>
               </div>
             )}
             {title === "Personal Portfolio" && (
@@ -82,8 +88,8 @@ const Projects = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           <Project title="EcoForecast" subtitle="An app for land managers to visualize and analyze climate and plant ecosystem data simulation data. Made using Google Earth Engine JavaScript API with the Yale School of the Environment." url="https://ecoforecast.info"/>
-          <Project title="Personal Portfolio" subtitle="My personal portfolio website. Made using React.js and Tailwind CSS."/>
-          <Project title="Project 3" />
+          <Project title="Lumos AI" subtitle="" url=""/>
+          <Project title="Personal Portfolio" subtitle="My personal portfolio website. Made using React.js and Tailwind CSS." url=""/>
         </motion.div>
       </div>
     </section>
