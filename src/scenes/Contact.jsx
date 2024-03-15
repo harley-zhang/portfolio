@@ -44,7 +44,7 @@ const Contact = () => {
             {/* FORM & IMAGE */}
             <div className="md:flex md:justify-between gap-16 mt-5">
                 <motion.div
-                    className="basis-1/2 flex justify-center"
+                    className="max-w-[400px] flex justify-center"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.5 }}
@@ -54,7 +54,7 @@ const Contact = () => {
                         visible: { opacity: 1, y: 0 },
                     }}
                 >
-                    <img src="../assets/contact-image.png" alt="contact" />
+                    <img src="../assets/contact-image.png" alt="contact" className="hidden md:block" />
                 </motion.div>
 
                 <motion.div
