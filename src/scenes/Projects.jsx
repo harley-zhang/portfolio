@@ -1,6 +1,7 @@
 import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
 import { SiGoogleearthengine, SiTailwindcss, SiOpenai } from "react-icons/si";
+import { TiWeatherWindyCloudy } from "react-icons/ti";
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaReact } from "react-icons/fa";
 
@@ -19,40 +20,40 @@ const projectVariant = {
 };
 
 const Project = ({ title, subtitle, url }) => {
-    const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-80 transition duration-500 bg-navy-blue z-30 flex flex-col justify-center items-center text-center p-16 text-white font-semibold`;
-    const projectTitle = title.split(" ").join("-").toLowerCase();
-  
-    return (
-      <a href={url} target="_blank" rel="noopener noreferrer">
-        <motion.div variants={projectVariant} className="relative">
-          <div className={overlayStyles}>
-            <p className="text-2xl font-helvetica">{title}</p>
-            <p className="mt-7">{subtitle}</p>
-            {title === "EcoForecast" && (
-              <div className="mt-2 flex">
-                <SiGoogleearthengine className="text-xl m-2" size={32}/>
-                <IoLogoJavascript className="text-xl m-2" size={32}/>
-              </div>
-            )}
-            {title === "Lumos AI" && (
-              <div className="mt-2 flex">
-                <SiOpenai className="text-xl m-2" size={32}/>
-                <FaReact className="text-xl m-2" size={32}/>
-              </div>
-            )}
-            {title === "Personal Portfolio" && (
-              <div className="mt-2 flex">
-                <FaReact className="text-xl m-2" size={32}/>
-                <SiTailwindcss className="text-xl m-2" size={32}/>
-              </div>
-            )}
-          </div>
-          <img src={`../assets/${projectTitle}.png`} alt={projectTitle} />
-        </motion.div>
-      </a>
-    );
-  };
-  
+  const overlayStyles = `absolute h-full text-white w-full opacity-0 hover:opacity-85 transition duration-500 bg-navy-blue z-30 flex flex-col justify-center items-center text-center p-16 text-white font-semibold`;
+  const projectTitle = title.split(" ").join("-").toLowerCase();
+
+  return (
+    <a href={url} target="_blank" rel="noopener noreferrer">
+      <motion.div variants={projectVariant} className="relative">
+        <div className={overlayStyles}>
+          <p className="text-2xl font-helvetica">{title}</p>
+          <p className="mt-7">{subtitle}</p>
+          {title === "EcoForecast" && (
+            <div className="mt-2 flex">
+              <SiGoogleearthengine className="text-xl m-2" size={32} color="#4285F4" />
+              <IoLogoJavascript className="text-xl m-2" size={32} color="#F7DF1E" />
+            </div>
+          )}
+          {title === "SimpleWeather" && (
+            <div className="mt-2 flex">
+              <TiWeatherWindyCloudy className="text-xl m-2" size={32} color="#e76241" />
+              <FaReact className="text-xl m-2" size={32} color="#61DAFB" />
+            </div>
+          )}
+          {title === "Personal Portfolio" && (
+            <div className="mt-2 flex">
+              <FaReact className="text-xl m-2" size={32} color="#61DAFB" />
+              <SiTailwindcss className="text-xl m-2" size={32} color="#38B2AC"/>
+            </div>
+          )}
+        </div>
+        <img src={`../assets/${projectTitle}.png`} alt={projectTitle} />
+      </motion.div>
+    </a>
+  );
+};
+
 const Projects = () => {
   return (
     <section id="projects" className="pt-48 pb-48">
@@ -87,9 +88,9 @@ const Projects = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          <Project title="EcoForecast" subtitle="An app for land managers to visualize and analyze climate and plant ecosystem data simulation data. Made using Google Earth Engine JavaScript API with the Yale School of the Environment." url="https://ecoforecast.info"/>
-          <Project title="Lumos AI" subtitle="" url=""/>
-          <Project title="Personal Portfolio" subtitle="My personal portfolio website. Made using React.js and Tailwind CSS." url=""/>
+          <Project title="EcoForecast" subtitle="An app for land managers to visualize and analyze climate and plant ecosystem data simulation data. Made using Google Earth Engine JavaScript API with the Yale School of the Environment." url="https://ecoforecast.info" />
+          <Project title="SimpleWeather" subtitle="An app that allows users to see weather for any location using search with a clean UI. Made using OpenWeatherMap API and React.js." url="https://simpleweather-murex.vercel.app/" />
+          <Project title="Personal Portfolio" subtitle="My personal portfolio website. Made using React.js and Tailwind CSS." url="https://harley-zhang.vercel.app/" />
         </motion.div>
       </div>
     </section>
