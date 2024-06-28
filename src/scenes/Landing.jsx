@@ -63,15 +63,6 @@ const Landing = ({ setSelectedPage }) => {
                     >
                         Contact Me
                     </AnchorLink>
-                    <a
-                        className="rounded-r-sm bg-navy-blue py-0.5 pr-0.5"
-                        href="https://drive.google.com/file/d/1QPsSITDXf8e5vJtICE-JKnUCOXTKuUl5/view?usp=sharing" target="_blank" rel="noopener noreferrer"
-                    >
-                        <div className="bg-light-blue text-navy-blue transition duration-500 w-full h-full flex items-center justify-center font-helvetica px-10"
-                        >
-                            Resume
-                        </div>
-                    </a>
                 </motion.div>
 
                 <motion.div
