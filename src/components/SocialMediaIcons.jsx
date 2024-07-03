@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
 
 const SocialMediaIcons = ({ className }) => {
     return (
@@ -31,6 +32,13 @@ const SocialMediaIcons = ({ className }) => {
                 rel="noreferrer"
             >
                 <FaYoutube size={17} />
+            </a>
+            <a
+                href="mailto:h333zhan@uwaterloo.ca"
+                target="_blank"
+                rel="noreferrer"
+            >
+                <MdEmail size={17} />
             </a>
         </div>
     )

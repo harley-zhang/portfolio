@@ -55,7 +55,6 @@ const MobileMenu = ({ isOpen, selectedPage, setSelectedPage, onClose }) => {
 const Navbar = ({ selectedPage, setSelectedPage }) => {
     const [isMenuToggled, setIsMenuToggled] = useState(false);
     const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
-    const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
     const [navbarBackground, setNavbarBackground] = useState("");
 
     useEffect(() => {
@@ -74,7 +73,7 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
 
     return (
         <nav className={`${navbarBackground} text-white  bg-darkgrey z-40 w-full fixed top-0 py-3`}>
-            <div className={`flex items-center justify-between mx-auto ${isAboveMediumScreens ? 'w-[1000px]' : 'px-5'}`}>
+            <div className='flex items-center justify-between mx-auto md:w-[1000px] px-5'>
                 <img src={logo} alt="harley-zhang-logo" className="h-6 z-50" />
 
                 {isAboveSmallScreens ? (
