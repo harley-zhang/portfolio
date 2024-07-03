@@ -22,11 +22,11 @@ const Landing = ({ setSelectedPage }) => {
                         visible: { opacity: 1, x: 0 }
                     }}
                 >
-                    <p className="text-5xl font-helvetica tracking-wide z-10 text-center md:text-start">
+                    <p className="text-[2.6rem] font-helvetica tracking-wide z-10 text-center md:text-start">
                         Harley Zhang
                     </p>
 
-                    <p className="mt-10 font-playfair mb-7 text-md text-center md:text-start">
+                    <p className="mt-10 font-helvetica tracking-wide mb-7 text-[1.1rem] text-center md:text-start">
                         Interested in web development, data science, computer engineering, and environmental sustainability.
                     </p>
                 </motion.div>
