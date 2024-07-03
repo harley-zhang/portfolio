@@ -8,9 +8,9 @@ const Link = ({ page, selectedPage, setSelectedPage, onClick }) => {
         <AnchorLink
             className={`inline-block`}
             href={`#${lowerCasePage}`}
-            onClick={() => {
+            onClick={(e) => {
                 setSelectedPage(lowerCasePage);
-                onClick(); // Call the onClick handler to toggle off the menu
+                if (onClick) onClick(e); // Ensure onClick is called if provided
             }}
         >
             {page}
