@@ -5,7 +5,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        grey: "#0a0a0a",
+        darkgrey: "#0a0a0a",
+        lightgrey: "#cbcbcb",
       },
       fontFamily: {
         helvetica: ["HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", "sans-serif"],

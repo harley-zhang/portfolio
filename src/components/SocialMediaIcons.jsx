@@ -1,23 +1,36 @@
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const SocialMediaIcons = ({ className }) => {
     return (
-        <div className={`flex justify-center md:justify-start my-10 gap-7 ${className}`}>
+        <div className={`flex justify-center md:justify-start my-10 gap-9 ${className}`}>
             <a
-                className="hover:opacity-50 transition duration-500"
                 href="https://www.linkedin.com/in/harley-zhang"
                 target="_blank"
                 rel="noreferrer"
             >
-                <FaLinkedinIn size={22} />
+                <FaLinkedin size={17} />
             </a>
             <a
-                className="hover:opacity-50 transition duration-500"
                 href="https://github.com/harley-zhang"
                 target="_blank"
                 rel="noreferrer"
             >
-                <FaGithub size={22} />
+                <FaGithub size={17} />
+            </a>
+            <a
+                href="https://twitter.com/HarleyZhang06"
+                target="_blank"
+                rel="noreferrer"
+            >
+                <FaXTwitter size={17} />
+            </a>
+            <a
+                href="https://www.youtube.com/@harleyzhang3092"
+                target="_blank"
+                rel="noreferrer"
+            >
+                <FaYoutube size={17} />
             </a>
         </div>
     )

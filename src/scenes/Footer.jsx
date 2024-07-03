@@ -2,12 +2,11 @@ import SocialMediaIcons from "../components/SocialMediaIcons";
 
 const Footer = () => {
     return (
-        <footer className="h-64 bg-navy-blue pt-10">
-            <div className="w-5/6 mx-auto">
-                <SocialMediaIcons className="text-light-blue" />
-                <div className="md:flex justify-center md:justify-between text-center">
-                    <p className="text-light-blue font-helvetica font-semibold text-2xl">hz●</p>
-                    <p className="text-light-blue font-playfair text-md">Made by Harley Zhang.</p>
+        <footer className="pt-10">
+            <div className="h-[180px] sm:h-28 md:w-[1000px] sm:mx-5 mx-5 md:mx-auto">
+                <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center my-10">
+                    <SocialMediaIcons className="sm:order-last" />
+                    <p className="font-helvetica text-sm text-lightgrey mt-3 md:mt-0 sm:order-first md:mx-5">Harley Zhang © 2006-2024</p>
                 </div>
             </div>
         </footer>

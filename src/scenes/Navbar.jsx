@@ -21,8 +21,8 @@ const Link = ({ page, setSelectedPage, onClick }) => {
 
 const MobileMenu = ({ isOpen, selectedPage, setSelectedPage, onClose }) => {
     return (
-        <div className={`fixed right-0 bottom-0 h-full w-full bg-grey bg-opacity-70 backdrop-filter backdrop-blur-xl text-white transition duration-[400ms] ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
-            <div className="flex flex-col gap-[23px] ml-[20px] text-[27px] mt-[80px]">
+        <div className={`fixed right-0 bottom-0 h-full w-full bg-darkgrey bg-opacity-70 backdrop-filter backdrop-blur-xl text-white transition duration-[400ms] ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+            <div className="flex flex-col gap-[23px] ml-5 text-[27px] mt-20">
                 <Link
                     page="Projects"
                     selectedPage={selectedPage}
@@ -73,8 +73,8 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
     };
 
     return (
-        <nav className={`${navbarBackground} text-white  bg-grey z-40 w-full fixed top-0 py-3`}>
-            <div className={`flex items-center justify-between mx-auto ${isAboveMediumScreens ? 'w-[1000px]' : 'px-[20px]'}`}>
+        <nav className={`${navbarBackground} text-white  bg-darkgrey z-40 w-full fixed top-0 py-3`}>
+            <div className={`flex items-center justify-between mx-auto ${isAboveMediumScreens ? 'w-[1000px]' : 'px-5'}`}>
                 <img src={logo} alt="harley-zhang-logo" className="h-6 z-50" />
 
                 {isAboveSmallScreens ? (

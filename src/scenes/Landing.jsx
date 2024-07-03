@@ -6,7 +6,7 @@ const Landing = ({ setSelectedPage }) => {
     return (
         <section
             id="home"
-            className={`md:flex md:justify-between md:items-center gap-16 md:h-50 py-10 ${isAboveMediumScreens ? 'w-full md:w-[1000px] mx-auto p-0 m-0' : 'px-[20px]'}`}
+            className={`md:flex md:justify-between md:items-center gap-16 md:h-50 py-10 ${isAboveMediumScreens ? 'w-full md:w-[1000px] mx-auto p-0 m-0' : 'px-5'}`}
         >
             {/* LANDING TEXT */}
             <div className={`z-30 mt-12 md:mt-32`}>
@@ -27,7 +27,7 @@ const Landing = ({ setSelectedPage }) => {
                     <a
                         href="https://drive.google.com/file/d/1QPsSITDXf8e5vJtICE-JKnUCOXTKuUl5/view?usp=sharing" target="_blank" rel="noopener noreferrer"
                     >
-                        <div className="bg-white text-grey transition duration-500 w-full h-full flex items-center justify-center font-helvetica tracking-wide px-6 py-2 rounded-3xl hover:opacity-80">
+                        <div className="bg-white text-darkgrey transition duration-500 w-full h-full flex items-center justify-center font-helvetica tracking-wide px-6 py-2 rounded-3xl hover:opacity-80">
                             Resume
                         </div>
                     </a>
