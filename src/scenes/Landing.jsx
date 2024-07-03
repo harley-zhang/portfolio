@@ -7,7 +7,7 @@ const Landing = ({ setSelectedPage }) => {
     return (
         <section 
             id="home" 
-            className="md:flex md:justify-between md:items-center gap-16 md:h-full py-10"
+            className="md:flex md:justify-between md:items-center gap-16 md:h-50 py-10"
         >
             {/* LANDING TEXT */}
             <div className={`z-30 basis-2/5 mt-12 md:mt-32 mx-[5%]`}>
@@ -22,7 +22,7 @@ const Landing = ({ setSelectedPage }) => {
                         visible: { opacity: 1, x: 0 }
                     }}
                 >
-                    <p className="text-6xl font-helvetica tracking-wide z-10 text-center md:text-start">
+                    <p className="text-5xl font-helvetica tracking-wide z-10 text-center md:text-start">
                         Harley Zhang
                     </p>
 
