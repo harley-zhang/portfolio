@@ -10,7 +10,7 @@ const Landing = ({ setSelectedPage }) => {
             className="md:flex md:justify-between md:items-center gap-16 md:h-50 py-10"
         >
             {/* LANDING TEXT */}
-            <div className={`z-30 basis-2/5 mt-12 md:mt-32 mx-[5%]`}>
+            <div className={`z-30 mt-12 md:mt-32 mx-[5%]`}>
                 {/* HEADINGS */}
                 <motion.div
                     initial="hidden" ß
