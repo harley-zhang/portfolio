@@ -22,7 +22,6 @@ const Link = ({ page, selectedPage, setSelectedPage, onClick }) => {
 const MobileMenu = ({ isOpen, selectedPage, setSelectedPage, onClose }) => {
     return (
         <div className={`fixed right-0 bottom-0 h-full w-full bg-grey bg-opacity-70 backdrop-filter backdrop-blur-xl text-white transition duration-300 ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
-
             <div className="flex flex-col gap-[23px] ml-[20px] text-[27px] mt-[80px]">
                 <Link
                     page="Projects"

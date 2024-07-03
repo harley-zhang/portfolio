@@ -7,13 +7,13 @@ const Landing = ({ setSelectedPage }) => {
     return (
         <section
             id="home"
-            className="md:flex md:justify-between md:items-center gap-16 md:h-50 py-10"
+            className={`md:flex md:justify-between md:items-center gap-16 md:h-50 py-10 ${isAboveMediumScreens ? 'w-full md:w-[1000px] mx-auto p-0 m-0' : 'px-[20px]'}`}
         >
             {/* LANDING TEXT */}
-            <div className={`z-30 mt-12 md:mt-32 mx-[5%]`}>
+            <div className={`z-30 mt-12 md:mt-32`}>
                 {/* HEADINGS */}
                 <motion.div
-                    initial="hidden" ß
+                    initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.5 }}
                     transition={{ duration: 0.4 }}
@@ -32,7 +32,7 @@ const Landing = ({ setSelectedPage }) => {
                 </motion.div>
 
 
-                {/* BUTTONS */}
+                {/* BUTTON */}
                 <motion.div
                     className="flex mt-5 justify-center md:justify-start"
                     initial="hidden"
