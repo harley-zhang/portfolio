@@ -21,7 +21,7 @@ const Link = ({ page, selectedPage, setSelectedPage, onClick }) => {
 
 const MobileMenu = ({ isOpen, selectedPage, setSelectedPage, onClose }) => {
     return (
-        <div className={`fixed right-0 bottom-0 h-full w-full bg-grey bg-opacity-70 backdrop-filter backdrop-blur-xl text-white transition duration-300 ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+        <div className={`fixed right-0 bottom-0 h-full w-full bg-grey bg-opacity-70 backdrop-filter backdrop-blur-xl text-white transition duration-[400ms] ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
             <div className="flex flex-col gap-[23px] ml-[20px] text-[27px] mt-[80px]">
                 <Link
                     page="Projects"
@@ -52,7 +52,7 @@ const MobileMenu = ({ isOpen, selectedPage, setSelectedPage, onClose }) => {
     );
 };
 
-const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
+const Navbar = ({ selectedPage, setSelectedPage }) => {
     const [isMenuToggled, setIsMenuToggled] = useState(false);
     const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
     const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
@@ -64,9 +64,9 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
             setNavbarBackground("");
         } else {
             document.body.style.overflow = "visible";
-            setNavbarBackground(isTopOfPage ? "" : "bg-opacity-70 backdrop-filter backdrop-blur-lg");
+            setNavbarBackground("bg-opacity-70 backdrop-filter backdrop-blur-lg");
         }
-    }, [isMenuToggled, isAboveSmallScreens, isTopOfPage]);
+    }, [isMenuToggled, isAboveSmallScreens]);
 
     const handleToggleMenu = () => {
         setIsMenuToggled(!isMenuToggled);
