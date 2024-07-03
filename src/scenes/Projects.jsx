@@ -27,7 +27,7 @@ const Project = ({ title, subtitle, url }) => {
     <a href={url} target="_blank" rel="noopener noreferrer">
       <motion.div variants={projectVariant} className="relative">
         <div className={overlayStyles}>
-          <p className="text-2xl font-helvetica">{title}</p>
+          <p className="text-2xl font-helvetica tracking-wide">{title}</p>
           <p className="mt-7">{subtitle}</p>
           {title === "EcoForecast" && (
             <div className="mt-2 flex">
@@ -70,7 +70,7 @@ const Projects = () => {
         }}
       >
         <div>
-          <p className="font-helvetica font-semibold text-4xl">
+          <p className="font-helvetica tracking-wide font-semibold text-4xl">
             Projects
           </p>
           <div className="flex justify-center mt-5">

@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        black: "#000000",
+        grey: "#0a0a0a",
         red: "#ff534d",
         "light-blue": "#e0ebff",
         "navy-blue": "#0f3e99",
@@ -15,8 +15,10 @@ module.exports = {
         "gradient-rainblue": "linear-gradient (90deg, #24cbff 14.53%, #fc59ff 69.36%, #ffbd0c 107.73%)",
       }),
       fontFamily: {
-        playfair: ["Playfair Display", "serif"],
-        helvetica: ["Helvetica", "sans-serif"],
+        helvetica: ["HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", "sans-serif"],
+      },
+      letterSpacing: {
+        wide: '0.03em',
       },
     },
     screens: {

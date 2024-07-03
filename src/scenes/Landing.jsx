@@ -22,7 +22,7 @@ const Landing = ({ setSelectedPage }) => {
                         visible: { opacity: 1, x: 0 }
                     }}
                 >
-                    <p className="text-6xl font-helvetica font-semibold z-10 text-center md:text-start">
+                    <p className="text-6xl font-helvetica tracking-wide z-10 text-center md:text-start">
                         Harley Zhang
                     </p>
 
