@@ -1,4 +1,3 @@
-import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
 import { SiGoogleearthengine, SiTailwindcss, SiOpenai } from "react-icons/si";
 import { TiWeatherWindyCloudy } from "react-icons/ti";
@@ -74,7 +73,6 @@ const Projects = () => {
             Projects
           </p>
           <div className="flex justify-center mt-5">
-            <LineGradient width="w-2/3" />
           </div>
         </div>
       </motion.div>

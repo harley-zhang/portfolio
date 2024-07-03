@@ -1,4 +1,3 @@
-import LineGradient from "../components/LineGradient";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 
@@ -36,7 +35,6 @@ const Contact = () => {
                         Get in touch
                     </p>
                     <div className="flex md:jutify-end my-5">
-                        <LineGradient width="w-1/2" />
                     </div>
                 </div>
             </motion.div>

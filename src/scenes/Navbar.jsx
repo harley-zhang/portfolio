@@ -3,7 +3,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "../hooks/useMediaQuery";
 import logo from "../assets/logo.png";
 
-const Link = ({ page, selectedPage, setSelectedPage, onClick }) => {
+const Link = ({ page, setSelectedPage, onClick }) => {
     const lowerCasePage = page.toLowerCase();
     return (
         <AnchorLink

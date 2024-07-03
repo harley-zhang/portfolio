@@ -5,7 +5,6 @@ import Projects from "./scenes/Projects";
 import Contact from "./scenes/Contact";
 import Footer from "./scenes/Footer";
 import useMediaQuery from "./hooks/useMediaQuery";
-import LineGradient from "./components/LineGradient";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
@@ -29,11 +28,9 @@ function App() {
         setSelectedPage={setSelectedPage}
       />
       <Landing setSelectedPage={setSelectedPage} />
-      <LineGradient />
       <div className="w-5/6 mx-auto">
         <Projects />
       </div>
-      <LineGradient />
       <div className="w-5/6 mx-auto md-h-full">
         <Contact />
       </div>

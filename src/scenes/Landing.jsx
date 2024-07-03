@@ -12,16 +12,7 @@ const Landing = ({ setSelectedPage }) => {
             {/* LANDING TEXT */}
             <div className={`z-30 mt-12 md:mt-32`}>
                 {/* HEADINGS */}
-                <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.5 }}
-                    transition={{ duration: 0.4 }}
-                    variants={{
-                        hidden: { opacity: 0, x: -50 },
-                        visible: { opacity: 1, x: 0 }
-                    }}
-                >
+                <div>
                     <p className="text-[2.6rem] font-helvetica tracking-wide z-10 text-center md:text-start">
                         Harley Zhang
                     </p>
@@ -29,21 +20,11 @@ const Landing = ({ setSelectedPage }) => {
                         I'm a student at the University of Waterloo studying Computer Engineering. <br /><br />
                         My interests are data science, software, and hardware and their applications for environmental sustainability and social causes. I'm eager to work on meaningful projects that make a positive impact.
                     </p>
-                </motion.div>
+                </div>
 
 
                 {/* BUTTON */}
-                <motion.div
-                    className="flex mt-5 justify-center md:justify-start"
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.5 }}
-                    transition={{ delay: 0.2, duration: 0.4 }}
-                    variants={{
-                        hidden: { opacity: 0, x: -50 },
-                        visible: { opacity: 1, x: 0 }
-                    }}
-                >
+                <div className="flex mt-5 justify-center md:justify-start">
                     <a
                         className="rounded-r-sm bg-navy-blue py-1 pr-0.5"
                         href="https://drive.google.com/file/d/1QPsSITDXf8e5vJtICE-JKnUCOXTKuUl5/view?usp=sharing" target="_blank" rel="noopener noreferrer"
@@ -52,7 +33,7 @@ const Landing = ({ setSelectedPage }) => {
                             Resume
                         </div>
                     </a>
-                </motion.div>
+                </div>
             </div>
         </section>
     );
