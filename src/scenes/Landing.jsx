@@ -2,16 +2,16 @@ const Landing = ({ setSelectedPage }) => {
     return (
         <section
             id="home"
-            className='md:flex md:justify-between md:items-center gap-16 md:h-50 py-10 md:w-[1000px] md:mx-auto px-5'
+            className='md:flex md:justify-between md:items-center gap-16 h-[34rem] py-10 md:w-[1000px] md:mx-auto px-5'
         >
             {/* LANDING TEXT */}
             <div className={`z-30 mt-12 md:mt-32`}>
                 {/* HEADINGS */}
                 <div>
-                    <p className="text-[2.6rem] font-helvetica tracking-wide z-10 text-center md:text-start">
+                    <p className="text-[2.6rem] font-helvetica tracking-wide z-10 text-start">
                         Harley Zhang
                     </p>
-                    <p className="mt-7 font-helvetica tracking-wide mb-7 text-[1.1rem] text-center md:text-start">
+                    <p className="mt-7 font-helvetica tracking-wide mb-7 text-[1.1rem] text-start">
                         I'm a student at the University of Waterloo studying Computer Engineering. <br /><br />
                         My interests are data science, software, and hardware and their applications for environmental sustainability and social causes. I'm eager to work on meaningful projects that make a positive impact.
                     </p>
@@ -19,7 +19,7 @@ const Landing = ({ setSelectedPage }) => {
 
 
                 {/* BUTTON */}
-                <div className="flex mt-10 justify-center md:justify-start">
+                <div className="flex mt-10 justify-start">
                     <a
                         className="rounded-r-sm"
                         href="https://drive.google.com/file/d/1QPsSITDXf8e5vJtICE-JKnUCOXTKuUl5/view?usp=sharing" target="_blank" rel="noopener noreferrer"
