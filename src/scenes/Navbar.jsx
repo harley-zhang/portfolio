@@ -32,7 +32,7 @@ const MobileMenu = ({ isOpen, onClose, selectedPage, setSelectedPage }) => {
             <img src={logo} alt="harley-zhang-logo" className="mt-3 ml-[20px] h-8" />
 
             <div className="flex flex-col gap-[35px] ml-[20px] text-[25px]">
-                
+
                 <Link
                     page="Projects"
                     selectedPage={selectedPage}

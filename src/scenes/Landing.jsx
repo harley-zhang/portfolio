@@ -5,15 +5,15 @@ const Landing = ({ setSelectedPage }) => {
     const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
     return (
-        <section 
-            id="home" 
+        <section
+            id="home"
             className="md:flex md:justify-between md:items-center gap-16 md:h-50 py-10"
         >
             {/* LANDING TEXT */}
             <div className={`z-30 basis-2/5 mt-12 md:mt-32 mx-[5%]`}>
                 {/* HEADINGS */}
                 <motion.div
-                    initial="hidden"
+                    initial="hidden"ß
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.5 }}
                     transition={{ duration: 0.4 }}
@@ -25,9 +25,9 @@ const Landing = ({ setSelectedPage }) => {
                     <p className="text-[2.6rem] font-helvetica tracking-wide z-10 text-center md:text-start">
                         Harley Zhang
                     </p>
-
                     <p className="mt-10 font-helvetica tracking-wide mb-7 text-[1.1rem] text-center md:text-start">
-                        Interested in web development, data science, computer engineering, and environmental sustainability.
+                        I'm a student at the University of Waterloo studying Computer Engineering. <br /><br />
+                        My interests are data science, software, and hardware and their applications for environmental sustainability and social causes. I'm eager to work on meaningful projects that make a positive impact.
                     </p>
                 </motion.div>
             </div>

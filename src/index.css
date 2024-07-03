@@ -12,6 +12,6 @@ body,
 }
 
 ::selection {
-  background-color: #fff; /* Set background color for selected text */
-  color: #0a0a0a; /* Set text color for selected text */
+  background-color: #fff;
+  color: #0a0a0a;
 }

@@ -44,7 +44,7 @@ const Project = ({ title, subtitle, url }) => {
           {title === "Personal Portfolio" && (
             <div className="mt-2 flex">
               <FaReact className="text-xl m-2" size={32} color="#61DAFB" />
-              <SiTailwindcss className="text-xl m-2" size={32} color="#38B2AC"/>
+              <SiTailwindcss className="text-xl m-2" size={32} color="#38B2AC" />
             </div>
           )}
         </div>
