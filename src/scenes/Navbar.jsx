@@ -61,10 +61,10 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
     useEffect(() => {
         if (!isAboveSmallScreens && isMenuToggled) {
             document.body.style.overflow = "hidden";
-            setNavbarBackground("bg-black");
+            setNavbarBackground("");
         } else {
             document.body.style.overflow = "visible";
-            setNavbarBackground(isTopOfPage ? "" : "bg-grey text-white transition duration-[1000ms] bg-opacity-70 backdrop-filter backdrop-blur-lg");
+            setNavbarBackground(isTopOfPage ? "" : "bg-opacity-70 backdrop-filter backdrop-blur-lg");
         }
     }, [isMenuToggled, isAboveSmallScreens, isTopOfPage]);
 
@@ -73,7 +73,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
     };
 
     return (
-        <nav className={`${navbarBackground} z-40 w-full fixed top-0 py-3`}>
+        <nav className={`${navbarBackground} text-white  bg-grey z-40 w-full fixed top-0 py-3`}>
             <div className={`flex items-center justify-between mx-auto ${isAboveMediumScreens ? 'w-[1000px]' : 'px-[20px]'}`}>
                 <img src={logo} alt="harley-zhang-logo" className="h-6 z-50" />
 
