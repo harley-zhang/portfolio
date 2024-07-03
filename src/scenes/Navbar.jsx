@@ -7,7 +7,7 @@ const Link = ({ page, selectedPage, setSelectedPage, onClick }) => {
     const lowerCasePage = page.toLowerCase();
     return (
         <AnchorLink
-            className={`inline-block`}
+            className="inline-block"
             href={`#${lowerCasePage}`}
             onClick={(e) => {
                 setSelectedPage(lowerCasePage);
@@ -19,20 +19,11 @@ const Link = ({ page, selectedPage, setSelectedPage, onClick }) => {
     );
 };
 
-const MobileMenu = ({ isOpen, onClose, selectedPage, setSelectedPage }) => {
+const MobileMenu = ({ isOpen, selectedPage, setSelectedPage, onClose }) => {
     return (
-        <div className={`fixed right-0 bottom-0 h-full w-full bg-gradient-to-t from-transparent to-grey bg-opacity-50 backdrop-filter backdrop-blur-xl text-white
+        <div className={`fixed right-0 bottom-0 h-full w-full bg-gradient-to-t from-transparent to-grey bg-opacity-60 backdrop-filter backdrop-blur-xl text-white
             ${isOpen ? 'opacity-100 visible transition duration-[400ms]' : 'opacity-0 invisible transition duration-[400ms]'}`}>
-            <div className="flex justify-end pt-3 pr-[20px] font-helvetica tracking-wide text-sm font-medium">
-                <button onClick={onClose}>
-                    Close
-                </button>
-            </div>
-
-            <img src={logo} alt="harley-zhang-logo" className="mt-3 ml-[20px] h-8" />
-
-            <div className="flex flex-col gap-[35px] ml-[20px] text-[25px]">
-
+            <div className="flex flex-col gap-[23px] ml-[20px] text-[27px] mt-[80px]">
                 <Link
                     page="Projects"
                     selectedPage={selectedPage}
@@ -85,7 +76,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
     return (
         <nav className={`${navbarBackground} z-40 w-full fixed top-0 py-3`}>
             <div className={`flex items-center justify-between mx-auto ${isAboveMediumScreens ? 'w-[1000px]' : 'px-[20px]'}`}>
-                <img src={logo} alt="harley-zhang-logo" className="h-6" />
+                <img src={logo} alt="harley-zhang-logo" className="h-6 z-50" />
 
                 {isAboveSmallScreens ? (
                     <div className="flex justify-between gap-14 font-helvetica tracking-wide text-[13px] font-medium">
@@ -112,19 +103,19 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
                     </div>
                 ) : (
                     <button
-                        className="flex justify-between gap-16 font-helvetica tracking-wide text-sm font-medium"
+                        className="flex justify-between gap-16 font-helvetica tracking-wide text-sm font-medium z-50"
                         onClick={handleToggleMenu}
                     >
-                        Menu
+                        {isMenuToggled ? "Close" : "Menu"}
                     </button>
                 )}
 
                 {!isAboveSmallScreens && (
                     <MobileMenu
                         isOpen={isMenuToggled}
-                        onClose={handleToggleMenu}
                         selectedPage={selectedPage}
                         setSelectedPage={setSelectedPage}
+                        onClose={handleToggleMenu}
                     />
                 )}
             </div>
