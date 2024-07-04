@@ -19,7 +19,7 @@ const Experience = () => {
                     </div>
 
                     {/* Text */}
-                    <div className='ml-4 w-full'>
+                    <div className='ml-5 w-full'>
                         <div className='flex justify-between w-full mb-2'>
                             <p className='text-md sm:text-xl font-helvetica tracking-wide text-left'>Yale University</p>
                             <p className='text-sm sm:text-[1rem] mt-[.1rem] font-helvetica tracking-wide text-right'>New Haven, CT</p>
@@ -40,7 +40,7 @@ const Experience = () => {
                     </div>
 
                     {/* Text */}
-                    <div className='ml-4 w-full'>
+                    <div className='ml-5 w-full'>
                         <div className='flex justify-between w-full mb-2'>
                             <p className='text-md sm:text-xl font-helvetica tracking-wide text-left'>University of Toronto</p>
                             <p className='text-sm sm:text-[1rem] mt-[.1rem] font-helvetica tracking-wide text-right'>Toronto, ON</p>

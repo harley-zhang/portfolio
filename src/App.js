@@ -1,10 +1,9 @@
-import Navbar from "./scenes/Navbar";
 import { useEffect, useState } from "react";
+import Navbar from "./scenes/Navbar";
 import Landing from "./scenes/Landing";
 import Experience from "./scenes/Experience.jsx";
 import Education from "./scenes/Education";
 import Footer from "./scenes/Footer";
-import useMediaQuery from "./hooks/useMediaQuery";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");

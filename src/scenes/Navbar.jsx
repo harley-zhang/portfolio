@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "../hooks/useMediaQuery";
 import logo from "../assets/logo.png";
+import resume from "../assets/Harley_Zhang_Resume.pdf";
 
 const Link = ({ page, setSelectedPage, onClick }) => {
     const lowerCasePage = page.toLowerCase();
@@ -16,39 +17,6 @@ const Link = ({ page, setSelectedPage, onClick }) => {
         >
             {page}
         </AnchorLink>
-    );
-};
-
-const MobileMenu = ({ isOpen, selectedPage, setSelectedPage, onClose }) => {
-    return (
-        <div className={`fixed right-0 bottom-0 h-full w-full bg-darkgrey bg-opacity-70 backdrop-filter backdrop-blur-xl text-white transition duration-[400ms] ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
-            <div className="flex flex-col gap-[23px] ml-5 text-[27px] mt-20">
-                <Link
-                    page="Projects"
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                    onClick={onClose}
-                />
-                <Link
-                    page="Education"
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                    onClick={onClose}
-                />
-                <Link
-                    page="Experience"
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                    onClick={onClose}
-                />
-                <Link
-                    page="Contact"
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                    onClick={onClose}
-                />
-            </div>
-        </div>
     );
 };
 
@@ -72,32 +40,28 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
     };
 
     return (
-        <nav className={`${navbarBackground} text-white  bg-darkgrey z-40 w-full fixed top-0 py-3`}>
+        <nav className={`${navbarBackground} text-white bg-darkgrey z-40 w-full fixed top-0 py-3`}>
             <div className='flex items-center justify-between mx-auto md:w-[1000px] px-5'>
                 <img src={logo} alt="harley-zhang-logo" className="h-6 z-50" />
 
+                {/* DESKTOP NAV*/}
                 {isAboveSmallScreens ? (
                     <div className="flex justify-between gap-14 font-helvetica tracking-wide text-[13px] font-medium">
                         <Link
                             page="Projects"
-                            selectedPage={selectedPage}
                             setSelectedPage={setSelectedPage}
                         />
                         <Link
                             page="Education"
-                            selectedPage={selectedPage}
                             setSelectedPage={setSelectedPage}
                         />
                         <Link
                             page="Experience"
-                            selectedPage={selectedPage}
                             setSelectedPage={setSelectedPage}
                         />
-                        <Link
-                            page="Contact"
-                            selectedPage={selectedPage}
-                            setSelectedPage={setSelectedPage}
-                        />
+                        <a href={resume} target="_blank" rel="noopener noreferrer" >
+                            Resume
+                        </a>
                     </div>
                 ) : (
                     <button
@@ -108,14 +72,29 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
                     </button>
                 )}
 
-                {!isAboveSmallScreens && (
-                    <MobileMenu
-                        isOpen={isMenuToggled}
-                        selectedPage={selectedPage}
-                        setSelectedPage={setSelectedPage}
-                        onClose={handleToggleMenu}
-                    />
-                )}
+                {/* MOBIlE MENU POPUP */}
+                <div className={`fixed font-helvetica tracking-wide right-0 bottom-0 h-full w-full text-white transition-all duration-[400ms] transform ${isMenuToggled ? 'opacity-100 bg-darkgrey bg-opacity-50 backdrop-blur-xl visible' : 'opacity-0 invisible'}`}>
+                    <div className="flex flex-col gap-[23px] ml-5 text-[27px] mt-20">
+                        <Link
+                            page="Projects"
+                            setSelectedPage={setSelectedPage}
+                            onClick={handleToggleMenu}
+                        />
+                        <Link
+                            page="Education"
+                            setSelectedPage={setSelectedPage}
+                            onClick={handleToggleMenu}
+                        />
+                        <Link
+                            page="Experience"
+                            setSelectedPage={setSelectedPage}
+                            onClick={handleToggleMenu}
+                        />
+                        <a href={resume} target="_blank" rel="noopener noreferrer" >
+                            Resume
+                        </a>
+                    </div>
+                </div>
             </div>
         </nav>
     );

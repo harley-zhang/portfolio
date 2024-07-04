@@ -1,3 +1,6 @@
+import resume from "../assets/Harley_Zhang_Resume.pdf";
+import { GoArrowUpRight } from "react-icons/go";
+
 const Landing = ({ setSelectedPage }) => {
     return (
         <section
@@ -20,12 +23,9 @@ const Landing = ({ setSelectedPage }) => {
 
                 {/* BUTTON */}
                 <div className="flex mt-10 justify-start">
-                    <a
-                        className="rounded-r-sm"
-                        href="https://drive.google.com/file/d/1QPsSITDXf8e5vJtICE-JKnUCOXTKuUl5/view?usp=sharing" target="_blank" rel="noopener noreferrer"
-                    >
+                    <a className="rounded-r-sm" href={resume} target="_blank" rel="noopener noreferrer">
                         <div className="bg-white text-darkgrey transition duration-500 w-full h-full flex items-center justify-center font-helvetica tracking-wide px-6 py-2 rounded-3xl hover:opacity-80">
-                            Resume
+                            Resume <GoArrowUpRight size={20} className="ml-[0.13rem] mr-0" />
                         </div>
                     </a>
                 </div>
