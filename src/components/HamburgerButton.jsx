@@ -13,21 +13,21 @@ const HamburgerButton = ({ active, setActive }) => {
         initial={false}
         animate={active ? "open" : "closed"}
         onClick={setActive}
-        className="relative h-4 w-4 transition-colors z-40"
+        className="relative h-5 w-4 transition-colors z-40"
       >
         <motion.span
           variants={VARIANTS.top}
-          className="absolute h-[.095rem] w-[.95rem] bg-white rounded-full"
+          className="absolute h-[.1rem] w-[1rem] bg-white rounded-full"
           style={{ x: "-50%", y: "-50%", left: "50%", top: "25%" }}
         />
         <motion.span
           variants={VARIANTS.middle}
-          className="absolute h-[.095rem] w-[.95rem] bg-white rounded-full"
+          className="absolute h-[.1rem] w-[1rem] bg-white rounded-full"
           style={{ x: "-50%", y: "-50%", left: "50%", top: "50%" }}
         />
         <motion.span
           variants={VARIANTS.bottom}
-          className="absolute h-[.095rem] w-[.95rem] bg-white rounded-full"
+          className="absolute h-[.1rem] w-[1rem] bg-white rounded-full"
           style={{ x: "-50%", y: "-50%", left: "50%", top: "75%" }}
         />
       </motion.button>

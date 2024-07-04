@@ -27,17 +27,31 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
     const [navbarBackground, setNavbarBackground] = useState("");
 
     useEffect(() => {
-        if (!isAboveSmallScreens && isMenuToggled) {
+        const handleResize = () => {
+            // Close menu if it's open and screen size changes to desktop view
+            if (isMenuToggled && isAboveSmallScreens) {
+                setIsMenuToggled(false);
+                document.body.style.overflow = "visible";
+                setNavbarBackground("bg-opacity-70 backdrop-filter backdrop-blur-lg");
+            }
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, [isMenuToggled, isAboveSmallScreens]);
+
+    const handleToggleMenu = () => {
+        setIsMenuToggled(!isMenuToggled);
+        if (!isMenuToggled && !isAboveSmallScreens) {
             document.body.style.overflow = "hidden";
             setNavbarBackground("");
         } else {
             document.body.style.overflow = "visible";
             setNavbarBackground("bg-opacity-70 backdrop-filter backdrop-blur-lg");
         }
-    }, [isMenuToggled, isAboveSmallScreens]);
-
-    const handleToggleMenu = () => {
-        setIsMenuToggled(!isMenuToggled);
     };
 
     return (
