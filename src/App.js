@@ -27,6 +27,7 @@ function App() {
         setSelectedPage={setSelectedPage}
       />
       <Landing setSelectedPage={setSelectedPage} />
+      <Projects />
       <Experience />
       <Education />
       <Footer />

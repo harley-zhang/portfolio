@@ -1,4 +1,4 @@
-# Personal Portfolio Website
+# Harley Zhang
 
 <div>
     <br>
@@ -7,12 +7,14 @@
     <br><br>
 </div>
   
-My personal portfolio website. Made using React.js and Tailwind CSS.
+I'm a student at the University of Waterloo studying Computer Engineering.
 
-## Features
+My interests are data science, software, and hardware and their applications for environmental sustainability and social causes. I'm eager to work on meaningful projects that make a positive impact.
 
-- **Animations:** Smooth transitions and animations throughout the website.
-  
-- **Projects:** Showcases, summarizes, and explains projects with hyperlinks.
-  
-- **Contact Section using FormSubmit:** Integrated contact form powered by FormSubmit.
+## Content
+
+- Projects
+- Experience
+- Education
+- Resume
+- Contacts

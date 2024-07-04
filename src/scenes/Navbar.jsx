@@ -28,7 +28,6 @@ const Navbar = ({ setSelectedPage }) => {
 
     useEffect(() => {
         const handleResize = () => {
-            // Close menu if it's open and screen size changes to desktop view
             if (isMenuToggled && isAboveSmallScreens) {
                 setIsMenuToggled(false);
                 document.body.style.overflow = "visible";
