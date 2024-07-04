@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import Navbar from "./scenes/Navbar";
 import Landing from "./scenes/Landing";
-import Experience from "./scenes/Experience.jsx";
+import Projects from "./scenes/Projects";
+import Experience from "./scenes/Experience";
 import Education from "./scenes/Education";
 import Footer from "./scenes/Footer";
 

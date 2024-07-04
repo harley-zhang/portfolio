@@ -73,7 +73,7 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
                 )}
 
                 {/* MOBIlE MENU POPUP */}
-                <div className={`fixed font-helvetica tracking-wide right-0 bottom-0 h-full w-full text-white transition-all duration-[400ms] transform ${isMenuToggled ? 'opacity-100 bg-darkgrey bg-opacity-50 backdrop-blur-xl visible' : 'opacity-0 invisible'}`}>
+                <div className={`fixed font-helvetica tracking-wide right-0 bottom-0 h-full w-full text-white transition-all duration-[500ms] transform ${isMenuToggled ? 'opacity-100 bg-darkgrey bg-opacity-50 backdrop-blur-xl visible' : 'opacity-0 invisible'}`}>
                     <div className="flex flex-col gap-[23px] ml-5 text-[27px] mt-20">
                         <Link
                             page="Projects"
