@@ -4,7 +4,7 @@ const Education = () => {
     return (
         <section id="education" className="md:w-[1000px] md:mx-auto px-5 py-0 sm:py-12">
 
-            <p className="text-[1.68rem] font-helvetica tracking-wide z-10 text-start">
+            <p className="text-[1.68rem] font-helvetica tracking-wide z-10 text-start mb-3">
                 Education
             </p>
 

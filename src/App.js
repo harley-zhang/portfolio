@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "./scenes/Navbar";
 import Landing from "./scenes/Landing";
-import Projects from "./scenes/Projects";
+import Projects from "./scenes/horizontalscroll";
 import Experience from "./scenes/Experience";
 import Education from "./scenes/Education";
 import Footer from "./scenes/Footer";

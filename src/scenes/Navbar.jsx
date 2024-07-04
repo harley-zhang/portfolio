@@ -27,30 +27,24 @@ const Navbar = ({ setSelectedPage }) => {
     const [navbarBackground, setNavbarBackground] = useState("");
 
     useEffect(() => {
-        const handleResize = () => {
-            if (isMenuToggled && isAboveSmallScreens) {
-                setIsMenuToggled(false);
-                document.body.style.overflow = "visible";
-                setNavbarBackground("bg-opacity-70 backdrop-filter backdrop-blur-lg");
-            }
-        };
+        // Handle closing the mobile menu when resizing above small screens
+        if (isAboveSmallScreens) {
+            setIsMenuToggled(false); // Close the mobile menu
+        }
+    }, [isAboveSmallScreens]);
 
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, [isMenuToggled, isAboveSmallScreens]);
-
-    const handleToggleMenu = () => {
-        setIsMenuToggled(!isMenuToggled);
-        if (!isMenuToggled && !isAboveSmallScreens) {
+    useEffect(() => {
+        if (!isAboveSmallScreens && isMenuToggled) {
             document.body.style.overflow = "hidden";
             setNavbarBackground("");
         } else {
             document.body.style.overflow = "visible";
-            setNavbarBackground("bg-opacity-70 backdrop-filter backdrop-blur-lg");
+            setNavbarBackground("bg-opacity-50 backdrop-filter backdrop-blur-lg");
         }
+    }, [isMenuToggled, isAboveSmallScreens]);
+
+    const handleToggleMenu = () => {
+        setIsMenuToggled(!isMenuToggled);
     };
 
     return (

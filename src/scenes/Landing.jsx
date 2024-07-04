@@ -29,7 +29,7 @@ const Landing = ({ setSelectedPage }) => {
 
                     {/* EMAIL */}
                     <div className="ml-4 relative text-[.8rem] xs:text-[.91rem]">
-                        <a href="mailto:h333zhan@uwaterloo.ca" className="relative flex items-center ml-2 group">
+                        <a href="mailto:h333zhan@uwaterloo.ca" className="relative flex items-center ml-2 group font-helvetica tracking-wide">
                             h333zhan@uwaterloo.ca
                             <GoArrowUpRight size={19} className="ml-0" />
                             <span className="absolute left-0 bottom-[-2px] w-full h-[1px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>

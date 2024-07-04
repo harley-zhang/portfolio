@@ -3,9 +3,9 @@ import Yale from "../assets/yale.png";
 
 const Experience = () => {
     return (
-        <section id="experience" className="md:w-[1000px] md:mx-auto my-8 px-5 py-0 sm:py-12">
+        <section id="experience" className="md:w-[1000px] mt-11 md:mx-auto my-9 px-5 py-0 sm:py-12">
 
-            <p className="text-[1.68rem] font-helvetica tracking-wide z-10 text-start">
+            <p className="text-[1.68rem] font-helvetica tracking-wide z-10 text-start mb-3">
                 Experience
             </p>
 
