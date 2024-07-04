@@ -21,7 +21,7 @@ const Link = ({ page, setSelectedPage, onClick }) => {
     );
 };
 
-const Navbar = ({ selectedPage, setSelectedPage }) => {
+const Navbar = ({ setSelectedPage }) => {
     const [isMenuToggled, setIsMenuToggled] = useState(false);
     const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
     const [navbarBackground, setNavbarBackground] = useState("");
