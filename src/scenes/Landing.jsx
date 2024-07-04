@@ -5,11 +5,10 @@ const Landing = ({ setSelectedPage }) => {
     return (
         <section
             id="home"
-            className='md:flex md:justify-between md:items-center gap-16 h-[34rem] py-10 md:w-[1000px] md:mx-auto px-5'
+            className="md:flex md:justify-between md:items-center gap-16 h-[32rem] xs:h-[30rem] sm:h-[34rem] py-10 md:w-[1000px] md:mx-auto px-5"
         >
             {/* LANDING TEXT */}
             <div className={`z-30 mt-12 md:mt-32`}>
-                {/* HEADINGS */}
                 <div>
                     <p className="text-[2.6rem] font-helvetica tracking-wide z-10 text-start">
                         Harley Zhang

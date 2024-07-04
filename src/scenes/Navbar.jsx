@@ -3,6 +3,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "../hooks/useMediaQuery";
 import logo from "../assets/logo.png";
 import resume from "../assets/Harley_Zhang_Resume.pdf";
+import HamburgerButton from "../components/HamburgerButton";
 
 const Link = ({ page, setSelectedPage, onClick }) => {
     const lowerCasePage = page.toLowerCase();
@@ -41,10 +42,10 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
 
     return (
         <nav className={`${navbarBackground} text-white bg-darkgrey z-40 w-full fixed top-0 py-3`}>
-            <div className='flex items-center justify-between mx-auto md:w-[1000px] px-5'>
+            <div className="flex items-center justify-between mx-auto md:w-[1000px] px-5">
                 <img src={logo} alt="harley-zhang-logo" className="h-6 z-50" />
 
-                {/* DESKTOP NAV*/}
+                {/* DESKTOP NAV */}
                 {isAboveSmallScreens ? (
                     <div className="flex justify-between gap-14 font-helvetica tracking-wide text-[13px] font-medium">
                         <Link
@@ -64,16 +65,11 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
                         </a>
                     </div>
                 ) : (
-                    <button
-                        className="flex justify-between gap-16 font-helvetica tracking-wide text-sm font-medium z-50"
-                        onClick={handleToggleMenu}
-                    >
-                        {isMenuToggled ? "Close" : "Menu"}
-                    </button>
+                    <HamburgerButton active={isMenuToggled} setActive={handleToggleMenu} />
                 )}
 
-                {/* MOBIlE MENU POPUP */}
-                <div className={`fixed font-helvetica tracking-wide right-0 bottom-0 h-full w-full text-white transition-all duration-[500ms] transform ${isMenuToggled ? 'opacity-100 bg-darkgrey bg-opacity-50 backdrop-blur-xl visible' : 'opacity-0 invisible'}`}>
+                {/* MOBILE MENU POPUP */}
+                <div className={`fixed font-helvetica tracking-wide right-0 bottom-0 h-full w-full text-white transition-all duration-500 transform ${isMenuToggled ? "opacity-100 bg-darkgrey bg-opacity-50 backdrop-blur-xl visible" : "opacity-0 invisible"}`}>
                     <div className="flex flex-col gap-[23px] ml-5 text-[27px] mt-20">
                         <Link
                             page="Projects"
