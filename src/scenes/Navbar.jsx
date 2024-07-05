@@ -11,6 +11,7 @@ const Link = ({ page, setSelectedPage, onClick }) => {
         <AnchorLink
             className="inline-block"
             href={`#${lowerCasePage}`}
+            offset={() => 100}
             onClick={(e) => {
                 setSelectedPage(lowerCasePage);
                 if (onClick) onClick(e);
@@ -27,9 +28,8 @@ const Navbar = ({ setSelectedPage }) => {
     const [navbarBackground, setNavbarBackground] = useState("");
 
     useEffect(() => {
-        // Handle closing the mobile menu when resizing above small screens
         if (isAboveSmallScreens) {
-            setIsMenuToggled(false); // Close the mobile menu
+            setIsMenuToggled(false);
         }
     }, [isAboveSmallScreens]);
 
