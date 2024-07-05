@@ -140,8 +140,8 @@ const Projects = () => {
                   <p className={`font-helvetica tracking-wide text-sm ${card.color}`}>{card.title}</p>
                 </div>
                 <div className="absolute bottom-5 left-5 text-left">
-                  <p className={`font-helvetica tracking-wide text-md ${card.color} ${card.shadow === 'yes' ? '[text-shadow:_0_0_23px_rgb(0_0_0_/_100%)]' : ''} mr-2`}>{card.description}</p>
-                  <p className={`font-helvetica tracking-wide text-sm opacity-75 ${card.color}  ${card.shadow === 'yes' ? '[text-shadow:_0_0_16px_rgb(0_0_0_/_100%)]' : ''} mt-2`} dangerouslySetInnerHTML={{ __html: card.tools.replace(/\s/g, '&nbsp;') }}></p>
+                  <p className={`font-helvetica tracking-wide text-[.99rem] ${card.color} ${card.shadow === 'yes' ? '[text-shadow:_0_0_23px_rgb(0_0_0_/_100%)]' : ''} mr-2`}>{card.description}</p>
+                  <p className={`font-helvetica tracking-wide text-[.85rem] opacity-75 ${card.color}  ${card.shadow === 'yes' ? '[text-shadow:_0_0_16px_rgb(0_0_0_/_100%)]' : ''} mt-2`} dangerouslySetInnerHTML={{ __html: card.tools.replace(/\s/g, '&nbsp;') }}></p>
                 </div>
               </div>
             </motion.div>
