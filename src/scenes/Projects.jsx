@@ -26,7 +26,7 @@ const cards = [
   {
     url: "../assets/trinchera.png",
     title: "Trinchera Statistics",
-    description: "Data summarizer for the Trinchera conservation area",
+    description: "Data summarizer for the Trinchera conservation project",
     tools: "R",
     link: "https://github.com/harley-zhang/Trinchera_summary",
     id: 3,

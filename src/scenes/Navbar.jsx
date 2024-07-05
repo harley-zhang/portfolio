@@ -39,7 +39,7 @@ const Navbar = ({ setSelectedPage }) => {
             setNavbarBackground("");
         } else {
             document.body.style.overflow = "visible";
-            setNavbarBackground("bg-opacity-50 backdrop-filter backdrop-blur-lg");
+            setNavbarBackground("bg-opacity-40 backdrop-filter backdrop-blur-lg");
         }
     }, [isMenuToggled, isAboveSmallScreens]);
 
@@ -76,7 +76,7 @@ const Navbar = ({ setSelectedPage }) => {
                 )}
 
                 {/* MOBILE MENU POPUP */}
-                <div className={`fixed font-helvetica tracking-wide right-0 bottom-0 h-full w-full text-white transition-all duration-500 transform ${isMenuToggled ? "opacity-100 bg-darkgrey bg-opacity-50 backdrop-blur-xl visible" : "opacity-0 invisible"}`}>
+                <div className={`fixed font-helvetica tracking-wide right-0 bottom-0 h-full w-full text-white transition-all duration-500 transform ${isMenuToggled ? "opacity-100 bg-darkgrey bg-opacity-60 backdrop-blur-xl visible" : "opacity-0 invisible"}`}>
                     <div className="flex flex-col gap-[23px] ml-5 text-[27px] mt-20">
                         <Link
                             page="Projects"

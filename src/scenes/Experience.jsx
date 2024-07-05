@@ -1,4 +1,4 @@
-import UofT from "../assets/uoft.png";
+import UofT from "../assets/uoft-cubes.png";
 import Yale from "../assets/yale.png";
 
 const Experience = () => {
@@ -15,13 +15,13 @@ const Experience = () => {
 
                     {/* Yale Icon */}
                     <div className="flex-shrink-0 my-4">
-                        <img src={Yale} alt="Yale University" className="w-[3.6rem] h-[3.6rem] rounded-[0.32rem]" />
+                        <img src={Yale} alt="Lauenroth Lab, Yale University" className="w-[3.6rem] h-[3.6rem] rounded-[0.32rem]" />
                     </div>
 
                     {/* Text */}
                     <div className="ml-5 w-full">
                         <div className="flex justify-between w-full mb-2">
-                            <p className="text-md sm:text-xl font-helvetica tracking-wide text-left">Yale University</p>
+                            <p className="text-md sm:text-xl font-helvetica tracking-wide text-left">Lauenroth Lab, Yale University</p>
                             <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] font-helvetica tracking-wide text-right">New Haven, CT</p>
                         </div>
                         <div className="flex justify-between w-full">
@@ -36,13 +36,13 @@ const Experience = () => {
 
                     {/* UofT Icon */}
                     <div className="flex-shrink-0 my-4">
-                        <img src={UofT} alt="University of Toronto" className="w-[3.6rem] h-[3.6rem] rounded-[0.32rem]" />
+                        <img src={UofT} alt="CUBES Lab, University of Toronto" className="w-[3.6rem] h-[3.6rem] rounded-[0.32rem]" />
                     </div>
 
                     {/* Text */}
                     <div className="ml-5 w-full">
                         <div className="flex justify-between w-full mb-2">
-                            <p className="text-md sm:text-xl font-helvetica tracking-wide text-left">University of Toronto</p>
+                            <p className="text-md sm:text-xl font-helvetica tracking-wide text-left">CUBES Lab, University of Toronto</p>
                             <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] font-helvetica tracking-wide text-right">Toronto, ON</p>
                         </div>
                         <div className="flex justify-between w-full">
