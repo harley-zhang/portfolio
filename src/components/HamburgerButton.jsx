@@ -1,4 +1,3 @@
-import React from "react";
 import { MotionConfig, motion } from "framer-motion";
 
 const HamburgerButton = ({ active, setActive }) => {
