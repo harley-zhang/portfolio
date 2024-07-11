@@ -1,27 +1,15 @@
-import { useState } from "react";
-import Navbar from "./scenes/Navbar";
-import Landing from "./scenes/Landing";
-import Projects from "./scenes/Projects";
-import Experience from "./scenes/Experience";
-import Education from "./scenes/Education";
-import Footer from "./scenes/Footer";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import Home from "./pages/Home";
 
 function App() {
-  const [selectedPage, setSelectedPage] = useState("home");
-  const [isTopOfPage] = useState(true);
-
   return (
-    <div className="app bg-grey">
-      <Navbar
-        isTopOfPage={isTopOfPage}
-        selectedPage={selectedPage}
-        setSelectedPage={setSelectedPage}
-      />
-      <Landing setSelectedPage={setSelectedPage} />
-      <Projects />
-      <Experience />
-      <Education />
-      <Footer />
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

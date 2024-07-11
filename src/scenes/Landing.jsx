@@ -1,14 +1,14 @@
 import resume from "../assets/Harley_Zhang_Resume.pdf";
 import { GoArrowUpRight } from "react-icons/go";
 
-const Landing = ({ setSelectedPage }) => {
+const Landing = () => {
     return (
         <section
             id="home"
             className="md:flex md:justify-between md:items-center gap-16 h-[30rem] sm:h-[34rem] py-10 md:w-[1000px] md:mx-auto px-5"
         >
             {/* LANDING TEXT */}
-            <div className={`z-30 mt-12 md:mt-32`}>
+            <div className={`z-30 mt-16 md:mt-32`}>
                 <div>
                     <p className="text-[2.3rem] xs:text-[2.6rem] font-helvetica tracking-wide z-10 text-start">
                         Harley Zhang
