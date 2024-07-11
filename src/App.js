@@ -1,16 +1,18 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
+import { HelmetProvider } from 'react-helmet-async';
+
 
 function App() {
   return (
-    <div>
+    <HelmetProvider>
       <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </HelmetProvider>
   );
 }
 
