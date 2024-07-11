@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "../hooks/useMediaQuery";
 import logo from "../assets/logo.png";
-import resume from "../assets/Harley_Zhang_Resume.pdf";
 import HamburgerButton from "../components/HamburgerButton";
+import { GoArrowUpRight } from 'react-icons/go';
 
 const Link = ({ page, setSelectedPage, onClick }) => {
     const lowerCasePage = page.toLowerCase();
@@ -67,8 +67,8 @@ const Navbar = ({ setSelectedPage }) => {
                             page="Experience"
                             setSelectedPage={setSelectedPage}
                         />
-                        <a href={resume} target="_blank" rel="noopener noreferrer" >
-                            Resume
+                        <a href="/resume" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                            Resume <GoArrowUpRight size={15} className="ml-1" />
                         </a>
                     </div>
                 ) : (
@@ -93,7 +93,7 @@ const Navbar = ({ setSelectedPage }) => {
                             setSelectedPage={setSelectedPage}
                             onClick={handleToggleMenu}
                         />
-                        <a href={resume} target="_blank" rel="noopener noreferrer" >
+                        <a href="/resume">
                             Resume
                         </a>
                     </div>
