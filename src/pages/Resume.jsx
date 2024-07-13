@@ -1,5 +1,5 @@
-import resume from "../assets/Harley_Zhang_Resume.pdf";
 import { Helmet } from 'react-helmet-async';
+import resume from "../assets/Harley_Zhang_Resume.pdf";
 
 const Resume = () => {
     return (

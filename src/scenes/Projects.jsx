@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const cards = [
@@ -102,7 +102,7 @@ const Projects = () => {
         <div className="flex items-center space-x-2">
           <motion.button
             onClick={() => scroll("left")}
-            className={`transition-all ${isLeftButtonActive ? 'text-white' : 'opacity-30'}`}
+            className={`transition-all ${isLeftButtonActive ? "text-white" : "opacity-30"}`}
             disabled={!isLeftButtonActive}
             whileTap={isLeftButtonActive ? { scale: 0.5 } : {}}
           >
@@ -110,7 +110,7 @@ const Projects = () => {
           </motion.button>
           <motion.button
             onClick={() => scroll("right")}
-            className={`transition-all pl-3 ${isRightButtonActive ? 'text-white' : 'opacity-30'}`}
+            className={`transition-all pl-3 ${isRightButtonActive ? "text-white" : "opacity-30"}`}
             disabled={!isRightButtonActive}
             whileTap={isRightButtonActive ? { scale: 0.5 } : {}}
           >
@@ -127,7 +127,7 @@ const Projects = () => {
         {cards.map((card, index) => (
           <a href={card.link} target="_blank" rel="noopener noreferrer" key={card.id}>
             <motion.div
-              className={`group relative flex-shrink-0 w-[331px] h-[277px] xs:w-[430px] xs:h-[360px] rounded-md ${index !== 0 ? 'ml-[0.9rem]' : ''}`}
+              className={`group relative flex-shrink-0 w-[331px] h-[277px] xs:w-[430px] xs:h-[360px] rounded-md ${index !== 0 ? "ml-[0.9rem]" : ""}`}
               style={{
                 backgroundImage: `url(${card.url})`,
                 backgroundSize: "100% auto",
@@ -140,8 +140,8 @@ const Projects = () => {
                   <p className={`font-helvetica tracking-wide text-sm ${card.color}`}>{card.title}</p>
                 </div>
                 <div className="absolute bottom-5 left-5 text-left">
-                  <p className={`font-helvetica tracking-wide text-[.8rem] xs:text-[.99rem] ${card.color} ${card.shadow === 'yes' ? '[text-shadow:_0_0_23px_rgb(0_0_0_/_100%)]' : ''} mr-2`}>{card.description}</p>
-                  <p className={`font-helvetica tracking-wide text-[.65rem] xs:text-[.85rem] opacity-75 ${card.color}  ${card.shadow === 'yes' ? '[text-shadow:_0_0_16px_rgb(0_0_0_/_100%)]' : ''} mt-2`} dangerouslySetInnerHTML={{ __html: card.tools.replace(/\s/g, '&nbsp;') }}></p>
+                  <p className={`font-helvetica tracking-wide text-[.8rem] xs:text-[.99rem] ${card.color} ${card.shadow === "yes" ? "[text-shadow:_0_0_23px_rgb(0_0_0_/_100%)]" : ""} mr-2`}>{card.description}</p>
+                  <p className={`font-helvetica tracking-wide text-[.65rem] xs:text-[.85rem] opacity-75 ${card.color}  ${card.shadow === "yes" ? "[text-shadow:_0_0_16px_rgb(0_0_0_/_100%)]" : ""} mt-2`} dangerouslySetInnerHTML={{ __html: card.tools.replace(/\s/g, "&nbsp;") }}></p>
                 </div>
               </div>
             </motion.div>

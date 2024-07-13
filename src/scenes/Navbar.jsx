@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import HamburgerButton from "../components/HamburgerButton";
 import useMediaQuery from "../hooks/useMediaQuery";
 import logo from "../assets/logo.png";
-import HamburgerButton from "../components/HamburgerButton";
-import { GoArrowUpRight } from 'react-icons/go';
+import { GoArrowUpRight } from "react-icons/go";
 
 const Link = ({ page, setSelectedPage, onClick }) => {
     const lowerCasePage = page.toLowerCase();
