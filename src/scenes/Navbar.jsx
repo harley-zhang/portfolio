@@ -26,6 +26,8 @@ const Navbar = ({ setSelectedPage }) => {
     const [isMenuToggled, setIsMenuToggled] = useState(false);
     const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
     const [navbarBackground, setNavbarBackground] = useState("");
+    const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
+    const [visible, setVisible] = useState(true);
 
     useEffect(() => {
         if (isAboveSmallScreens) {
@@ -47,27 +49,39 @@ const Navbar = ({ setSelectedPage }) => {
         setIsMenuToggled(!isMenuToggled);
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPos = window.pageYOffset;
+            const visible = prevScrollPos > currentScrollPos;
+
+            setPrevScrollPos(currentScrollPos);
+            setVisible(visible);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [prevScrollPos]);
+
     return (
-        <nav className={`${navbarBackground} text-white bg-darkgrey z-40 w-full fixed top-0 py-3`}>
+        <nav
+            className={`${navbarBackground} text-white bg-darkgrey z-40 w-full fixed top-0 py-3 transition-all duration-300 delay-100 ${visible ? "" : "transform -translate-y-full"
+                }`}
+        >
             <div className="flex items-center justify-between mx-auto md:w-[1000px] px-5">
                 <img src={logo} alt="harley-zhang-logo" className="h-6 z-50" />
 
                 {/* DESKTOP NAV */}
                 {isAboveSmallScreens ? (
-                    <div className="flex justify-between gap-14  text-[13px] font-medium">
-                        <Link
-                            page="Projects"
-                            setSelectedPage={setSelectedPage}
-                        />
-                        <Link
-                            page="Education"
-                            setSelectedPage={setSelectedPage}
-                        />
-                        <Link
-                            page="Experience"
-                            setSelectedPage={setSelectedPage}
-                        />
-                        <a href="/resume" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                    <div className="flex justify-between gap-14 text-[13px] font-medium">
+                        <Link page="Projects" setSelectedPage={setSelectedPage} />
+                        <Link page="Education" setSelectedPage={setSelectedPage} />
+                        <Link page="Experience" setSelectedPage={setSelectedPage} />
+                        <a
+                            href="/resume"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center"
+                        >
                             Resume <GoArrowUpRight size={15} className="ml-1" />
                         </a>
                     </div>
@@ -76,26 +90,15 @@ const Navbar = ({ setSelectedPage }) => {
                 )}
 
                 {/* MOBILE MENU POPUP */}
-                <div className={`fixed  right-0 bottom-0 h-full w-full text-white transition-all duration-500 transform ${isMenuToggled ? "opacity-100 bg-darkgrey bg-opacity-60 backdrop-blur-xl visible" : "opacity-0 invisible"}`}>
+                <div
+                    className={`fixed right-0 bottom-0 h-full w-full text-white transition-all duration-500 transform ${isMenuToggled ? "opacity-100 bg-darkgrey bg-opacity-60 backdrop-blur-xl visible" : "opacity-0 invisible"
+                        }`}
+                >
                     <div className="flex flex-col gap-[23px] ml-5 text-[27px] mt-20">
-                        <Link
-                            page="Projects"
-                            setSelectedPage={setSelectedPage}
-                            onClick={handleToggleMenu}
-                        />
-                        <Link
-                            page="Education"
-                            setSelectedPage={setSelectedPage}
-                            onClick={handleToggleMenu}
-                        />
-                        <Link
-                            page="Experience"
-                            setSelectedPage={setSelectedPage}
-                            onClick={handleToggleMenu}
-                        />
-                        <a href="/resume">
-                            Resume
-                        </a>
+                        <Link page="Projects" setSelectedPage={setSelectedPage} onClick={handleToggleMenu} />
+                        <Link page="Education" setSelectedPage={setSelectedPage} onClick={handleToggleMenu} />
+                        <Link page="Experience" setSelectedPage={setSelectedPage} onClick={handleToggleMenu} />
+                        <a href="/resume">Resume</a>
                     </div>
                 </div>
             </div>
