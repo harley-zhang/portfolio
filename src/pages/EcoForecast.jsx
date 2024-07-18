@@ -13,9 +13,6 @@ const EcoForecast = () => {
             <Navbar />
             <div className="sm:w-[750px] mx-auto px-5">
                 <h1 className="text-3xl xs:text-4xl sm:text-5xl mt-28 xs:mt-32 sm:mt-40 mb-4 text-center">EcoForecast</h1>
-                <div className="w-[350px] xs:w-[400px] sm:w-[500px] mx-auto">
-                    <p className="mt-6 xs:mt-8 text-md xs:text-lg sm:text-xl text-center">An individual-based model for exploring the impact of climate and disturbance on dryland plant communities</p>
-                </div>
 
                 <div className="flex justify-center mt-8">
                     <a
@@ -38,8 +35,14 @@ const EcoForecast = () => {
                         <span className="absolute left-0 bottom-[5px] w-full h-[1px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     </a>
                 </div>
+            </div>
 
-                <p className="mt-16 xs:mt-24 text-lg">
+            <div className="[w-750px] md:w-[960px] h-full mx-5 md:mx-auto mt-28 items-center">
+                <img src={EcoForecastBanner} className="rounded-md"/>
+            </div>
+
+            <div className="sm:w-[750px] mx-auto px-5">
+                <p className="mt-6 xs:mt-8 text-lg">
                     EcoForecast is a web application that allows farmers, ranchers, foresters, and land managers to visualize and analyze future ecological changes in the sagebrush habitat across the United States. The app utilizes data generated using the <a href="https://github.com/DrylandEcology/STEPWAT2" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 decoration-underlinegrey hover:decoration-white decoration-1 underline">STEPWAT2 simulation model</a> and is built using React and <a href="https://developers.google.com/earth-engine" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 decoration-underlinegrey hover:decoration-white decoration-1 underline">Google Earth Engine JavaScript API</a>.
                 </p>
                 <p className="mt-4 xs:mt-6 text-lg">
