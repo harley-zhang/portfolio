@@ -4,7 +4,7 @@ const Education = () => {
     return (
         <section id="education" className="md:w-[1000px] md:mx-auto px-5 py-0 sm:py-12">
 
-            <p className="text-[1.68rem] font-helvetica tracking-wide z-10 text-start mb-3">
+            <p className="text-[1.68rem] z-10 text-start mb-3">
                 Education
             </p>
 
@@ -18,12 +18,12 @@ const Education = () => {
                 {/* Text */}
                 <div className="ml-5 w-full">
                     <div className="flex justify-between w-full mb-2">
-                        <p className="text-md sm:text-xl font-helvetica tracking-wide text-left">University of Waterloo</p>
-                        <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] font-helvetica tracking-wide text-right">Waterloo, ON</p>
+                        <p className="text-base sm:text-xl text-left">University of Waterloo</p>
+                        <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] text-right">Waterloo, ON</p>
                     </div>
-                    <div className="flex justify-between w-full">
-                        <p className="text-xs xs:text-sm sm:text-[1rem] font-helvetica tracking-wide text-left text-lightgrey">BASc, Computer Engineering</p>
-                        <p className="text-xs xs:text-sm font-helvetica tracking-wide text-right text-lightgrey">2024 &mdash; 2029</p>
+                    <div className="flex justify-between w-full text-lightgrey">
+                        <p className="text-xs xs:text-sm sm:text-[1rem] text-left">BASc, Computer Engineering</p>
+                        <p className="text-xs xs:text-sm text-right">2024 &mdash; 2029</p>
                     </div>
                 </div>
             </div>

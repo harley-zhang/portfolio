@@ -96,7 +96,7 @@ const Projects = () => {
   return (
     <section id="projects" className="relative">
       <div className="flex items-center justify-between px-5 md:mx-auto md:w-[1000px] my-8">
-        <p className="text-[1.68rem] font-helvetica tracking-wide z-10 text-start">
+        <p className="text-[1.68rem] z-10 text-start">
           Projects
         </p>
         <div className="flex items-center space-x-2">
@@ -137,11 +137,11 @@ const Projects = () => {
             >
               <div className="absolute inset-0 z-10 flex flex-col justify-between p-5">
                 <div>
-                  <p className={`font-helvetica tracking-wide text-sm ${card.color}`}>{card.title}</p>
+                  <p className={`text-sm ${card.color}`}>{card.title}</p>
                 </div>
                 <div className="absolute bottom-5 left-5 text-left">
-                  <p className={`font-helvetica tracking-wide text-[.8rem] xs:text-[.99rem] ${card.color} ${card.shadow === "yes" ? "[text-shadow:_0_0_23px_rgb(0_0_0_/_100%)]" : ""} mr-2`}>{card.description}</p>
-                  <p className={`font-helvetica tracking-wide text-[.65rem] xs:text-[.85rem] opacity-75 ${card.color}  ${card.shadow === "yes" ? "[text-shadow:_0_0_16px_rgb(0_0_0_/_100%)]" : ""} mt-2`} dangerouslySetInnerHTML={{ __html: card.tools.replace(/\s/g, "&nbsp;") }}></p>
+                  <p className={`text-[.8rem] xs:text-[.99rem] ${card.color} ${card.shadow === "yes" ? "[text-shadow:_0_0_23px_rgb(0_0_0_/_100%)]" : ""} mr-2`}>{card.description}</p>
+                  <p className={`text-[.65rem] xs:text-[.85rem] opacity-75 ${card.color}  ${card.shadow === "yes" ? "[text-shadow:_0_0_16px_rgb(0_0_0_/_100%)]" : ""} mt-2`} dangerouslySetInnerHTML={{ __html: card.tools.replace(/\s/g, "&nbsp;") }}></p>
                 </div>
               </div>
             </motion.div>

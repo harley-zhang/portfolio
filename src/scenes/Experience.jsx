@@ -5,7 +5,7 @@ const Experience = () => {
     return (
         <section id="experience" className="md:w-[1000px] mt-11 md:mx-auto my-9 px-5 py-0 sm:py-12">
 
-            <p className="text-[1.68rem] font-helvetica tracking-wide z-10 text-start mb-3">
+            <p className="text-[1.68rem] z-10 text-start mb-3">
                 Experience
             </p>
 
@@ -21,12 +21,12 @@ const Experience = () => {
                     {/* Text */}
                     <div className="ml-5 w-full">
                         <div className="flex justify-between w-full mb-2">
-                            <p className="text-md sm:text-xl font-helvetica tracking-wide text-left">Lauenroth Lab, Yale University</p>
-                            <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] font-helvetica tracking-wide text-right">New Haven, CT</p>
+                            <p className="text-base sm:text-xl text-left">Lauenroth Lab, Yale University</p>
+                            <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] text-right">New Haven, CT</p>
                         </div>
                         <div className="flex justify-between w-full">
-                            <p className="text-xs xs:text-sm sm:text-[1rem] font-helvetica tracking-wide text-left text-lightgrey">Software Engineering Intern</p>
-                            <p className="text-xs xs:text-sm font-helvetica tracking-wide text-right text-lightgrey">Mar 2021 &mdash; Jun 2024</p>
+                            <p className="text-xs xs:text-sm sm:text-[1rem] text-left text-lightgrey">Software Engineering Intern</p>
+                            <p className="text-xs xs:text-sm text-right text-lightgrey">Mar 2021 &mdash; Jun 2024</p>
                         </div>
                     </div>
                 </div>
@@ -42,12 +42,12 @@ const Experience = () => {
                     {/* Text */}
                     <div className="ml-5 w-full">
                         <div className="flex justify-between w-full mb-2">
-                            <p className="text-md sm:text-xl font-helvetica tracking-wide text-left">CUBES Lab, University of Toronto</p>
-                            <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] font-helvetica tracking-wide text-right">Toronto, ON</p>
+                            <p className="text-base sm:text-xl text-left">CUBES Lab, University of Toronto</p>
+                            <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] text-right">Toronto, ON</p>
                         </div>
                         <div className="flex justify-between w-full">
-                            <p className="text-xs xs:text-sm sm:text-[1rem] font-helvetica tracking-wide text-left text-lightgrey">Research Assistant</p>
-                            <p className="text-xs xs:text-sm font-helvetica tracking-wide text-right text-lightgrey">May 2023 &mdash; Dec 2023</p>
+                            <p className="text-xs xs:text-sm sm:text-[1rem] text-left text-lightgrey">Research Assistant</p>
+                            <p className="text-xs xs:text-sm text-right text-lightgrey">May 2023 &mdash; Dec 2023</p>
                         </div>
                     </div>
                 </div>
