@@ -8,37 +8,27 @@ const DataAnalysis = () => {
     return (
         <>
             <Helmet>
-                <title>Data Analytics for Yale | Harley Zhang</title>
+                <title>Data Analysis at Yale | Harley Zhang</title>
             </Helmet>
             <Navbar />
             <div className="sm:w-[750px] mx-auto px-5">
-                <h1 className="text-3xl xs:text-4xl sm:text-5xl mt-28 xs:mt-32 sm:mt-40 mb-4 text-center">Data Analytics for Yale</h1>
+                <h1 className="text-3xl xs:text-4xl sm:text-5xl mt-28 xs:mt-32 sm:mt-40 mb-4 text-center">Data Analysis at Yale</h1>
 
                 <div className="flex flex-col items-center mt-8 space-y-6 xs:space-y-0 xs:flex-row xs:justify-center xs:space-x-5">
                     <a
-                        href="https://www.ecoforecast.info/"
+                        href="https://github.com/harley-zhang/Conservation_statistics"
                         className="font-product-sans-light-regular text-[.85rem] sm:text-sm tracking-wide flex items-center bg-white hover:opacity-90 transition-all duration-300 text-black px-5 py-2 rounded-full"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Open EcoForecast
-                        <GoArrowUpRight size={15} className="ml-1" />
-                    </a>
-                    <a
-                        href="https://github.com/harley-zhang/ecoforecast_app"
-                        className="font-product-sans-light-regular text-[.85rem] sm:text-sm tracking-wide flex items-center relative group"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         GitHub repository
                         <GoArrowUpRight size={15} className="ml-1" />
-                        <span className="absolute left-0 bottom-[-2px] w-full h-[1px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     </a>
                 </div>
             </div>
 
             <div className="md:w-[960px] mx-5 md:mx-auto mt-16 xs:mt-20 items-center">
-                <img src={ConservationBanner} className="rounded-md"/>
+                <img src={ConservationBanner} className="rounded-md" alt="Conservation statistics" />
             </div>
 
             <div className="sm:w-[750px] mx-auto px-5">
@@ -72,27 +62,6 @@ const DataAnalysis = () => {
                 <p className="mt-4 xs:mt-6 text-lg">
                     Big sagebrush stand structure was characterized by recording individual counts and canopy volume size class distribution. Canopy volume was calculated using diameter and height measurements. Soil samples from multiple depths were analyzed for texture. The STEPWAT2 model simulated plant community dynamics across the sites under current and future climate scenarios over 300 years with 100 iterations per site. Parameters included space allocation, rooting depth, phenological activity, and growth characteristics for each plant functional type.
                 </p>
-            </div>
-
-            <div className="md:w-[960px] pt-1 pb-12 bg-referencegrey mx-5 md:mx-auto rounded-lg mt-10">
-                <div className="sm:w-[750px] mx-auto px-5">
-                    <h3 className="text-2xl sm:text-4xl font-product-sans-regular px-5 sm:px-16 mt-8 xs:mt-12 sm:mt-14 text-center">
-                        Dive into the data and try EcoForecast today.
-                    </h3>
-                    <div className="flex justify-center mt-8">
-
-                        <a
-                            href="https://ecoforecast.info/"
-                            className="font-product-sans-light-regular text-[.85rem] sm:text-sm tracking-wide flex items-center bg-white hover:opacity-90 transition-all text-black duration-300 px-6 py-2 rounded-full mr-5"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Launch EcoForecast
-                            <GoArrowUpRight size={15} className="ml-1" />
-                        </a>
-                    </div>
-
-                </div>
             </div>
 
             <Footer />

@@ -38,7 +38,7 @@ const EcoForecast = () => {
             </div>
 
             <div className="md:w-[960px] mx-5 md:mx-auto mt-16 xs:mt-20 items-center">
-                <img src={EcoForecastBanner} className="rounded-md"/>
+                <img src={EcoForecastBanner} className="rounded-md" alt="EcoForecast app" />
             </div>
 
             <div className="sm:w-[750px] mx-auto px-5">
