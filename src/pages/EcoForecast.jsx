@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "../scenes/Navbar";
 import Footer from "../scenes/Footer";
 import { GoArrowUpRight } from "react-icons/go";
+import EcoForecastBanner from "../assets/ecoforecast-banner.png";
 
 const EcoForecast = () => {
     return (
