@@ -25,10 +25,10 @@ const cards = [
   },
   {
     url: "../assets/conservation.png",
-    title: "/data-analysis",
+    title: "Data Analysis",
     description: "Data summarizer for Yale conservation project",
     tools: "R",
-    link: "https://github.com/harley-zhang/Conservation_summary",
+    link: "/data-analysis",
     id: 3,
     color: "text-white",
     shadow: "yes",

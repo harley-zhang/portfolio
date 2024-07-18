@@ -2,17 +2,17 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "../scenes/Navbar";
 import Footer from "../scenes/Footer";
 import { GoArrowUpRight } from "react-icons/go";
-import EcoForecastBanner from "../assets/ecoforecast-banner.png";
+import ConservationBanner from "../assets/conservation-banner.png";
 
-const EcoForecast = () => {
+const DataAnalysis = () => {
     return (
         <>
             <Helmet>
-                <title>EcoForecast | Harley Zhang</title>
+                <title>Data Analytics for Yale | Harley Zhang</title>
             </Helmet>
             <Navbar />
             <div className="sm:w-[750px] mx-auto px-5">
-                <h1 className="text-3xl xs:text-4xl sm:text-5xl mt-28 xs:mt-32 sm:mt-40 mb-4 text-center">EcoForecast</h1>
+                <h1 className="text-3xl xs:text-4xl sm:text-5xl mt-28 xs:mt-32 sm:mt-40 mb-4 text-center">Data Analytics for Yale</h1>
 
                 <div className="flex flex-col items-center mt-8 space-y-6 xs:space-y-0 xs:flex-row xs:justify-center xs:space-x-5">
                     <a
@@ -38,7 +38,7 @@ const EcoForecast = () => {
             </div>
 
             <div className="md:w-[960px] mx-5 md:mx-auto mt-16 xs:mt-20 items-center">
-                <img src={EcoForecastBanner} className="rounded-md"/>
+                <img src={ConservationBanner} className="rounded-md"/>
             </div>
 
             <div className="sm:w-[750px] mx-auto px-5">
@@ -100,4 +100,4 @@ const EcoForecast = () => {
     );
 };
 
-export default EcoForecast;
+export default DataAnalysis;
