@@ -8,7 +8,7 @@ const cards = [
     title: "EcoForecast",
     description: "Simulation model data for climate and plant trends",
     tools: "React &nbsp;&nbsp; Google Earth Engine JavaScript API",
-    link: "https://ecoforecast.info/",
+    link: "/ecoforecast",
     id: 1,
     color: "text-white",
     shadow: "yes",
@@ -25,7 +25,7 @@ const cards = [
   },
   {
     url: "../assets/conservation.png",
-    title: "Data Analysis",
+    title: "/data-analysis",
     description: "Data summarizer for Yale conservation project",
     tools: "R",
     link: "https://github.com/harley-zhang/Conservation_summary",

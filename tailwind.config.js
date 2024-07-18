@@ -9,6 +9,8 @@ module.exports = {
       colors: {
         darkgrey: "#0a0a0a",
         lightgrey: "#cbcbcb",
+        underlinegrey: "#616161",
+        referencegrey: "#161616",
       },
       fontFamily: {
         helvetica: ["HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", "sans-serif"],

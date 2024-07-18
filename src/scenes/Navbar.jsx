@@ -26,7 +26,7 @@ const Navbar = ({ setSelectedPage }) => {
     const [isMenuToggled, setIsMenuToggled] = useState(false);
     const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
     const [navbarBackground, setNavbarBackground] = useState("");
-    const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
+    const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
     const [visible, setVisible] = useState(true);
 
     useEffect(() => {
@@ -51,7 +51,7 @@ const Navbar = ({ setSelectedPage }) => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const currentScrollPos = window.pageYOffset;
+            const currentScrollPos = window.scrollY;
             const visible = prevScrollPos > currentScrollPos;
 
             setPrevScrollPos(currentScrollPos);
@@ -68,8 +68,10 @@ const Navbar = ({ setSelectedPage }) => {
                 }`}
         >
             <div className="flex items-center justify-between mx-auto md:w-[1000px] px-5">
-                <img src={logo} alt="harley-zhang-logo" className="h-6 z-50" />
-
+                <a href="/">
+                    <img src={logo} alt="harley-zhang-logo" className="h-6 z-50" />
+                </a>
+                
                 {/* DESKTOP NAV */}
                 {isAboveSmallScreens ? (
                     <div className="flex justify-between gap-14 text-[13px] font-medium">
