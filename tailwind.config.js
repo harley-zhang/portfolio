@@ -14,8 +14,8 @@ module.exports = {
       },
       fontFamily: {
         "sf-light": ["SF Pro Display Light", "sans-serif"],
-        "sf-regular": ["SF Pro Display Light", "sans-serif"],
-        "sf-medium": ["SF Pro Display Light", "sans-serif"],
+        "sf-regular": ["SF Pro Display Regular", "sans-serif"],
+        "sf-medium": ["SF Pro Display Medium", "sans-serif"],
       },
     },
     screens: {

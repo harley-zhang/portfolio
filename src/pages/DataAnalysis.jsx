@@ -36,67 +36,67 @@ const DataAnalysis = () => {
                     Open-source R program for researchers to summarize relevant 2022 and 2023 survey statistics for a 172,000-acre conservation area in Colorado. Developed with the Yale School of the Environment as part of The Partnership in Forestry and Rangeland Research Program. Uses dplyr, tidyr, and stringr.
                 </p>
 
-                <h2 className="text-xl xs:text-2xl sm:text-3xl mt-8 xs:mt-12 sm:mt-16">Plot statistics</h2>
+                <h2 className="text-xl xs:text-2xl sm:text-3xl mt-8 xs:mt-12 sm:mt-16 font-sf-regular">Plot statistics</h2>
 
-                <h3 className="text-lg xs:text-xl sm:text-2xl mt-8 xs:mt-10 sm:mt-12">Treatment statistics</h3>
+                <h3 className="text-lg xs:text-xl sm:text-2xl mt-8 xs:mt-10 sm:mt-12 font-sf-regular">Treatment statistics</h3>
                 <ul className="pl-8 list-disc text-lg mt-4">
-                    <li className="mt-3"><span className="font-bold">Treatment year.</span> The year each plot was treated.</li>
-                    <li className="mt-3"><span className="font-bold">Treatment type.</span> Types of treatment used within a plot.</li>
+                    <li className="mt-3"><span className="font-sf-medium">Treatment year.</span> The year each plot was treated.</li>
+                    <li className="mt-3"><span className="font-sf-medium">Treatment type.</span> Types of treatment used within a plot.</li>
                 </ul>
 
-                <h3 className="text-lg xs:text-xl sm:text-2xl mt-8 xs:mt-10 sm:mt-12">Tree statistics</h3>
+                <h3 className="text-lg xs:text-xl sm:text-2xl mt-8 xs:mt-10 sm:mt-12 font-sf-regular">Tree statistics</h3>
                 <ul className="pl-8 list-disc text-lg mt-4">
-                    <li className="mt-3"><span className="font-bold">Basal area per acre.</span> Calculates basal area in inches per acre for living trees.</li>
-                    <li className="mt-3"><span className="font-bold">Average diameter at breast height (DBH).</span> Calculates the average DBH in inches per acre for living trees.</li>
-                    <li className="mt-3"><span className="font-bold">Average height.</span> Calculates the average height in feet for living trees.</li>
-                    <li className="mt-3"><span className="font-bold">Dominant tree species.</span> Identifies the dominant tree species per plot, considering survey, frequency, and if the dominant one is less than or equal to 50% frequency, also determines the second-dominant tree species.</li>
+                    <li className="mt-3"><span className="font-sf-medium">Basal area per acre.</span> Calculates basal area in inches per acre for living trees.</li>
+                    <li className="mt-3"><span className="font-sf-medium">Average diameter at breast height (DBH).</span> Calculates the average DBH in inches per acre for living trees.</li>
+                    <li className="mt-3"><span className="font-sf-medium">Average height.</span> Calculates the average height in feet for living trees.</li>
+                    <li className="mt-3"><span className="font-sf-medium">Dominant tree species.</span> Identifies the dominant tree species per plot, considering survey, frequency, and if the dominant one is less than or equal to 50% frequency, also determines the second-dominant tree species.</li>
                 </ul>
 
-                <h3 className="text-lg xs:text-xl sm:text-2xl mt-8 xs:mt-10 sm:mt-12">Regeneration statistics</h3>
+                <h3 className="text-lg xs:text-xl sm:text-2xl mt-8 xs:mt-10 sm:mt-12 font-sf-regular">Regeneration statistics</h3>
                 <ul className="pl-8 list-disc text-lg mt-4">
-                    <li className="mt-3"><span className="font-bold">Regeneration presence.</span> Checks if regeneration (saplings or seedlings) is present in each plot.</li>
-                    <li className="mt-3"><span className="font-bold">Seedlings per acre.</span> Calculates the number of seedlings per acre.</li>
-                    <li className="mt-3"><span className="font-bold">Dominant regeneration species.</span> Identifies the dominant regeneration (sapling/seedling) species per plot, considering survey, frequency, and if the dominant one is less than or equal to 50% frequency, also determines the second-dominant regeneration species.</li>
+                    <li className="mt-3"><span className="font-sf-medium">Regeneration presence.</span> Checks if regeneration (saplings or seedlings) is present in each plot.</li>
+                    <li className="mt-3"><span className="font-sf-medium">Seedlings per acre.</span> Calculates the number of seedlings per acre.</li>
+                    <li className="mt-3"><span className="font-sf-medium">Dominant regeneration species.</span> Identifies the dominant regeneration (sapling/seedling) species per plot, considering survey, frequency, and if the dominant one is less than or equal to 50% frequency, also determines the second-dominant regeneration species.</li>
                 </ul>
 
-                <h3 className="text-lg xs:text-xl sm:text-2xl mt-8 xs:mt-10 sm:mt-12">Damage statistics</h3>
+                <h3 className="text-lg xs:text-xl sm:text-2xl mt-8 xs:mt-10 sm:mt-12 font-sf-regular">Damage statistics</h3>
                 <ul className="pl-8 list-disc text-lg mt-4">
-                    <li className="mt-3"><span className="font-bold">Insect presence.</span> Determines if insect damage is present in each plot (Y/N).</li>
-                    <li className="mt-3"><span className="font-bold">Browse presence.</span> Identifies if browse damage is present in each plot (Y/N).</li>
-                    <li className="mt-3"><span className="font-bold">List of damage types.</span> Lists each type of damage present in each plot.</li>
+                    <li className="mt-3"><span className="font-sf-medium">Insect presence.</span> Determines if insect damage is present in each plot (Y/N).</li>
+                    <li className="mt-3"><span className="font-sf-medium">Browse presence.</span> Identifies if browse damage is present in each plot (Y/N).</li>
+                    <li className="mt-3"><span className="font-sf-medium">List of damage types.</span> Lists each type of damage present in each plot.</li>
                 </ul>
 
-                <h2 className="text-xl xs:text-2xl sm:text-3xl mt-8 xs:mt-12 sm:mt-16">Forest stand statistics</h2>
+                <h2 className="text-xl xs:text-2xl sm:text-3xl mt-8 xs:mt-12 sm:mt-16 font-sf-regular">Forest stand statistics</h2>
 
-                <h3 className="text-lg xs:text-xl sm:text-2xl mt-8 xs:mt-10 sm:mt-12">Tree statistics</h3>
+                <h3 className="text-lg xs:text-xl sm:text-2xl mt-8 xs:mt-10 sm:mt-12 font-sf-regular">Tree statistics</h3>
                 <ul className="pl-8 list-disc text-lg mt-4">
-                    <li className="mt-3"><span className="font-bold">Basal area per acre.</span> Calculates basal area in inches per acre for living trees.</li>
-                    <li className="mt-3"><span className="font-bold">Average diameter at breast height (DBH):</span> Calculates the average DBH in inches per acre for living trees.</li>
-                    <li className="mt-3"><span className="font-bold">Average height.</span> Calculates the average height in feet for living trees.</li>
-                    <li className="mt-3"><span className="font-bold">Dominant tree species.</span> Identifies the dominant tree species in each stand and calculates the number and percent of plots.</li>
+                    <li className="mt-3"><span className="font-sf-medium">Basal area per acre.</span> Calculates basal area in inches per acre for living trees.</li>
+                    <li className="mt-3"><span className="font-sf-medium">Average diameter at breast height (DBH):</span> Calculates the average DBH in inches per acre for living trees.</li>
+                    <li className="mt-3"><span className="font-sf-medium">Average height.</span> Calculates the average height in feet for living trees.</li>
+                    <li className="mt-3"><span className="font-sf-medium">Dominant tree species.</span> Identifies the dominant tree species in each stand and calculates the number and percent of plots.</li>
                 </ul>
 
-                <h3 className="text-lg xs:text-xl sm:text-2xl mt-8 xs:mt-10 sm:mt-12">Regeneration statistics</h3>
+                <h3 className="text-lg xs:text-xl sm:text-2xl mt-8 xs:mt-10 sm:mt-12 font-sf-regular">Regeneration statistics</h3>
                 <ul className="pl-8 list-disc text-lg mt-4">
-                    <li className="mt-3"><span className="font-bold">Regeneration presence.</span> Calculates the number and percent of plots with regeneration (saplings or seedlings) in each stand.</li>
-                    <li className="mt-3"><span className="font-bold">Seedlings per acre.</span> Calculates the average number of seedlings per acre in each stand.</li>
-                    <li className="mt-3"><span className="font-bold">Dominant regeneration species.</span> Identifies the dominant regeneration (sapling/seedling) species in each stand and calculates the number and percent of plots.</li>
+                    <li className="mt-3"><span className="font-sf-medium">Regeneration presence.</span> Calculates the number and percent of plots with regeneration (saplings or seedlings) in each stand.</li>
+                    <li className="mt-3"><span className="font-sf-medium">Seedlings per acre.</span> Calculates the average number of seedlings per acre in each stand.</li>
+                    <li className="mt-3"><span className="font-sf-medium">Dominant regeneration species.</span> Identifies the dominant regeneration (sapling/seedling) species in each stand and calculates the number and percent of plots.</li>
                 </ul>
 
-                <h3 className="text-lg xs:text-xl sm:text-2xl mt-8 xs:mt-10 sm:mt-12">Damage statistics</h3>
+                <h3 className="text-lg xs:text-xl sm:text-2xl mt-8 xs:mt-10 sm:mt-12 font-sf-regular">Damage statistics</h3>
                 <ul className="pl-8 list-disc text-lg mt-4">
-                    <li className="mt-3"><span className="font-bold">Insect damage presence.</span> Calculates the number and percent of plots with insect damage in each stand.</li>
-                    <li className="mt-3"><span className="font-bold">Browse damage presence.</span> Calculates the number and percent of plots with browsing damage in each stand.</li>
-                    <li className="mt-3"><span className="font-bold">List of damage types.</span> Lists all damage present across all plots within a stand.</li>
+                    <li className="mt-3"><span className="font-sf-medium">Insect damage presence.</span> Calculates the number and percent of plots with insect damage in each stand.</li>
+                    <li className="mt-3"><span className="font-sf-medium">Browse damage presence.</span> Calculates the number and percent of plots with browsing damage in each stand.</li>
+                    <li className="mt-3"><span className="font-sf-medium">List of damage types.</span> Lists all damage present across all plots within a stand.</li>
                 </ul>
 
             </div>
 
             <div className="md:w-[960px] pt-1 pb-12 bg-grey-reference mx-5 md:mx-auto rounded-lg mt-20 sm:mt-24 md:mt-28">
                 <div className="sm:w-[750px] mx-auto px-5">
-                    <h2 className="text-2xl sm:text-4xl px-5 sm:px-16 mt-8 xs:mt-12 sm:mt-14 text-center">
+                    <p className="text-2xl sm:text-4xl px-5 sm:px-16 mt-8 xs:mt-12 sm:mt-14 text-center">
                         Start summarizing data now.
-                    </h2>
+                    </p>
                     <div className="flex justify-center mt-8">
 
                         <a
