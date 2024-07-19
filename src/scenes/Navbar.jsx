@@ -1,35 +1,10 @@
 import { useState, useEffect } from "react";
-import HamburgerButton from "../components/HamburgerButton";
-import useMediaQuery from "../hooks/useMediaQuery";
 import logo from "../assets/logo.png";
 import { GoArrowUpRight } from "react-icons/go";
 
 const Navbar = () => {
-    const [isMenuToggled, setIsMenuToggled] = useState(false);
-    const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
-    const [navbarBackground, setNavbarBackground] = useState("");
     const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
     const [visible, setVisible] = useState(true);
-
-    useEffect(() => {
-        if (isAboveSmallScreens) {
-            setIsMenuToggled(false);
-        }
-    }, [isAboveSmallScreens]);
-
-    useEffect(() => {
-        if (!isAboveSmallScreens && isMenuToggled) {
-            document.body.style.overflow = "hidden";
-            setNavbarBackground("");
-        } else {
-            document.body.style.overflow = "visible";
-            setNavbarBackground("bg-opacity-40 backdrop-filter backdrop-blur-lg");
-        }
-    }, [isMenuToggled, isAboveSmallScreens]);
-
-    const handleToggleMenu = () => {
-        setIsMenuToggled(!isMenuToggled);
-    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -46,56 +21,21 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`${navbarBackground} text-white bg-darkgrey z-40 w-full fixed top-0 py-3 transition-all duration-300 delay-100 ${visible ? "" : "transform -translate-y-full"
-                }`}
+            className={`text-white bg-grey-dark bg-opacity-40 backdrop-filter backdrop-blur-lg z-40 w-full fixed top-0 py-3 transition-all duration-300 delay-100 ${visible ? "" : "transform -translate-y-full"}`}
         >
             <div className="flex items-center justify-between mx-auto md:w-[1000px] px-5">
                 <a href="/">
                     <img src={logo} alt="harley-zhang-logo" className="h-6 z-50" />
                 </a>
-
-                {/* DESKTOP NAV */}
-                {isAboveSmallScreens ? (
-                    <div className="flex justify-between gap-14 text-[13px] font-medium">
-                        <a
-                            href="/projects"
-                            className="inline-block"
-                        >
-                            Projects
-                        </a>
-                        <a
-                            href="/resume"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center"
-                        >
-                            Resume <GoArrowUpRight size={15} className="ml-1" />
-                        </a>
-                    </div>
-                ) : (
-                    <HamburgerButton active={isMenuToggled} setActive={handleToggleMenu} />
-                )}
-
-                {/* MOBILE MENU POPUP */}
-                <div
-                    className={`fixed right-0 bottom-0 h-full w-full text-white transition-all duration-500 transform ${isMenuToggled ? "opacity-100 bg-darkgrey bg-opacity-60 backdrop-blur-xl visible" : "opacity-0 invisible"
-                        }`}
-                >
-                    <div className="flex flex-col gap-[23px] ml-5 text-[27px] mt-20">
-                        <a
-                            href="/projects"
-                            className="inline-block"
-                            onClick={handleToggleMenu}
-                        >
-                            Projects
-                        </a>
-                        <a
-                            href="/resume"
-                            onClick={handleToggleMenu}
-                        >
-                            Resume
-                        </a>
-                    </div>
+                <div className="flex justify-between gap-14 text-[13px] font-medium">
+                    <a
+                        href="/resume"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center"
+                    >
+                        Resume <GoArrowUpRight size={15} className="ml-1" />
+                    </a>
                 </div>
             </div>
         </nav>

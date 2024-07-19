@@ -125,7 +125,7 @@ const Projects = () => {
         style={{ scrollbarWidth: "none", "-ms-overflow-style": "none" }}
       >
         {cards.map((card, index) => (
-          <a href={card.link} target="_blank" rel="noopener noreferrer" key={card.id}>
+          <a href={card.link} key={card.id}>
             <motion.div
               className={`group relative flex-shrink-0 w-[331px] h-[277px] xs:w-[430px] xs:h-[360px] rounded-md ${index !== 0 ? "ml-[0.9rem]" : ""}`}
               style={{

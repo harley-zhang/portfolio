@@ -7,23 +7,21 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        darkgrey: "#0a0a0a",
-        lightgrey: "#cbcbcb",
-        underlinegrey: "#616161",
-        referencegrey: "#161616",
+        "grey-dark": "#0a0a0a",
+        "grey-light": "#cbcbcb",
+        "grey-underline": "#616161",
+        "grey-reference": "#161616",
       },
       fontFamily: {
-        helvetica: ["HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", "sans-serif"],
-      },
-      letterSpacing: {
-        wide: "0.03em",
+        "sf-light": ["SF Pro Display Light", "sans-serif"],
+        "sf-regular": ["SF Pro Display Light", "sans-serif"],
+        "sf-medium": ["SF Pro Display Light", "sans-serif"],
       },
     },
     screens: {
       xs: "480px",
       sm: "768px",
       md: "1060px",
-      lg: "1400px",
     },
   },
   plugins: [
