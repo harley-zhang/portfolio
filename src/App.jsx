@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import Home from "./pages/Home";
 import Resume from "./pages/Resume";
 import EcoForecast from "./pages/EcoForecast";
 import DataAnalysis from "./pages/DataAnalysis";
-import { HelmetProvider } from "react-helmet-async";
 
 function App() {
   return (
