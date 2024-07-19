@@ -21,22 +21,22 @@ body,
 /** https://en.bestfonts.pro/font/san-francisco-pro **/
 
 @font-face {
-  font-family: 'SF Pro Display Light';
+  font-family: "SF Pro Display Light";
   font-style: normal;
   font-weight: normal;
-  src: local('SF Pro Display Light'), url('./fonts/SFProDisplay-Light.woff') format('woff');
+  src: local("SF Pro Display Light"), url("./fonts/SFProDisplay-Light.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'SF Pro Display Regular';
+  font-family: "SF Pro Display Regular";
   font-style: normal;
   font-weight: normal;
-  src: local('SF Pro Display Regular'), url('./fonts/SFProDisplay-Regular.woff') format('woff');
+  src: local("SF Pro Display Regular"), url("./fonts/SFProDisplay-Regular.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'SF Pro Display Medium';
+  font-family: "SF Pro Display Medium";
   font-style: normal;
   font-weight: normal;
-  src: local('SF Pro Display Medium'), url('./fonts/SFProDisplay-Medium.woff') format('woff');
+  src: local("SF Pro Display Medium"), url("./fonts/SFProDisplay-Medium.woff") format("woff");
 }

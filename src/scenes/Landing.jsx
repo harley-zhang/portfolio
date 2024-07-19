@@ -14,7 +14,7 @@ const Landing = () => {
                     </p>
                     <p className="my-7 text-[.95rem] xs:text-[1.1rem] text-start">
                         I'm a student at the University of Waterloo studying Computer Engineering. <br /><br />
-                        My interests are data science, software, and hardware and their applications for environmental sustainability and social causes. I'm eager to work on meaningful projects that make a positive impact.
+                        My interests are data science, software, and hardware, and their applications for environmental sustainability and social causes. I'm eager to work on meaningful projects that make a positive impact.
                     </p>
                 </div>
 
