@@ -1,28 +1,10 @@
 import { useState, useEffect } from "react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import HamburgerButton from "../components/HamburgerButton";
 import useMediaQuery from "../hooks/useMediaQuery";
 import logo from "../assets/logo.png";
 import { GoArrowUpRight } from "react-icons/go";
 
-const Link = ({ page, setSelectedPage, onClick }) => {
-    const lowerCasePage = page.toLowerCase();
-    return (
-        <AnchorLink
-            className="inline-block"
-            href={`#${lowerCasePage}`}
-            offset={() => 100}
-            onClick={(e) => {
-                setSelectedPage(lowerCasePage);
-                if (onClick) onClick(e);
-            }}
-        >
-            {page}
-        </AnchorLink>
-    );
-};
-
-const Navbar = ({ setSelectedPage }) => {
+const Navbar = () => {
     const [isMenuToggled, setIsMenuToggled] = useState(false);
     const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
     const [navbarBackground, setNavbarBackground] = useState("");
@@ -71,13 +53,16 @@ const Navbar = ({ setSelectedPage }) => {
                 <a href="/">
                     <img src={logo} alt="harley-zhang-logo" className="h-6 z-50" />
                 </a>
-                
+
                 {/* DESKTOP NAV */}
                 {isAboveSmallScreens ? (
                     <div className="flex justify-between gap-14 text-[13px] font-medium">
-                        <Link page="Projects" setSelectedPage={setSelectedPage} />
-                        <Link page="Education" setSelectedPage={setSelectedPage} />
-                        <Link page="Experience" setSelectedPage={setSelectedPage} />
+                        <a
+                            href="/projects"
+                            className="inline-block"
+                        >
+                            Projects
+                        </a>
                         <a
                             href="/resume"
                             target="_blank"
@@ -97,10 +82,19 @@ const Navbar = ({ setSelectedPage }) => {
                         }`}
                 >
                     <div className="flex flex-col gap-[23px] ml-5 text-[27px] mt-20">
-                        <Link page="Projects" setSelectedPage={setSelectedPage} onClick={handleToggleMenu} />
-                        <Link page="Education" setSelectedPage={setSelectedPage} onClick={handleToggleMenu} />
-                        <Link page="Experience" setSelectedPage={setSelectedPage} onClick={handleToggleMenu} />
-                        <a href="/resume">Resume</a>
+                        <a
+                            href="/projects"
+                            className="inline-block"
+                            onClick={handleToggleMenu}
+                        >
+                            Projects
+                        </a>
+                        <a
+                            href="/resume"
+                            onClick={handleToggleMenu}
+                        >
+                            Resume
+                        </a>
                     </div>
                 </div>
             </div>
