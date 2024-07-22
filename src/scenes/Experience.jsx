@@ -26,7 +26,7 @@ const Experience = () => {
                         </div>
                         <div className="flex justify-between w-full">
                             <p className="text-xs xs:text-sm sm:text-[1rem] text-left text-grey-light">Lauenroth Lab, Yale University</p>
-                            <p className="text-xs xs:text-sm text-right text-grey-light">Mar 2021 &mdash; Jun 2024</p>
+                            <p className="text-xs xs:text-sm text-right text-grey-light">Mar 2021&mdash;Jun 2024</p>
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@ const Experience = () => {
                         </div>
                         <div className="flex justify-between w-full">
                             <p className="text-xs xs:text-sm sm:text-[1rem] text-left text-grey-light">CUBES Lab, University of Toronto</p>
-                            <p className="text-xs xs:text-sm text-right text-grey-light">May 2023 &mdash; Dec 2023</p>
+                            <p className="text-xs xs:text-sm text-right text-grey-light">May 2023&mdash;Dec 2023</p>
                         </div>
                     </div>
                 </div>
