@@ -121,7 +121,7 @@ const Projects = () => {
 
       <div
         ref={scrollRef}
-        className="flex h-full overflow-x-auto overflow-y-hidden px-5 md:px-[calc(50vw-480px)] no-scrollbar"
+        className="flex h-full overflow-x-auto overflow-y-hidden px-5 md:px-[calc(50vw-485px)] no-scrollbar"
         style={{ scrollbarWidth: "none", "-ms-overflow-style": "none" }}
       >
         {cards.map((card, index) => (
