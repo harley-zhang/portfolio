@@ -30,9 +30,17 @@ const Experience = () => {
                         </div>
                     </div>
                 </div>
+                <ul className="pl-8 list-disc text-sm xs:text-base mb-6">
+                    <li className="mt-3">
+                        Simulated a century of plant biomass projections for a conservation area in Colorado using the STEPWAT2 model.
+                    </li>
+                    <li className="mt-3">
+                        Summarized climate and plant simulations for the next century and field survey statistics from 2022 to 2023 using R.
+                    </li>
+                </ul>
 
                 {/* UOFT */}
-                <div className="flex flex-row items-center">
+                <div className="flex flex-row items-center mt-4">
 
                     {/* UofT Icon */}
                     <div className="flex-shrink-0 my-4">
@@ -51,6 +59,14 @@ const Experience = () => {
                         </div>
                     </div>
                 </div>
+                <ul className="pl-8 list-disc text-sm xs:text-base mb-6">
+                    <li className="mt-3">
+                        Trained an object detection model to classify land uses with 80 years of historical raster imagery using QGIS.
+                    </li>
+                    <li className="mt-3">
+                        Quantified the urbanization in Toronto by comparing both mapped changes in land use over the past century.
+                    </li>
+                </ul>
             </div>
         </section>
     );

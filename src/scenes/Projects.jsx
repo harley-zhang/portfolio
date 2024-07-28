@@ -14,22 +14,22 @@ const cards = [
     shadow: "yes",
   },
   {
-    url: "../assets/simpleweather.png",
-    title: "SimpleWeather",
-    description: "Realtime weather data at a glance",
-    tools: "React &nbsp;&nbsp; OpenWeatherMap API",
-    link: "https://simpleweather-murex.vercel.app/",
-    id: 2,
-    color: "text-white",
-    shadow: "yes",
-  },
-  {
     url: "../assets/conservation.png",
     title: "Data Analysis",
     description: "Data summarizer for Yale conservation project",
     tools: "R",
     link: "/data-analysis",
     id: 3,
+    color: "text-white",
+    shadow: "yes",
+  },
+  {
+    url: "../assets/simpleweather.png",
+    title: "SimpleWeather",
+    description: "Realtime weather data at a glance",
+    tools: "React &nbsp;&nbsp; OpenWeatherMap API",
+    link: "https://simpleweather-murex.vercel.app/",
+    id: 2,
     color: "text-white",
     shadow: "yes",
   },
@@ -121,7 +121,7 @@ const Projects = () => {
 
       <div
         ref={scrollRef}
-        className="flex h-full overflow-x-auto overflow-y-hidden px-5 md:px-[calc(50vw-485px)] no-scrollbar"
+        className="flex h-full overflow-x-auto overflow-y-hidden px-5 md:px-[calc(50vw-487px)] no-scrollbar"
         style={{ scrollbarWidth: "none", "-ms-overflow-style": "none" }}
       >
         {cards.map((card, index) => (
