@@ -21,7 +21,7 @@ const DataAnalysis = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        GitHub repository
+                        GitHub
                         <GoArrowUpRight size={15} className="ml-1" />
                     </a>
                 </div>
