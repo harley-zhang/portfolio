@@ -21,7 +21,7 @@ const EcoForecast = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Open EcoForecast
+                        Visit EcoForecast
                         <GoArrowUpRight size={15} className="ml-1" />
                     </a>
                     <a
@@ -87,7 +87,7 @@ const EcoForecast = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Launch EcoForecast
+                            Visit EcoForecast
                             <GoArrowUpRight size={15} className="ml-1" />
                         </a>
                     </div>

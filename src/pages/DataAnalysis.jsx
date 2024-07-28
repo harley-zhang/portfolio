@@ -105,7 +105,7 @@ const DataAnalysis = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            View the code
+                            Use the code
                             <GoArrowUpRight size={15} className="ml-1" />
                         </a>
                     </div>
