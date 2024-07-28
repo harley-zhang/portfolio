@@ -32,10 +32,10 @@ const Experience = () => {
                 </div>
                 <ul className="pl-8 list-disc text-sm xs:text-base mb-6">
                     <li className="mt-3">
-                        Simulated a century of plant biomass projections for a conservation area in Colorado using the STEPWAT2 model.
+                        Simulated 100 years of plant biomass in a Colorado conservation area using STEPWAT2.
                     </li>
                     <li className="mt-3">
-                        Summarized climate and plant simulations for the next century and field survey statistics from 2022 to 2023 using R.
+                        Summarized next-century climate and plant simulations and 2022-2023 field survey stats using R.
                     </li>
                 </ul>
 
@@ -61,10 +61,10 @@ const Experience = () => {
                 </div>
                 <ul className="pl-8 list-disc text-sm xs:text-base mb-6">
                     <li className="mt-3">
-                        Trained an object detection model to classify land uses with 80 years of historical raster imagery using QGIS.
+                        Trained an object detection model to classify land use with 80 years of raster imagery in QGIS.
                     </li>
                     <li className="mt-3">
-                        Quantified the urbanization in Toronto by comparing both mapped changes in land use over the past century.
+                        Quantified Toronto's urbanization by comparing land use changes over the past century.
                     </li>
                 </ul>
             </div>
