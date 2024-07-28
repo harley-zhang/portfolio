@@ -20,19 +20,28 @@ const Landing = () => {
 
                 {/* BUTTON */}
                 <div className="flex mt-10 items-center">
-                    <a className="rounded-r-sm" href="/resume" target="_blank" rel="noopener noreferrer">
+                    <a
+                        href="mailto:h333zhan@uwaterloo.ca"
+                        className="rounded-r-sm"
+                    >
                         <div className="text-[.8rem] xs:text-[.91rem] bg-white text-grey-dark transition duration-500 w-full h-full flex items-center justify-center px-6 py-2 rounded-3xl hover:opacity-80 relative">
-                            Resume <GoArrowUpRight size={17} className="ml-1" />
+                            h333zhan@uwaterloo.ca <GoArrowUpRight size={17} className="ml-1" />
                         </div>
                     </a>
 
                     {/* EMAIL */}
                     <div className="ml-4 relative text-[.8rem] xs:text-[.91rem]">
-                        <a href="mailto:h333zhan@uwaterloo.ca" className="relative flex items-center ml-2 group">
-                            h333zhan@uwaterloo.ca <GoArrowUpRight size={17} className="ml-1" />
+                        <a
+                            href="/resume"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="relative flex items-center ml-2 group"
+                        >
+                            Resume <GoArrowUpRight size={17} className="ml-1" />
                             <span className="absolute left-0 bottom-[-2px] w-full h-[1px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                         </a>
                     </div>
+
                 </div>
             </div>
         </section>
