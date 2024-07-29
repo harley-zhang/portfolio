@@ -25,14 +25,30 @@ const Experience = () => {
                             <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] text-right">New Haven, CT</p>
                         </div>
                         <div className="flex justify-between w-full">
-                            <p className="text-xs xs:text-sm sm:text-[1rem] text-left text-grey-light">Lauenroth Lab, Yale University</p>
+                            <a
+                                href="https://www.researchgate.net/lab/William-K-Lauenroth-Lab"
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                className="text-xs xs:text-sm sm:text-[1rem] text-left text-grey-light transition-all duration-300 decoration-grey-underline hover:decoration-grey-light decoration-2 underline"
+                            >
+                                Lauenroth Lab, Yale University
+                            </a>
                             <p className="text-xs xs:text-sm text-right text-grey-light">Mar 2021&mdash;Jun 2024</p>
                         </div>
                     </div>
                 </div>
                 <ul className="pl-8 list-disc text-sm xs:text-base mb-6">
                     <li className="mt-3">
-                        Simulated 100 years of plant biomass in a Colorado conservation area using STEPWAT2.
+                        Simulated 100 years of plant biomass in a Colorado conservation area using&nbsp;
+                        <a
+                            href="https://doi.org/10.1002/ecs2.2394"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className="text-xs xs:text-sm sm:text-[1rem] text-left text-white transition-all duration-300 decoration-grey-underline hover:decoration-white decoration-2 underline"
+                        >
+                            STEPWAT2
+                        </a>
+                        .
                     </li>
                     <li className="mt-3">
                         Summarized next-century climate and plant simulations and 2022-2023 field survey stats using R.
@@ -54,17 +70,33 @@ const Experience = () => {
                             <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] text-right">Toronto, ON</p>
                         </div>
                         <div className="flex justify-between w-full">
-                            <p className="text-xs xs:text-sm sm:text-[1rem] text-left text-grey-light">CUBES Lab, University of Toronto</p>
+                            <a
+                                href="https://cubes-labs.com/"
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                className="text-xs xs:text-sm sm:text-[1rem] text-left text-grey-light transition-all duration-300 decoration-grey-underline hover:decoration-grey-light decoration-2 underline"
+                            >
+                                CUBES Lab, University of Toronto
+                            </a>
                             <p className="text-xs xs:text-sm text-right text-grey-light">May 2023&mdash;Dec 2023</p>
                         </div>
                     </div>
                 </div>
                 <ul className="pl-8 list-disc text-sm xs:text-base mb-6">
                     <li className="mt-3">
-                        Trained an object detection model to classify land use with 80 years of raster imagery in QGIS.
+                        Trained an object detection model to classify land use with 80 years of raster imagery in&nbsp;
+                        <a
+                            href="https://www.qgis.org/"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className="text-xs xs:text-sm sm:text-[1rem] text-left text-white transition-all duration-300 decoration-grey-underline hover:decoration-white decoration-2 underline"
+                        >
+                            QGIS
+                        </a>
+                        .
                     </li>
                     <li className="mt-3">
-                        Quantified Toronto's urbanization by comparing land use changes over the past century.
+                        Analyzed Toronto's urbanization by comparing land use changes from intervals in the past century.
                     </li>
                 </ul>
             </div>

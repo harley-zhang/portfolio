@@ -2,7 +2,7 @@ import Waterloo from "../assets/waterloo.png";
 
 const Education = () => {
     return (
-        <section id="education" className="md:w-[1000px] md:mx-auto px-5 py-0 sm:py-12">
+        <section id="education" className="md:w-[1000px] md:mx-auto px-5 py-0 sm:py-6">
 
             <p className="text-[1.68rem] z-10 text-start mb-3">
                 Education
