@@ -14,7 +14,7 @@ const DataAnalysis = () => {
             <div className="sm:w-[750px] mx-auto px-5">
                 <h1 className="text-3xl xs:text-4xl sm:text-5xl mt-28 xs:mt-32 sm:mt-40 mb-4 text-center">Data Analysis at Yale</h1>
 
-                <div className="flex flex-col items-center mt-8 space-y-6 xs:space-y-0 xs:flex-row xs:justify-center xs:space-x-5">
+                <div className="flex flex-col items-center mt-8 space-y-6 sm:space-y-0 sm:flex-row sm:justify-center sm:space-x-5">
                     <a
                         href="https://github.com/harley-zhang/Conservation_statistics"
                         className="text-[.85rem] sm:text-sm flex items-center bg-white hover:opacity-90 transition-all duration-300 text-black px-5 py-2 rounded-full"
@@ -33,7 +33,7 @@ const DataAnalysis = () => {
 
             <div className="sm:w-[750px] mx-auto px-5">
                 <p className="mt-16 xs:mt-20 text-lg">
-                    Open-source R program for researchers to summarize relevant 2022 and 2023 survey statistics for a 172,000-acre conservation area in Colorado. Developed with the Yale School of the Environment as part of The Partnership in Forestry and Rangeland Research Program. Uses dplyr, tidyr, and stringr.
+                    Open-source R program for researchers to summarize relevant 2022 and 2023 survey statistics for a 172,000-acre conservation area in Colorado. Developed with Yale University as part of <a href="https://developers.google.com/earth-engine" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 decoration-grey-underline hover:decoration-white decoration-2 underline">The Partnership in Forestry and Rangeland Research Program</a>. Uses dplyr, tidyr, and stringr.
                 </p>
 
                 <h2 className="text-xl xs:text-2xl sm:text-3xl mt-8 xs:mt-12 sm:mt-16 font-sf-regular">Plot statistics</h2>
