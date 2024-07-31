@@ -1,8 +1,18 @@
 import { Helmet } from "react-helmet-async";
 import Navbar from "../scenes/Navbar";
+import Credits from "../components/Credits";
 import Footer from "../scenes/Footer";
 import { GoArrowUpRight } from "react-icons/go";
 import ConservationBanner from "../assets/Project-Pages/dataanalysis-banner.png";
+import yale from "../assets/Project-Pages/yale.png";
+
+const dataAnalysisLogos = [
+    {
+        url: yale,
+        alt: "Yale School of the Environment",
+        link: "https://environment.yale.edu/",
+    },
+];
 
 const DataAnalysis = () => {
     return (
@@ -11,7 +21,7 @@ const DataAnalysis = () => {
                 <title>Data analysis for conservation project | Harley Zhang</title>
             </Helmet>
             <Navbar />
-            <div className="sm:w-[750px] mx-auto px-5">
+            <div className="mx-auto px-5">
                 <h1 className="text-3xl xs:text-4xl sm:text-5xl mt-28 xs:mt-32 sm:mt-40 mb-4 text-center">Data analysis for conservation project</h1>
                 <p className="mt-6 xs:mt-8 text-xs xs:text-sm sm:text-base text-center text-grey-light">
                     <span className="mr-4">R</span>
@@ -30,13 +40,15 @@ const DataAnalysis = () => {
                 </div>
             </div>
 
+            <Credits logos={dataAnalysisLogos} />
+
             <div className="md:w-[960px] mx-5 md:mx-auto mt-16 xs:mt-20 items-center">
                 <img src={ConservationBanner} className="rounded-md" alt="Conservation statistics" />
             </div>
 
             <div className="sm:w-[750px] mx-auto px-5">
                 <p className="mt-16 xs:mt-20 text-lg">
-                    Open-source R program for Yale field researchers to summarize relevant 2022 and 2023 survey statistics for a 172,000-acre conservation area in Colorado. Developed with Yale University as part of <a href="https://evst.yale.edu/news/developing-and-testing-long-term-ecological-monitoring-protocols-land-practitioners-south" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 decoration-grey-underline hover:decoration-white decoration-2 underline">The Partnership in Forestry and Rangeland Research Program</a>. Uses dplyr, tidyr, and stringr.
+                    Open-source R program for Yale field researchers to summarize relevant 2022 and 2023 survey statistics for a 172,000-acre conservation area in Colorado. Developed as part of <a href="https://evst.yale.edu/news/developing-and-testing-long-term-ecological-monitoring-protocols-land-practitioners-south" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 decoration-grey-underline hover:decoration-white decoration-2 underline">The Partnership in Forestry and Rangeland Research Program</a> at Yale University. Uses dplyr, tidyr, and stringr.
                 </p>
 
                 <h2 className="text-xl xs:text-2xl sm:text-3xl mt-8 xs:mt-12 sm:mt-16 font-sf-regular">Plot statistics</h2>

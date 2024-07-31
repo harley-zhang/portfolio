@@ -1,8 +1,36 @@
 import { Helmet } from "react-helmet-async";
 import Navbar from "../scenes/Navbar";
+import Credits from "../components/Credits";
 import Footer from "../scenes/Footer";
 import { GoArrowUpRight } from "react-icons/go";
 import EcoForecastBanner from "../assets/Project-Pages/ecoforecast-banner.png";
+import yale from "../assets/Project-Pages/yale.png";
+import usgs from "../assets/Project-Pages/usgs.png";
+import marshall from "../assets/Project-Pages/marshall.png";
+import utah from "../assets/Project-Pages/utah-state.png";
+
+const ecoForecastLogos = [
+    {
+        url: yale,
+        alt: "Yale School of the Environment",
+        link: "https://environment.yale.edu/",
+    },
+    {
+        url: usgs,
+        alt: "USGS",
+        link: "https://www.usgs.gov/",
+    },
+    {
+        url: marshall,
+        alt: "Marshall University",
+        link: "https://www.marshall.edu/",
+    },
+    {
+        url: utah,
+        alt: "Utah State University",
+        link: "https://www.usu.edu/",
+    },
+];
 
 const EcoForecast = () => {
     return (
@@ -11,7 +39,7 @@ const EcoForecast = () => {
                 <title>EcoForecast | Harley Zhang</title>
             </Helmet>
             <Navbar />
-            <div className="sm:w-[750px] mx-auto px-5">
+            <div className="mx-auto px-5">
                 <h1 className="text-3xl xs:text-4xl sm:text-5xl mt-28 xs:mt-32 sm:mt-40 mb-4 text-center">EcoForecast</h1>
                 <p className="mt-6 xs:mt-8 text-xs xs:text-sm sm:text-base text-center text-grey-light">
                     <span className="mr-4">React</span>
@@ -50,6 +78,8 @@ const EcoForecast = () => {
                     </a>
                 </div>
             </div>
+
+            <Credits logos={ecoForecastLogos} />
 
             <div className="md:w-[960px] mx-5 md:mx-auto mt-16 xs:mt-20 items-center">
                 <img src={EcoForecastBanner} className="rounded-md" alt="EcoForecast app" />

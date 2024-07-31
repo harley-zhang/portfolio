@@ -14,7 +14,7 @@ const cards = [
     shadow: "yes",
   },
   {
-    url: "../assets/Projects/conservation.png",
+    url: "../assets/Projects/dataanalysis.png",
     title: "Data Analysis",
     description: "Data summarizer for Yale conservation project",
     tools: "R",
