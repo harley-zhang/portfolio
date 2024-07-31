@@ -2,17 +2,20 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "../scenes/Navbar";
 import Footer from "../scenes/Footer";
 import { GoArrowUpRight } from "react-icons/go";
-import ConservationBanner from "../assets/conservation-banner.png";
+import ConservationBanner from "../assets/Project-Pages/dataanalysis-banner.png";
 
 const DataAnalysis = () => {
     return (
         <>
             <Helmet>
-                <title>Data Analysis at Yale | Harley Zhang</title>
+                <title>Data analysis for conservation project | Harley Zhang</title>
             </Helmet>
             <Navbar />
             <div className="sm:w-[750px] mx-auto px-5">
-                <h1 className="text-3xl xs:text-4xl sm:text-5xl mt-28 xs:mt-32 sm:mt-40 mb-4 text-center">Data Analysis at Yale</h1>
+                <h1 className="text-3xl xs:text-4xl sm:text-5xl mt-28 xs:mt-32 sm:mt-40 mb-4 text-center">Data analysis for conservation project</h1>
+                <p className="mt-6 xs:mt-8 text-xs xs:text-sm sm:text-base text-center text-grey-light">
+                    <span className="mr-4">R</span>
+                </p>
 
                 <div className="flex flex-col items-center mt-8 space-y-6 sm:space-y-0 sm:flex-row sm:justify-center sm:space-x-5">
                     <a
@@ -33,7 +36,7 @@ const DataAnalysis = () => {
 
             <div className="sm:w-[750px] mx-auto px-5">
                 <p className="mt-16 xs:mt-20 text-lg">
-                    Open-source R program for researchers to summarize relevant 2022 and 2023 survey statistics for a 172,000-acre conservation area in Colorado. Developed with Yale University as part of <a href="https://developers.google.com/earth-engine" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 decoration-grey-underline hover:decoration-white decoration-2 underline">The Partnership in Forestry and Rangeland Research Program</a>. Uses dplyr, tidyr, and stringr.
+                    Open-source R program for Yale field researchers to summarize relevant 2022 and 2023 survey statistics for a 172,000-acre conservation area in Colorado. Developed with Yale University as part of <a href="https://evst.yale.edu/news/developing-and-testing-long-term-ecological-monitoring-protocols-land-practitioners-south" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 decoration-grey-underline hover:decoration-white decoration-2 underline">The Partnership in Forestry and Rangeland Research Program</a>. Uses dplyr, tidyr, and stringr.
                 </p>
 
                 <h2 className="text-xl xs:text-2xl sm:text-3xl mt-8 xs:mt-12 sm:mt-16 font-sf-regular">Plot statistics</h2>

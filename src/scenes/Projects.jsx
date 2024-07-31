@@ -4,7 +4,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const cards = [
   {
-    url: "../assets/ecoforecast.png",
+    url: "../assets/Projects/ecoforecast.png",
     title: "EcoForecast",
     description: "Simulation model data for climate and plant trends",
     tools: "React &nbsp;&nbsp; Google Earth Engine JavaScript API",
@@ -14,7 +14,7 @@ const cards = [
     shadow: "yes",
   },
   {
-    url: "../assets/conservation.png",
+    url: "../assets/Projects/conservation.png",
     title: "Data Analysis",
     description: "Data summarizer for Yale conservation project",
     tools: "R",
@@ -24,7 +24,7 @@ const cards = [
     shadow: "yes",
   },
   {
-    url: "../assets/simpleweather.png",
+    url: "../assets/Projects/simpleweather.png",
     title: "SimpleWeather",
     description: "Realtime weather data at a glance",
     tools: "React &nbsp;&nbsp; OpenWeatherMap API",
@@ -34,7 +34,7 @@ const cards = [
     shadow: "yes",
   },
   {
-    url: "../assets/portfolio.png",
+    url: "../assets/Projects/portfolio.png",
     title: "Portfolio",
     description: "Keep tabs with my education and career",
     tools: "React",

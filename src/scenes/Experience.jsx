@@ -1,5 +1,5 @@
-import UofT from "../assets/uoft-cubes.png";
-import Yale from "../assets/yale.png";
+import UofT from "../assets/Experience/uoft-cubes.png";
+import Yale from "../assets/Experience/yale-lauenroth.png";
 
 const Experience = () => {
     return (

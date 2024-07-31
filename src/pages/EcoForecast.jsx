@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "../scenes/Navbar";
 import Footer from "../scenes/Footer";
 import { GoArrowUpRight } from "react-icons/go";
-import EcoForecastBanner from "../assets/ecoforecast-banner.png";
+import EcoForecastBanner from "../assets/Project-Pages/ecoforecast-banner.png";
 
 const EcoForecast = () => {
     return (
@@ -13,6 +13,10 @@ const EcoForecast = () => {
             <Navbar />
             <div className="sm:w-[750px] mx-auto px-5">
                 <h1 className="text-3xl xs:text-4xl sm:text-5xl mt-28 xs:mt-32 sm:mt-40 mb-4 text-center">EcoForecast</h1>
+                <p className="mt-6 xs:mt-8 text-xs xs:text-sm sm:text-base text-center text-grey-light">
+                    <span className="mr-4">React</span>
+                    <span className="ml-4">Google Earth Engine JavaScript API</span>
+                </p>
 
                 <div className="flex flex-col items-center mt-8 space-y-6 sm:space-y-0 sm:flex-row sm:justify-center sm:space-x-5">
                     <a
@@ -53,7 +57,7 @@ const EcoForecast = () => {
 
             <div className="sm:w-[750px] mx-auto px-5">
                 <p className="mt-16 xs:mt-20 text-lg">
-                    EcoForecast is a web application that allows farmers, ranchers, foresters, and land managers to visualize and analyze future ecological changes in the sagebrush habitat across the United States. The app utilizes data generated using the <a href="https://github.com/DrylandEcology/STEPWAT2" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 decoration-grey-underline hover:decoration-white decoration-2 underline">STEPWAT2 simulation model</a> and is built using React and <a href="https://developers.google.com/earth-engine" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 decoration-grey-underline hover:decoration-white decoration-2 underline">Google Earth Engine JavaScript API, a cloud-based platform for remote sensing data analysis</a>.
+                    EcoForecast is a web application that allows farmers, ranchers, foresters, and land managers to visualize and analyze future ecological changes in the sagebrush habitat across the United States. The app utilizes data generated using the <a href="https://github.com/DrylandEcology/STEPWAT2" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 decoration-grey-underline hover:decoration-white decoration-2 underline">STEPWAT2</a> simulation model and is built using React and <a href="https://developers.google.com/earth-engine" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 decoration-grey-underline hover:decoration-white decoration-2 underline">Google Earth Engine JavaScript API</a>, a cloud-based platform for remote sensing data analysis.
                 </p>
                 <p className="mt-4 xs:mt-6 text-lg">
                     This app is made possible by the support of <a href="https://www.yale.edu/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 decoration-grey-underline hover:decoration-white 2 underline">Yale University</a>, the <a href="https://www.usgs.gov/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 decoration-grey-underline hover:decoration-white decoration-2 underline">United States Geological Survey (USGS)</a>, <a href="https://www.marshall.edu/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 decoration-grey-underline hover:decoration-white decoration-2 underline">Marshall University</a>, and <a href="https://www.usu.edu/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 decoration-grey-underline hover:decoration-white decoration-2 underline">Utah State University</a>.
