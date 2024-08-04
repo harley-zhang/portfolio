@@ -1,5 +1,6 @@
-import UofT from "../assets/Experience/uoft-cubes.png";
+import Cornell from "../assets/Experience/cornell-tech.png";
 import Yale from "../assets/Experience/yale-lauenroth.png";
+import UofT from "../assets/Experience/uoft-cubes.png";
 
 const Experience = () => {
     return (
@@ -10,8 +11,52 @@ const Experience = () => {
             </p>
 
             <div className="flex flex-col">
-                {/* YALE */}
+                {/* CORNELL TECH */}
                 <div className="flex flex-row items-center">
+
+                    {/* UofT Icon */}
+                    <div className="flex-shrink-0 my-4">
+                        <img src={Cornell} alt="Cornell Tech" className="w-[3.6rem] h-[3.6rem] rounded-[0.32rem]" />
+                    </div>
+
+                    {/* Text */}
+                    <div className="ml-5 w-full">
+                        <div className="flex justify-between w-full mb-2">
+                            <p className="text-base sm:text-xl text-left">Software Developer</p>
+                            <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] text-right">New York, NY</p>
+                        </div>
+                        <div className="flex justify-between w-full">
+                            <a
+                                href="https://s.tech.cornell.edu/"
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                className="text-xs xs:text-sm sm:text-[1rem] text-left text-grey-light transition-all duration-300 decoration-grey-underline hover:decoration-grey-light decoration-2 underline"
+                            >
+                                Cornell Tech
+                            </a>
+                            <p className="text-xs xs:text-sm text-right text-grey-light">Jun 2024&mdash;Present</p>
+                        </div>
+                    </div>
+                </div>
+                <ul className="pl-4 xs:pl-8 sm:pl-16 list-disc text-sm xs:text-base mb-6">
+                    <li className="mt-3">
+                        Used LLMs to identify and map localities and topics in local news articles.
+                    </li>
+                    <li className="mt-3">
+                        Developed app for local news to view coverage differences by neighborhood using React and Uber's <a
+                            href="https://deck.gl/"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className="text-left text-white transition-all duration-300 decoration-grey-underline hover:decoration-white decoration-2 underline"
+                        >
+                            deck.gl
+                        </a>.
+                    </li>
+                </ul>
+
+
+                {/* YALE LAUENROTH*/}
+                <div className="flex flex-row items-center mt-4">
 
                     {/* Yale Icon */}
                     <div className="flex-shrink-0 my-4">
@@ -37,14 +82,14 @@ const Experience = () => {
                         </div>
                     </div>
                 </div>
-                <ul className="pl-8 list-disc text-sm xs:text-base mb-6">
+                <ul className="pl-4 xs:pl-8 sm:pl-16 list-disc text-sm xs:text-base mb-6">
                     <li className="mt-3">
                         Simulated 100 years of plant biomass in a Colorado conservation area using&nbsp;
                         <a
                             href="https://doi.org/10.1002/ecs2.2394"
                             target="_blank"
                             rel="noreferrer noopener"
-                            className="text-xs xs:text-sm sm:text-[1rem] text-left text-white transition-all duration-300 decoration-grey-underline hover:decoration-white decoration-2 underline"
+                            className="text-left text-white transition-all duration-300 decoration-grey-underline hover:decoration-white decoration-2 underline"
                         >
                             STEPWAT2
                         </a>
@@ -55,7 +100,7 @@ const Experience = () => {
                     </li>
                 </ul>
 
-                {/* UOFT */}
+                {/* UOFT CUBES */}
                 <div className="flex flex-row items-center mt-4">
 
                     {/* UofT Icon */}
@@ -82,14 +127,14 @@ const Experience = () => {
                         </div>
                     </div>
                 </div>
-                <ul className="pl-8 list-disc text-sm xs:text-base mb-6">
+                <ul className="pl-4 xs:pl-8 sm:pl-16 list-disc text-sm xs:text-base mb-6">
                     <li className="mt-3">
                         Trained an object detection model to classify land use with 80 years of raster imagery in&nbsp;
                         <a
                             href="https://www.qgis.org/"
                             target="_blank"
                             rel="noreferrer noopener"
-                            className="text-xs xs:text-sm sm:text-[1rem] text-left text-white transition-all duration-300 decoration-grey-underline hover:decoration-white decoration-2 underline"
+                            className="text-left text-white transition-all duration-300 decoration-grey-underline hover:decoration-white decoration-2 underline"
                         >
                             QGIS
                         </a>

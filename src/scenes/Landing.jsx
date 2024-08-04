@@ -4,7 +4,7 @@ const Landing = () => {
     return (
         <section
             id="home"
-            className="md:flex md:justify-between md:items-center gap-16 h-[30rem] sm:h-[34rem] py-10 md:w-[1000px] md:mx-auto px-5"
+            className="md:flex md:justify-between md:items-center gap-16 h-1000 pt-8 sm:pt-16 pb-16 sm:pb-24 md:w-[1000px] md:mx-auto px-5"
         >
             {/* LANDING TEXT */}
             <div className={`z-30 mt-16 md:mt-32`}>
