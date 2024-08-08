@@ -34,7 +34,7 @@ const Experience = () => {
                             >
                                 Cornell Tech
                             </a>
-                            <p className="text-xs xs:text-sm text-right text-grey-light">Jun 2024&mdash;Present</p>
+                            <p className="text-xs xs:text-sm text-right text-grey-light">Jul 2024&mdash;Present</p>
                         </div>
                     </div>
                 </div>
