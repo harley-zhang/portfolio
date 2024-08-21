@@ -40,8 +40,7 @@ const Experience = () => {
                 </div>
                 <ul className="pl-4 xs:pl-8 sm:pl-16 list-disc text-sm xs:text-base mb-6">
                     <li className="mt-3">
-                        Used LLMs to identify and map localities and topics in local news articles.
-                    </li>
+                        Parsed and filtered US Census ZIP Code Tabulation Area shapefile data using Python.                    </li>
                     <li className="mt-3">
                         Developed app for local news to view coverage differences by neighborhood using React and Uber's <a
                             href="https://deck.gl/"
