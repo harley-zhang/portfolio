@@ -42,7 +42,7 @@ const Experience = () => {
                     <li className="mt-3">
                         Parsed and filtered US Census ZIP Code Tabulation Area shapefile data using Python.                    </li>
                     <li className="mt-3">
-                        Developed app for local news to view coverage differences by neighborhood using React and Uber's <a
+                        Developed app for media companies to analyze coverage differences by neighborhood using React and Uber's <a
                             href="https://deck.gl/"
                             target="_blank"
                             rel="noreferrer noopener"
