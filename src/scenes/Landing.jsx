@@ -21,11 +21,11 @@ const Landing = () => {
                 {/* BUTTON */}
                 <div className="flex mt-10 items-center">
                     <a
-                        href="mailto:h333zhan@uwaterloo.ca"
+                        href="mailto:harley.zhang@uwaterloo.ca"
                         className="rounded-r-sm"
                     >
                         <div className="text-[.8rem] xs:text-[.91rem] bg-white text-grey-dark transition duration-500 w-full h-full flex items-center justify-center px-6 py-2 rounded-3xl hover:opacity-80 relative">
-                            h333zhan@uwaterloo.ca <GoArrowUpRight size={17} className="ml-1" />
+                            harley.zhang@uwaterloo.ca <GoArrowUpRight size={17} className="ml-1" />
                         </div>
                     </a>
 
