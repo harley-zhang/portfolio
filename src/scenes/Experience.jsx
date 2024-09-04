@@ -122,7 +122,7 @@ const Experience = () => {
                             >
                                 CUBES Lab, University of Toronto
                             </a>
-                            <p className="text-xs xs:text-sm text-right text-grey-light">May 2023&mdash;Dec 2023</p>
+                            <p className="text-xs xs:text-sm text-right text-grey-light">Jun 2023&mdash;Dec 2023</p>
                         </div>
                     </div>
                 </div>
