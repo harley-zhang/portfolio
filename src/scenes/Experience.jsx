@@ -65,7 +65,7 @@ const Experience = () => {
                     {/* Text */}
                     <div className="ml-5 w-full">
                         <div className="flex justify-between w-full mb-2">
-                            <p className="text-base sm:text-xl text-left">Software Engineering Intern</p>
+                            <p className="text-base sm:text-xl text-left">Software Engineer</p>
                             <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] text-right">New Haven, CT</p>
                         </div>
                         <div className="flex justify-between w-full">
