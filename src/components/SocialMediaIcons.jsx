@@ -6,7 +6,7 @@ const SocialMediaIcons = ({ className }) => {
     return (
         <div className={`flex justify-center md:justify-start my-10 gap-9 ${className}`}>
             <a
-                href="mailto:h333zhan@uwaterloo.ca"
+                href="mailto:harley.zhang@uwaterloo.ca"
                 target="_blank"
                 rel="noreferrer"
             >
