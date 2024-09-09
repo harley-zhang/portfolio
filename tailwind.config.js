@@ -11,6 +11,7 @@ module.exports = {
         "grey-light": "#cbcbcb",
         "grey-underline": "#616161",
         "grey-present-bg": "#252525",
+        "grey-present": "#a0a0a0",
         "grey-reference": "#161616",
       },
       fontFamily: {
