@@ -26,7 +26,7 @@ const Experience = () => {
                                 <p className="text-base sm:text-xl">Software Developer</p>
                                 <p className="text-[0.7rem] xs:text-[0.8rem] sm:text-[0.9rem] bg-grey-present-bg text-grey-present px-2 py- rounded-full ml-3">Present</p>
                             </div>
-                            <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] text-right">New York, NY</p>
+                            <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] text-grey-light text-right">New York, NY</p>
                         </div>
                         <div className="flex justify-between w-full">
                             <a
@@ -37,7 +37,7 @@ const Experience = () => {
                             >
                                 Cornell Tech
                             </a>
-                            <p className="text-xs xs:text-sm text-right text-grey-light">Jul 2024&mdash;Present</p>
+                            <p className="text-xs xs:text-sm text-right text-grey-present">Jul 2024&mdash;Present</p>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@ const Experience = () => {
                     <div className="ml-5 w-full">
                         <div className="flex justify-between w-full mb-2">
                             <p className="text-base sm:text-xl text-left">Software Engineer</p>
-                            <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] text-right">New Haven, CT</p>
+                            <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] text-grey-light text-right">New Haven, CT</p>
                         </div>
                         <div className="flex justify-between w-full">
                             <a
@@ -80,7 +80,7 @@ const Experience = () => {
                             >
                                 Lauenroth Lab, Yale University
                             </a>
-                            <p className="text-xs xs:text-sm text-right text-grey-light">Mar 2021&mdash;Jun 2024</p>
+                            <p className="text-xs xs:text-sm text-right text-grey-present">Mar 2021&mdash;Jun 2024</p>
                         </div>
                     </div>
                 </div>
@@ -114,7 +114,7 @@ const Experience = () => {
                     <div className="ml-5 w-full">
                         <div className="flex justify-between w-full mb-2">
                             <p className="text-base sm:text-xl text-left">Research Assistant</p>
-                            <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] text-right">Toronto, ON</p>
+                            <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] text-right text-grey-light">Toronto, ON</p>
                         </div>
                         <div className="flex justify-between w-full">
                             <a
@@ -125,7 +125,7 @@ const Experience = () => {
                             >
                                 CUBES Lab, University of Toronto
                             </a>
-                            <p className="text-xs xs:text-sm text-right text-grey-light">Jun 2023&mdash;Dec 2023</p>
+                            <p className="text-xs xs:text-sm text-right text-grey-present">Jun 2023&mdash;Dec 2023</p>
                         </div>
                     </div>
                 </div>

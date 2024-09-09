@@ -19,11 +19,11 @@ const Education = () => {
                 <div className="ml-5 w-full">
                     <div className="flex justify-between w-full mb-2">
                         <p className="text-base sm:text-xl text-left">University of Waterloo</p>
-                        <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] text-right">Waterloo, ON</p>
+                        <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] text-right text-grey-light">Waterloo, ON</p>
                     </div>
                     <div className="flex justify-between w-full text-grey-light">
                         <p className="text-xs xs:text-sm sm:text-[1rem] text-left">BASc, Computer Engineering</p>
-                        <p className="text-xs xs:text-sm text-right">2024&mdash;2029</p>
+                        <p className="text-xs xs:text-sm text-right text-grey-present">2024&mdash;2029</p>
                     </div>
                 </div>
             </div>
