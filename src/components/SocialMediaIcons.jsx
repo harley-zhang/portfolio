@@ -26,6 +26,7 @@ const SocialMediaIcons = ({ className }) => {
             >
                 <FaGithub size={17} />
             </a>
+            {/* 
             <a
                 href="https://www.youtube.com/@harleyzhang3092"
                 target="_blank"
@@ -40,6 +41,7 @@ const SocialMediaIcons = ({ className }) => {
             >
                 <FaXTwitter size={17} />
             </a>
+            */}
         </div>
     )
 }

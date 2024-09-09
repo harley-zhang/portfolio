@@ -3,7 +3,7 @@ import Navbar from "../scenes/Navbar";
 import Credits from "../components/Credits";
 import Footer from "../scenes/Footer";
 import { GoArrowUpRight } from "react-icons/go";
-import EcoForecastBanner from "../assets/Project-Pages/ecoforecast/ecoforecast-banner.png";
+import ContentDesertsBanner from "../assets/Project-Pages/content-deserts/content-deserts-banner.png";
 import cornell from "../assets/Project-Pages/content-deserts/cornell-tech.png";
 import columbia from "../assets/Project-Pages/content-deserts/columbia.png";
 import city from "../assets/Project-Pages/content-deserts/the-city.png";
@@ -58,7 +58,7 @@ const EcoForecast = () => {
             <Credits logos={contentDesertsLogos} />
 
             <div className="md:w-[960px] mx-5 md:mx-auto mt-16 xs:mt-20 items-center">
-                <img src={EcoForecastBanner} className="rounded-md" alt="EcoForecast app" />
+                <img src={ContentDesertsBanner} className="rounded-md" alt="EcoForecast app" />
             </div>
 
             <div className="sm:w-[750px] mx-auto px-5">
