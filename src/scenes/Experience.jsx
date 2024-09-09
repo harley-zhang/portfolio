@@ -22,7 +22,10 @@ const Experience = () => {
                     {/* Text */}
                     <div className="ml-5 w-full">
                         <div className="flex justify-between w-full mb-2">
-                            <p className="text-base sm:text-xl text-left">Software Developer</p>
+                            <div className="flex items-center">
+                                <p className="text-base sm:text-xl">Software Developer</p>
+                                <p className="text-[0.7rem] xs:text-[0.8rem] sm:text-[0.9rem] bg-grey-underline text-black px-2 py- rounded-full ml-3">Present</p>
+                            </div>
                             <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] text-right">New York, NY</p>
                         </div>
                         <div className="flex justify-between w-full">

@@ -10,6 +10,7 @@ module.exports = {
         "grey-dark": "#0a0a0a",
         "grey-light": "#cbcbcb",
         "grey-underline": "#616161",
+        "grey-present-bg": "#252525",
         "grey-reference": "#161616",
       },
       fontFamily: {
