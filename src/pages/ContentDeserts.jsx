@@ -3,32 +3,26 @@ import Navbar from "../scenes/Navbar";
 import Credits from "../components/Credits";
 import Footer from "../scenes/Footer";
 import { GoArrowUpRight } from "react-icons/go";
-import EcoForecastBanner from "../assets/Project-Pages/ecoforecast-banner.png";
-import yale from "../assets/Project-Pages/yale.png";
-import usgs from "../assets/Project-Pages/usgs.png";
-import marshall from "../assets/Project-Pages/marshall.png";
-import utah from "../assets/Project-Pages/utah-state.png";
+import EcoForecastBanner from "../assets/Project-Pages/ecoforecast/ecoforecast-banner.png";
+import cornell from "../assets/Project-Pages/content-deserts/cornell-tech.png";
+import columbia from "../assets/Project-Pages/content-deserts/columbia.png";
+import city from "../assets/Project-Pages/content-deserts/the-city.png";
 
-const ecoForecastLogos = [
+const contentDesertsLogos = [
     {
-        url: yale,
-        alt: "Yale School of the Environment",
-        link: "https://environment.yale.edu/",
+        url: cornell,
+        alt: "Cornell Tech",
+        link: "https://s.tech.cornell.edu/",
     },
     {
-        url: usgs,
-        alt: "USGS",
-        link: "https://www.usgs.gov/",
+        url: columbia,
+        alt: "Columbia University",
+        link: "https://journalism.columbia.edu/",
     },
     {
-        url: marshall,
-        alt: "Marshall University",
-        link: "https://www.marshall.edu/",
-    },
-    {
-        url: utah,
-        alt: "Utah State University",
-        link: "https://www.usu.edu/",
+        url: city,
+        alt: "The City",
+        link: "https://www.thecity.nyc/",
     },
 ];
 
@@ -42,10 +36,10 @@ const EcoForecast = () => {
             <div className="mx-auto px-5">
                 <h1 className="text-3xl xs:text-4xl sm:text-5xl mt-28 xs:mt-32 sm:mt-40 mb-4 text-center">Content Deserts</h1>
                 <p className="mt-6 xs:mt-8 text-xs xs:text-sm sm:text-base text-center text-grey-light">
-                    <span className="mr-6">React</span>
-                    <span className="mr-6">Python</span>
-                    <span className="mr-6">deck.gl</span>
-                    <span className="mr-6">Google Geocoding API</span>
+                    <span className="mr-7">React</span>
+                    <span className="mr-7">Python</span>
+                    <span className="mr-7">deck.gl</span>
+                    <span>Google Geocoding API</span>
                 </p>
 
                 <div className="flex flex-col items-center mt-8 space-y-6 sm:space-y-0 sm:flex-row sm:justify-center sm:space-x-5">
@@ -61,7 +55,7 @@ const EcoForecast = () => {
                 </div>
             </div>
 
-            <Credits logos={ecoForecastLogos} />
+            <Credits logos={contentDesertsLogos} />
 
             <div className="md:w-[960px] mx-5 md:mx-auto mt-16 xs:mt-20 items-center">
                 <img src={EcoForecastBanner} className="rounded-md" alt="EcoForecast app" />
@@ -103,17 +97,17 @@ const EcoForecast = () => {
             <div className="md:w-[960px] pt-1 pb-12 bg-grey-reference mx-5 md:mx-auto rounded-lg mt-20 sm:mt-24 md:mt-28">
                 <div className="sm:w-[750px] mx-auto px-5">
                     <p className="text-2xl sm:text-4xl px-5 sm:px-16 mt-8 xs:mt-12 sm:mt-14 text-center">
-                        Dive into the data and try EcoForecast today.
+                        Learn more about the Social Technologies Lab.
                     </p>
                     <div className="flex justify-center mt-8">
 
                         <a
-                            href="https://ecoforecast.info/"
+                            href="https://s.tech.cornell.edu/"
                             className="text-[.85rem] sm:text-sm flex items-center bg-white hover:opacity-90 transition-all text-black duration-300 px-6 py-2 rounded-full mr-5"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Visit EcoForecast
+                            Visit page
                             <GoArrowUpRight size={15} className="ml-1" />
                         </a>
                     </div>

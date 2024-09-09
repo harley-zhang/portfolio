@@ -3,8 +3,8 @@ import Navbar from "../scenes/Navbar";
 import Credits from "../components/Credits";
 import Footer from "../scenes/Footer";
 import { GoArrowUpRight } from "react-icons/go";
-import ConservationBanner from "../assets/Project-Pages/dataanalysis-banner.png";
-import yale from "../assets/Project-Pages/yale.png";
+import ConservationBanner from "../assets/Project-Pages/data-analysis/dataanalysis-banner.png";
+import yale from "../assets/Project-Pages/ecoforecast/yale.png";
 
 const dataAnalysisLogos = [
     {
@@ -24,7 +24,7 @@ const DataAnalysis = () => {
             <div className="mx-auto px-5">
                 <h1 className="text-3xl xs:text-4xl sm:text-5xl mt-28 xs:mt-32 sm:mt-40 mb-4 text-center">Data analysis for conservation project</h1>
                 <p className="mt-6 xs:mt-8 text-xs xs:text-sm sm:text-base text-center text-grey-light">
-                    <span className="mr-4">R</span>
+                    <span>R</span>
                 </p>
 
                 <div className="flex flex-col items-center mt-8 space-y-6 sm:space-y-0 sm:flex-row sm:justify-center sm:space-x-5">

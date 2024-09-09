@@ -34,7 +34,7 @@ const Credits = ({ logos }) => {
                             <motion.img
                                 src={logo.url}
                                 alt={logo.alt}
-                                className="w-[75px] md:w-[90px] mx-auto"
+                                className="h-[30px] md:h-[30px] mx-auto"
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, delay: 0.3 * index + 0.2 }}

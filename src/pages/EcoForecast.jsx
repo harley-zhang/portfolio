@@ -3,11 +3,11 @@ import Navbar from "../scenes/Navbar";
 import Credits from "../components/Credits";
 import Footer from "../scenes/Footer";
 import { GoArrowUpRight } from "react-icons/go";
-import EcoForecastBanner from "../assets/Project-Pages/ecoforecast-banner.png";
-import yale from "../assets/Project-Pages/yale.png";
-import usgs from "../assets/Project-Pages/usgs.png";
-import marshall from "../assets/Project-Pages/marshall.png";
-import utah from "../assets/Project-Pages/utah-state.png";
+import EcoForecastBanner from "../assets/Project-Pages/ecoforecast/ecoforecast-banner.png";
+import yale from "../assets/Project-Pages/ecoforecast/yale.png";
+import usgs from "../assets/Project-Pages/ecoforecast/usgs.png";
+import marshall from "../assets/Project-Pages/ecoforecast/marshall.png";
+import utah from "../assets/Project-Pages/ecoforecast/utah-state.png";
 
 const ecoForecastLogos = [
     {
@@ -42,8 +42,8 @@ const EcoForecast = () => {
             <div className="mx-auto px-5">
                 <h1 className="text-3xl xs:text-4xl sm:text-5xl mt-28 xs:mt-32 sm:mt-40 mb-4 text-center">EcoForecast</h1>
                 <p className="mt-6 xs:mt-8 text-xs xs:text-sm sm:text-base text-center text-grey-light">
-                    <span className="mr-4">React</span>
-                    <span className="ml-4">Google Earth Engine JavaScript API</span>
+                    <span className="mr-7">React</span>
+                    <span>Google Earth Engine JavaScript API</span>
                 </p>
 
                 <div className="flex flex-col items-center mt-8 space-y-6 sm:space-y-0 sm:flex-row sm:justify-center sm:space-x-5">
