@@ -22,7 +22,7 @@ const Education = () => {
                         <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] text-right text-grey-light">Waterloo, ON</p>
                     </div>
                     <div className="flex justify-between w-full text-grey-light">
-                        <p className="text-xs xs:text-sm sm:text-[1rem] text-left">BASc, Computer Engineering</p>
+                        <p className="text-xs xs:text-sm sm:text-[1rem] text-left">BSE, Software Engineering</p>
                         <p className="text-xs xs:text-sm text-right text-grey-present">2024&mdash;2029</p>
                     </div>
                 </div>
