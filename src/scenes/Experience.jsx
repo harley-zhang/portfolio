@@ -35,7 +35,7 @@ const Experience = () => {
                                 rel="noreferrer noopener"
                                 className="text-xs xs:text-sm sm:text-[1rem] text-left text-grey-light transition-all duration-300 decoration-grey-underline hover:decoration-grey-light decoration-2 underline"
                             >
-                                Cornell Tech
+                                Social Technologies Lab, Cornell Tech
                             </a>
                             <p className="text-xs xs:text-sm text-right text-grey-present">Jul 2024&mdash;Present</p>
                         </div>
