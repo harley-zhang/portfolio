@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const cards = [
-  {
+  /*{
     url: "../assets/Projects/ecoforecast.png",
     title: "EcoForecast",
     description: "Simulation model data for climate and plant trends",
@@ -12,7 +12,7 @@ const cards = [
     id: 1,
     color: "text-white",
     shadow: "yes",
-  },
+  },*/
   {
     url: "../assets/Projects/content-deserts.png",
     title: "Content Deserts",
