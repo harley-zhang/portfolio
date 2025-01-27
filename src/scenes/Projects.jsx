@@ -26,7 +26,7 @@ const cards = [
   {
     url: "../assets/Projects/dataanalysis.png",
     title: "Data Analysis",
-    description: "Data summarizer for Yale conservation project",
+    description: "Data analysis for Yale environmental research",
     tools: "R",
     link: "/data-analysis",
     id: 3,
@@ -47,7 +47,7 @@ const cards = [
     url: "../assets/Projects/portfolio.png",
     title: "Portfolio",
     description: "Keep tabs with my education and career",
-    tools: "React",
+    tools: "React &nbsp;&nbsp; Tailwind",
     link: "https://github.com/harley-zhang/portfolio",
     id: 5,
     color: "text-black",
