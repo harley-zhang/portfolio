@@ -111,6 +111,7 @@ const Landing = () => {
                                             autoStart: true,
                                             loop: true,
                                             delay: 20,
+                                            deleteSpeed: 20,
                                             pauseFor: 100000
                                         }}
                                     />
