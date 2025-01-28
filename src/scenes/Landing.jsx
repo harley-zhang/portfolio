@@ -61,17 +61,17 @@ const Landing = () => {
                                         Software Engineering @<span className="ml-1 font-sf-medium">University of Waterloo</span>
                                     </div>
                                 </div>
-                                <div className="flex items-center justify-start text-[1.2rem]">
+                                <div className="flex items-center justify-start text-[1.3rem]">
                                     <div className="flex items-center justify-center h-12 rounded-lg text-white">
                                         <span className="font-mono text-md px-2 py-1 mr-3 rounded-md bg-grey-present-bg text-grey-present">{sweCount}</span> SWE internships
                                     </div>
                                 </div>
-                                <div className="flex items-center justify-start text-[1.2rem]">
+                                <div className="flex items-center justify-start text-[1.3rem]">
                                     <div className="flex items-center justify-center h-12 bg-grey rounded-lg text-white">
                                         <span className="font-mono text-md px-2 py-1 mr-3 rounded-md bg-grey-present-bg text-grey-present">{hackathonsCount}</span> hackathons
                                     </div>
                                 </div>
-                                <div className="flex items-center justify-start text-[1.2rem]">
+                                <div className="flex items-center justify-start text-[1.3rem]">
                                     <div className="flex items-center justify-center h-12 bg-grey rounded-lg text-white">
                                         <span className="font-mono text-md px-2 py-1 mr-3 rounded-md bg-grey-present-bg text-grey-present">{githubCount}</span> public projects
                                     </div>

@@ -43,9 +43,9 @@ const Experience = () => {
                 </div>
                 <ul className="pl-4 xs:pl-8 sm:pl-16 list-disc text-sm xs:text-base mb-6">
                     <li className="mt-3">
-                        Parsed and filtered US Census ZIP Code Tabulation Area shapefile and LLM-generated data using Python.                    </li>
+                        Parsed US Census ZIP Code shapefile and Hugging Face generated datasets using Python.                    </li>
                     <li className="mt-3">
-                        Developed app for media companies to analyze coverage differences by neighborhood using React and Uber's <a
+                        Developed web app for NYC media companies to analyze coverage differences using React and Uber's <a
                             href="https://deck.gl/"
                             target="_blank"
                             rel="noreferrer noopener"
@@ -98,7 +98,7 @@ const Experience = () => {
                         .
                     </li>
                     <li className="mt-3">
-                        Summarized next-century climate and plant simulations and 2022-2023 field survey stats using R.
+                        Summarized next-century climate and plant simulations and 2022-2023 field survey stats for 130+ sites using R.
                     </li>
                 </ul>
 
