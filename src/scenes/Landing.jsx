@@ -42,7 +42,7 @@ const Landing = () => {
     return (
         <section id="home" className="md:w-[1000px] md:mx-auto px-5 pt-8 sm:pt-16 pb-16 sm:pb-24">
             {/* Harley Zhang Name */}
-            <div className="text-[2.3rem] xs:text-[2.6rem] z-10 text-start mt-16 md:mt-32">
+            <div className="text-[2.3rem] xs:text-[2.6rem] z-10 text-center mt-16 md:mt-32">
                 Harley Zhang
             </div>
 
@@ -110,9 +110,9 @@ const Landing = () => {
                                             ],
                                             autoStart: true,
                                             loop: true,
-                                            delay: 20,
-                                            deleteSpeed: 10,
-                                            pauseFor: 2
+                                            delay: 10,
+                                            deleteSpeed: 5,
+                                            pauseFor: 200000000
                                         }}
                                     />
                                 </div>

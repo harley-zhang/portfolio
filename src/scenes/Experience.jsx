@@ -86,16 +86,7 @@ const Experience = () => {
                 </div>
                 <ul className="pl-4 xs:pl-8 sm:pl-16 list-disc text-sm xs:text-base mb-6">
                     <li className="mt-3">
-                        Simulated 100 years of plant biomass in a Colorado conservation area using&nbsp;
-                        <a
-                            href="https://doi.org/10.1002/ecs2.2394"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            className="text-left text-white transition-all duration-300 decoration-grey-underline hover:decoration-white decoration-2 underline"
-                        >
-                            STEPWAT2
-                        </a>
-                        .
+                        Simulated 100 years of plant biomass in a Colorado conservation area using Bash on Yale's supercomputers.
                     </li>
                     <li className="mt-3">
                         Summarized next-century climate and plant simulations and 2022-2023 field survey stats for 130+ sites using R.
