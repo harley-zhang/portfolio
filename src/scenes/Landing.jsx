@@ -17,7 +17,7 @@ const Landing = () => {
         }, 100);
 
         const hackathonsInterval = setInterval(() => {
-            if (hackathonsCount < 2) {
+            if (hackathonsCount < 3) {
                 setHackathonsCount(prev => prev + 1);
             } else {
                 clearInterval(hackathonsInterval);
