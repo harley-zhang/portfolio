@@ -48,7 +48,7 @@ const EcoForecast = () => {
 
                 <div className="flex flex-col items-center mt-8 space-y-6 sm:space-y-0 sm:flex-row sm:justify-center sm:space-x-5">
                     <a
-                        href="https://www.ecoforecast.info/"
+                        href="https://ecoforecast.vercel.app/"
                         className="text-[.85rem] sm:text-sm flex items-center bg-white hover:opacity-90 transition-all duration-300 text-black px-5 py-2 rounded-full"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -126,7 +126,7 @@ const EcoForecast = () => {
                     <div className="flex justify-center mt-8">
 
                         <a
-                            href="https://ecoforecast.info/"
+                            href="https://ecoforecast.vercel.app/"
                             className="text-[.85rem] sm:text-sm flex items-center bg-white hover:opacity-90 transition-all text-black duration-300 px-6 py-2 rounded-full mr-5"
                             target="_blank"
                             rel="noopener noreferrer"
