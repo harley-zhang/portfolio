@@ -13,10 +13,10 @@ const Experience = () => {
 
             <div className="flex flex-col">
 
-                {/* CORNELL TECH */}
+                {/* SHOPIFY */}
                 <div className="flex flex-row items-center">
 
-                    {/* Cornell Icon */}
+                    {/* Shopify Icon */}
                     <div className="flex-shrink-0 my-4">
                         <img src={Shopify} alt="Shopify" className="w-[3.6rem] h-[3.6rem] rounded-[0.32rem]" />
                     </div>
@@ -28,7 +28,7 @@ const Experience = () => {
                                 <p className="text-base sm:text-xl">Software Engineer</p>
                                 <p className="text-[0.7rem] xs:text-[0.8rem] sm:text-[0.9rem] bg-grey-present-bg text-grey-present px-2 py- rounded-full ml-3">Incoming</p>
                             </div>
-                            <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] text-grey-light text-right">New York, NY</p>
+                            <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] text-grey-light text-right">Toronto, ON</p>
                         </div>
                         <div className="flex justify-between w-full">
                             <a
@@ -39,7 +39,7 @@ const Experience = () => {
                             >
                                 Shopify
                             </a>
-                            <p className="text-xs xs:text-sm text-right text-grey-present">Jul 2024&mdash;Present</p>
+                            <p className="text-xs xs:text-sm text-right text-grey-present">May 2025&mdash;Aug 2025</p>
                         </div>
                     </div>
                 </div>
