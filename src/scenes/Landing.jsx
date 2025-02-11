@@ -9,7 +9,7 @@ const Landing = () => {
 
     useEffect(() => {
         const sweInterval = setInterval(() => {
-            if (sweCount < 2) {
+            if (sweCount < 3) {
                 setSweCount(prev => prev + 1);
             } else {
                 clearInterval(sweInterval);

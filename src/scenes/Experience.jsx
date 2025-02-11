@@ -1,6 +1,7 @@
+import Shopify from "../assets/Experience/shopify.png";
 import Cornell from "../assets/Experience/cornell-tech.png";
-import Yale from "../assets/Experience/yale-lauenroth.png";
-import UofT from "../assets/Experience/uoft-cubes.png";
+import Yale from "../assets/Experience/yale.png";
+import UofT from "../assets/Experience/uoft.png";
 
 const Experience = () => {
     return (
@@ -11,10 +12,49 @@ const Experience = () => {
             </p>
 
             <div className="flex flex-col">
+
                 {/* CORNELL TECH */}
                 <div className="flex flex-row items-center">
 
-                    {/* UofT Icon */}
+                    {/* Cornell Icon */}
+                    <div className="flex-shrink-0 my-4">
+                        <img src={Shopify} alt="Shopify" className="w-[3.6rem] h-[3.6rem] rounded-[0.32rem]" />
+                    </div>
+
+                    {/* Text */}
+                    <div className="ml-5 w-full">
+                        <div className="flex justify-between w-full mb-2">
+                            <div className="flex items-center">
+                                <p className="text-base sm:text-xl">Software Engineer</p>
+                                <p className="text-[0.7rem] xs:text-[0.8rem] sm:text-[0.9rem] bg-grey-present-bg text-grey-present px-2 py- rounded-full ml-3">Incoming</p>
+                            </div>
+                            <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] text-grey-light text-right">New York, NY</p>
+                        </div>
+                        <div className="flex justify-between w-full">
+                            <a
+                                href="https://www.shopify.com/"
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                className="text-xs xs:text-sm sm:text-[1rem] text-left text-grey-light transition-all duration-300 decoration-grey-underline hover:decoration-grey-light decoration-2 underline"
+                            >
+                                Shopify
+                            </a>
+                            <p className="text-xs xs:text-sm text-right text-grey-present">Jul 2024&mdash;Present</p>
+                        </div>
+                    </div>
+                </div>
+                <ul className="pl-4 xs:pl-8 sm:pl-16 list-disc text-sm xs:text-base mb-6">
+                    {/*<li className="mt-3">
+                    LIST ITEMS
+                    </li>*/}
+                </ul>
+
+
+
+                {/* CORNELL TECH */}
+                <div className="flex flex-row items-center">
+
+                    {/* Cornell Icon */}
                     <div className="flex-shrink-0 my-4">
                         <img src={Cornell} alt="Cornell Tech" className="w-[3.6rem] h-[3.6rem] rounded-[0.32rem]" />
                     </div>
@@ -24,7 +64,6 @@ const Experience = () => {
                         <div className="flex justify-between w-full mb-2">
                             <div className="flex items-center">
                                 <p className="text-base sm:text-xl">Software Developer</p>
-                                <p className="text-[0.7rem] xs:text-[0.8rem] sm:text-[0.9rem] bg-grey-present-bg text-grey-present px-2 py- rounded-full ml-3">Present</p>
                             </div>
                             <p className="text-xs xs:text-sm sm:text-[1rem] mt-[.1rem] text-grey-light text-right">New York, NY</p>
                         </div>
@@ -35,9 +74,9 @@ const Experience = () => {
                                 rel="noreferrer noopener"
                                 className="text-xs xs:text-sm sm:text-[1rem] text-left text-grey-light transition-all duration-300 decoration-grey-underline hover:decoration-grey-light decoration-2 underline"
                             >
-                                Social Technologies Lab, Cornell Tech
+                                Cornell Tech
                             </a>
-                            <p className="text-xs xs:text-sm text-right text-grey-present">Jul 2024&mdash;Present</p>
+                            <p className="text-xs xs:text-sm text-right text-grey-present">May 2024&mdash;Dec 2024</p>
                         </div>
                     </div>
                 </div>
@@ -57,12 +96,12 @@ const Experience = () => {
                 </ul>
 
 
-                {/* YALE LAUENROTH*/}
+                {/* YALE */}
                 <div className="flex flex-row items-center mt-4">
 
                     {/* Yale Icon */}
                     <div className="flex-shrink-0 my-4">
-                        <img src={Yale} alt="Lauenroth Lab, Yale University" className="w-[3.6rem] h-[3.6rem] rounded-[0.32rem]" />
+                        <img src={Yale} alt="Yale University" className="w-[3.6rem] h-[3.6rem] rounded-[0.32rem]" />
                     </div>
 
                     {/* Text */}
@@ -73,12 +112,12 @@ const Experience = () => {
                         </div>
                         <div className="flex justify-between w-full">
                             <a
-                                href="https://www.researchgate.net/lab/William-K-Lauenroth-Lab"
+                                href="https://www.yale.edu/"
                                 target="_blank"
                                 rel="noreferrer noopener"
                                 className="text-xs xs:text-sm sm:text-[1rem] text-left text-grey-light transition-all duration-300 decoration-grey-underline hover:decoration-grey-light decoration-2 underline"
                             >
-                                Lauenroth Lab, Yale University
+                                Yale University
                             </a>
                             <p className="text-xs xs:text-sm text-right text-grey-present">Mar 2021&mdash;Jun 2024</p>
                         </div>
@@ -93,12 +132,12 @@ const Experience = () => {
                     </li>
                 </ul>
 
-                {/* UOFT CUBES */}
+                {/* UOFT */}
                 <div className="flex flex-row items-center mt-4">
 
                     {/* UofT Icon */}
                     <div className="flex-shrink-0 my-4">
-                        <img src={UofT} alt="CUBES Lab, University of Toronto" className="w-[3.6rem] h-[3.6rem] rounded-[0.32rem]" />
+                        <img src={UofT} alt="University of Toronto" className="w-[3.6rem] h-[3.6rem] rounded-[0.32rem]" />
                     </div>
 
                     {/* Text */}
@@ -114,7 +153,7 @@ const Experience = () => {
                                 rel="noreferrer noopener"
                                 className="text-xs xs:text-sm sm:text-[1rem] text-left text-grey-light transition-all duration-300 decoration-grey-underline hover:decoration-grey-light decoration-2 underline"
                             >
-                                CUBES Lab, University of Toronto
+                                University of Toronto
                             </a>
                             <p className="text-xs xs:text-sm text-right text-grey-present">Jun 2023&mdash;Dec 2023</p>
                         </div>
