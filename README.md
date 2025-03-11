@@ -5,7 +5,7 @@
     <br><br>
 </div>
   
-I'm a student at the University of Waterloo studying Software Engineering, interning at Shopify during the summer.
+I'm a student at the University of Waterloo studying Software Engineering.
 
 My interests are data science, software, and hardware and their applications for environmental sustainability and social causes. I'm eager to work on meaningful projects that make a positive impact.
 
@@ -14,5 +14,4 @@ My interests are data science, software, and hardware and their applications for
 - Projects
 - Experience
 - Education
-- Resume
 - Contacts
