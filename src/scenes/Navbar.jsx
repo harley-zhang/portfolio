@@ -27,16 +27,6 @@ const Navbar = () => {
                 <a href="/">
                     <img src={logo} alt="harley-zhang-logo" className="h-6 z-50" />
                 </a>
-                <div className="flex justify-between gap-14 text-[13px] font-medium">
-                    <a
-                        href="/resume"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center"
-                    >
-                        Resume <GoArrowUpRight size={15} className="ml-1" />
-                    </a>
-                </div>
             </div>
         </nav>
     );
