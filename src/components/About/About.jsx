@@ -18,12 +18,12 @@ function About() {
       <div className="action-container">
         <button className="chat-button" onClick={openCalendly}>
           Book a 15 Min Chat
-          <PiArrowUpRight size={20} />
+          <PiArrowUpRight size={18} />
         </button>
         
         <a href="mailto:harley.zhang@uwaterloo.ca" className="email-link">
           harley.zhang@uwaterloo.ca
-          <PiArrowUpRight size={20} />
+          <PiArrowUpRight size={18} />
         </a>
       </div>
     </section>

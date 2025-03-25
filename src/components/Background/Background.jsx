@@ -14,7 +14,7 @@ function Background() {
         <filter id='noiseFilter'>
           <feTurbulence 
             type='fractalNoise' 
-            baseFrequency='0.45' 
+            baseFrequency='0.6' 
             stitchTiles='stitch'/>
           <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0" />
         </filter>

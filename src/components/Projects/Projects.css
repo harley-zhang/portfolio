@@ -1,0 +1,365 @@
+.projects-section {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px 100px;
+  position: relative;
+}
+
+.projects-heading {
+  font-weight: 500;
+  margin-bottom: 60px;
+  display: inline-block;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: visible;
+  padding-bottom: 60px;
+}
+
+.carousel {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 600px;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+.carousel-item {
+  position: absolute;
+  transition: all 0.5s ease;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center;
+  width: 100%;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  pointer-events: all;
+  z-index: 3;
+  left: 50%;
+  transform: translateX(-50%) scale(1);
+}
+
+.carousel-item.active .window-container.phone {
+  /* No special margin needed here */
+}
+
+.carousel-item.prev {
+  opacity: 0.5;
+  z-index: 2;
+  pointer-events: none;
+  left: calc(50% - 600px);
+  transform: translateX(-50%) scale(0.8);
+}
+
+.carousel-item.next {
+  opacity: 0.5;
+  z-index: 2;
+  pointer-events: none;
+  left: calc(50% + 600px);
+  transform: translateX(-50%) scale(0.8);
+}
+
+.carousel-item.prev .window-container.phone,
+.carousel-item.next .window-container.phone {
+  margin: 0 auto;
+}
+
+.window-container {
+  position: relative;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.window-container.web {
+  width: 1000px;
+  height: 600px;
+  max-width: 100%;
+  max-height: 600px;
+  aspect-ratio: 2400/1660;
+}
+
+.window-container.phone {
+  width: 300px;
+  height: 600px;
+  max-width: 100%;
+  max-height: 600px;
+  aspect-ratio: 888/1920;
+}
+
+.window-controls {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.control-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.control-dot.red-dot {
+  background-color: #ff5f56;
+}
+
+.control-dot.yellow-dot {
+  background-color: #ffbd2e;
+}
+
+.control-dot.green-dot {
+  background-color: #27c93f;
+}
+
+.dynamic-island {
+  position: relative;
+  height: 24px;
+  width: 120px;
+  background-color: white;
+  border-radius: 12px;
+  margin: 8px auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.media-container {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+}
+
+.window-container.phone .media-container {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0 0 12px 12px;
+  height: calc(100% - 25px);
+}
+
+.project-media {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0 0 12px 12px;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.play-pause-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  font-size: 14px;
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  font-size: 18px;
+  transition: opacity 0.3s ease;
+}
+
+.nav-arrow:hover {
+  opacity: 0.8;
+}
+
+.nav-arrow.left {
+  right: 80px;
+}
+
+.nav-arrow.right {
+  right: 20px;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  padding: 10px 0;
+  z-index: 10;
+}
+
+.indicator-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.indicator-dot.active {
+  background-color: #333;
+}
+
+.window-container.web .nav-arrow,
+.window-container.phone .nav-arrow {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .projects-section {
+    padding: 0 10px 80px;
+    margin: 60px auto;
+  }
+  
+  .projects-heading {
+    margin-bottom: 50px;
+  }
+  
+  .carousel {
+    height: auto;
+    min-height: 300px;
+    margin-bottom: 50px;
+  }
+  
+  .carousel-container {
+    padding-bottom: 60px;
+  }
+  
+  .carousel-item.prev {
+    opacity: 0;
+    transform: translateX(-150%) scale(0.8);
+    left: 0;
+  }
+  
+  .carousel-item.next {
+    opacity: 0;
+    transform: translateX(50%) scale(0.8);
+    left: 100%;
+  }
+  
+  .window-container.web {
+    width: calc(100% - 20px);
+    height: auto;
+    max-width: 900px;
+    max-height: 550px;
+  }
+  
+  .window-container.phone {
+    width: 300px;
+    height: auto;
+    max-height: 550px;
+    max-width: 270px;
+    aspect-ratio: 888/1920;
+  }
+  
+  .nav-arrow {
+    transform: none;
+    top: -30px;
+  }
+  
+  .carousel-indicators {
+    bottom: -30px;
+  }
+}
+
+@media (max-width: 800px) {
+  .projects-section {
+    margin: 40px auto;
+    padding: 0 10px 70px;
+  }
+  
+  .projects-heading {
+    margin-bottom: 30px;
+  }
+  
+  .carousel-container {
+    padding-bottom: 50px;
+  }
+  
+  .carousel {
+    margin-bottom: 40px;
+  }
+  
+  .window-container.web {
+    width: calc(100% - 20px);
+    max-width: calc(100% - 20px);
+  }
+  
+  .window-container.phone {
+    height: auto;
+    width: calc((100vw - 40px) * 0.3);
+    max-width: 300px;
+  }
+  
+  .carousel-indicators {
+    bottom: -25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-section {
+    padding: 0 10px 60px;
+  }
+  
+  .carousel {
+    min-height: 250px;
+    margin-bottom: 30px;
+  }
+  
+  .carousel-container {
+    padding-bottom: 40px;
+  }
+  
+  .carousel-indicators {
+    bottom: -20px;
+  }
+} 
