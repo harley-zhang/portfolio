@@ -1,0 +1,45 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-family: 'Atkinson Hyperlegible Mono', monospace;
+  font-size: 0.9rem;
+}
+
+::selection {
+  background: rgba(0, 0, 0, 0.1);
+  color: inherit;
+}
+
+::-moz-selection {
+  background: rgba(0, 0, 0, 0.1);
+  color: inherit;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  padding: 0;
+}
