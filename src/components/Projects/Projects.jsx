@@ -109,7 +109,7 @@ function Projects() {
 
   return (
     <section className="projects-section">
-      <p className="projects-heading">Projects</p>
+      <p className="projects-heading">My work</p>
       <div 
         className="carousel-container" 
         ref={carouselRef}
