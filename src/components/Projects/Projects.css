@@ -1,11 +1,24 @@
-.projects-section {
-    padding: 2rem 0;
+/* Adding font-face for SF-Pro */
+@font-face {
+    font-family: 'SF-Pro-Text';
+    src: url('/assets/fonts/SF-Pro-Text-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.projects-section .projects-heading {
-    font-weight: 600;
+.projects-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 0;
+    position: relative;
+}
+
+.projects-heading {
     margin-bottom: 2rem;
     text-align: center;
+    font-weight: 600;
 }
 
 /* Debug container */
@@ -23,69 +36,121 @@
     margin-top: 20px;
 }
 
-/* Carousel Styles */
-.projects-section .carousel-container {
-    height: 800px;
+/* New carousel styles */
+.carousel-container {
     width: 100%;
     position: relative;
+    overflow: visible;
+    user-select: none;
+    touch-action: pan-y;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
-.projects-section .carousel-controls {
+.carousel-track {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
+    align-items: center;
+    position: relative;
+    transition: transform 0.3s ease;
 }
 
-.projects-section .carousel-controls button {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 4px;
+.carousel-item {
+    position: absolute;
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: scale(0.7);
+    pointer-events: none;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+    z-index: 10;
+    position: relative;
+    pointer-events: auto;
+}
+
+.carousel-item.prev {
+    opacity: 0.5;
+    transform: scale(0.8) translateX(-40%);
+    z-index: 5;
+    pointer-events: auto;
+}
+
+.carousel-item.next {
+    opacity: 0.5;
+    transform: scale(0.8) translateX(40%);
+    z-index: 5;
+    pointer-events: auto;
+}
+
+.carousel-item.prev .phone-card {
+    transform: translateX(-140%);
+}
+
+.carousel-item.next .phone-card {
+    transform: translateX(140%);
+}
+
+/* Navigation dots */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 0.5rem;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #7c7c7c3c;
+    border: none;
+    padding: 0;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.projects-section .carousel-controls button:hover {
-    background: rgba(255, 255, 255, 0.2);
+.carousel-dot.active {
+    background-color: #7c7c7c;
+    transform: scale(1.2);
 }
 
-.projects-section .carousel-controls button.active {
-    background: rgba(255, 255, 255, 0.3);
-    border-color: rgba(255, 255, 255, 0.5);
+.carousel-dot:hover {
+    background-color: #999;
+}
+
+.carousel-dot:focus,
+.carousel-dot:active {
+    outline: none;
+    border: none;
 }
 
 /* Project Card Styles */
 .projects-section .project-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.projects-section .card-content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: none;
+    background-color: transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Web Card Styles */
 .projects-section .web-card .card-content {
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.6);
     border: 8px solid rgba(255, 255, 255, 0);
     border-top-width: 30px;
-    /* Thicker top border */
     padding: 0;
+    width: auto;
+    height: clamp(265px, 45vw, 580px);
 }
 
 .projects-section .web-card .window-controls {
     position: absolute;
-    top: -20px;
-    /* Adjusted for thicker top border */
-    left: 4px;
+    top: 10px;
+    left: 8px;
     display: flex;
     gap: 6px;
     z-index: 5;
@@ -113,24 +178,61 @@
 
 /* Phone Card Styles */
 .projects-section .phone-card .card-content {
-    border-radius: calc(580px * 0.0655);  /* 38px/580px ratio */
-    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: calc(clamp(265px, 45vw, 580px) * 0.0655);
+    background-color: rgba(255, 255, 255, 0.6);
     border: 6px solid rgba(255, 255, 255, 0);
     padding: 0;
     position: relative;
+    width: auto;
+    height: clamp(265px, 45vw, 580px);
 }
 
 .projects-section .phone-card .dynamic-island {
     position: absolute;
-    top: 6px;
+    top: 7px;
     left: 50%;
     transform: translateX(-50%);
-    width: calc(580px * 0.1345);  /* 78px/580px ratio */
-    height: calc(580px * 0.0362);  /* 21px/580px ratio */
+    width: calc(clamp(265px, 45vw, 580px) * 0.1345);
+    height: calc(clamp(265px, 45vw, 580px) * 0.0362);
     background-color: #000000;
-    border-radius: 100px;
+    border-radius: calc(clamp(265px, 45vw, 580px) * 0.0362);
     z-index: 10;
     border: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects-section .phone-card .phone-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: #b4b4b4;
+    mix-blend-mode: difference;
+    font-size: calc(clamp(275px, 45vw, 580px) * 0.018);
+    margin-left: calc(clamp(275px, 45vw, 580px) * 0.036);
+    gap: calc(clamp(265px, 45vw, 580px) * 0.2);
+}
+
+.projects-section .phone-card .phone-time {
+    font-family: 'SF-Pro-Text', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: calc(clamp(265px, 45vw, 580px) * 0.026);
+}
+
+.projects-section .phone-card .phone-icons {
+    display: flex;
+    align-items: center;
+    gap: calc(clamp(265px, 45vw, 580px) * 0.008);
+}
+
+.projects-section .phone-card .phone-icon {
+    font-size: calc(clamp(265px, 45vw, 580px) * 0.026);
+}
+
+.projects-section .phone-card .phone-icon.battery {
+    font-size: calc(clamp(265px, 45vw, 580px) * 0.034);
 }
 
 .projects-section .media-container {
@@ -138,7 +240,6 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    /* Contain the media within border */
     height: 100%;
 }
 
@@ -149,24 +250,12 @@
 }
 
 .projects-section .web-card .project-media {
-    border-radius: 7px;
+    border-radius: 9px;
 }
 
 .projects-section .phone-card .project-media {
-    border-radius: calc(580px * 0.0552);  /* 32px/580px ratio */
-    /* Match the phone card's rounded corners */
+    border-radius: calc(clamp(265px, 45vw, 580px) * 0.048);
     height: 100%;
-}
-
-.projects-section .web-card .card-content {
-    width: auto;
-    height: 580px;
-}
-
-.projects-section .phone-card .card-content {
-    width: auto;
-    height: 580px;
-    /* Same height as web cards */
 }
 
 .projects-section .web-card {
@@ -175,29 +264,4 @@
 
 .projects-section .phone-card {
     height: auto;
-    /* Match web card height */
-}
-
-@media (max-width: 1199px) {
-
-    .projects-section .web-card .card-content {
-        width: auto;
-        height: clamp(265px, 45vw, 580px);
-    }
-
-    .projects-section .phone-card .card-content {
-        width: auto;
-        height: clamp(265px, 45vw, 580px);
-        border-radius: calc(clamp(265px, 38vw, 480px) * 0.0655);
-    }
-
-    .projects-section .phone-card .dynamic-island {
-        width: calc(clamp(265px, 38vw, 480px) * 0.1345);
-        height: calc(clamp(265px, 38vw, 480px) * 0.0362);
-        border-radius: calc(clamp(265px, 38vw, 480px) * 0.0362);
-    }
-    
-    .projects-section .phone-card .project-media {
-        border-radius: calc(clamp(265px, 38vw, 480px) * 0.0552);
-    }
 }
