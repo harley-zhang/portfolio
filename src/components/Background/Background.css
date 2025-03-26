@@ -74,22 +74,22 @@
 
 @keyframes blobOne {
   0% {transform: translate(0, 0) scale(1);}
-  33% {transform: translate(9vh, 13vh) scale(1.2);}
-  66% {transform: translate(-9vh, 7vh) scale(1.3);}
+  33% {transform: translate(15vh, 15vh) scale(0.9);}
+  66% {transform: translate(-15vh, 0vh) scale(1.5);}
   100% {transform: translate(0, 0) scale(1);}
 }
 
 @keyframes blobTwo {
   0% {transform: translate(0, 0) scale(1);}
-  33% {transform: translate(-9vh, -7vh) scale(1.2);}
-  66% {transform: translate(13vh, -16vh) scale(1.4);}
+  33% {transform: translate(-10vh, 0vh) scale(0.8);}
+  66% {transform: translate(15vh, -16vh) scale(1.4);}
   100% {transform: translate(0, 0) scale(1);}
 }
 
 @keyframes blobThree {
   0% {transform: translate(0, 0) scale(1);}
-  33% {transform: translate(16vh, -11vh) scale(1.3);}
-  66% {transform: translate(-16vh, 13vh) scale(1.1);}
+  33% {transform: translate(16vh, -11vh) scale(1.5);}
+  66% {transform: translate(-16vh, 13vh) scale(1.2);}
   100% {transform: translate(0, 0) scale(1);}
 } 
 
