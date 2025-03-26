@@ -178,7 +178,7 @@
 
 /* Phone Card Styles */
 .projects-section .phone-card .card-content {
-    border-radius: calc(clamp(265px, 45vw, 580px) * 0.0655);
+    border-radius: calc(clamp(265px, 45vw, 580px) * 0.0552 + 6px);
     background-color: rgba(255, 255, 255, 0.6);
     border: 6px solid rgba(255, 255, 255, 0);
     padding: 0;
@@ -254,7 +254,7 @@
 }
 
 .projects-section .phone-card .project-media {
-    border-radius: calc(clamp(265px, 45vw, 580px) * 0.048);
+    border-radius: calc(clamp(265px, 45vw, 580px) * 0.0552);
     height: 100%;
 }
 

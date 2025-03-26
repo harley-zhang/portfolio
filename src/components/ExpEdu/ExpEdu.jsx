@@ -29,7 +29,7 @@ const education = [
         role: "University of Waterloo",
         company: "Bachelor of Software Engineering",
         logo: "/assets/ExpEdu/uwaterloo-logo.png",
-        date: "2024 - 2029",
+        date: "2024 — 2029",
         location: "Waterloo"
     }
 ];
