@@ -13,10 +13,10 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <button className="footer-button" onClick={openCalendly}>
+        <a className="footer-meeting" onClick={openCalendly}>
           Book a 15 Min Chat
           <PiArrowUpRight size={18} />
-        </button>
+        </a>
 
         <h2 className="footer-name">Harley Zhang</h2>
 
