@@ -4,7 +4,7 @@ import { MdOutlineWifi } from "react-icons/md";
 import { TbBatteryFilled } from "react-icons/tb";
 import { LiaSignalSolid } from "react-icons/lia";
 
-function ProjectCard({ project }) {
+function ProjectCard({ project, onMediaLoaded }) {
   const { name, windowType, mediaType, mediaLink } = project;
   
   const isWeb = windowType === 'web';
@@ -37,6 +37,12 @@ function ProjectCard({ project }) {
     
     return () => clearInterval(interval);
   }, []);
+
+  const handleMediaLoad = () => {
+    if (onMediaLoaded) {
+      onMediaLoaded();
+    }
+  };
   
   return (
     <div className={`project-card ${windowType}-card`}>
@@ -68,6 +74,7 @@ function ProjectCard({ project }) {
               muted 
               playsInline
               className="project-media"
+              onLoadedData={handleMediaLoad}
             >
               <source src={mediaLink} type="video/mp4" />
               Your browser does not support the video tag.
@@ -77,6 +84,7 @@ function ProjectCard({ project }) {
               src={mediaLink} 
               alt={name} 
               className="project-media"
+              onLoad={handleMediaLoad}
             />
           )}
         </div>

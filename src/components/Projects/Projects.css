@@ -6,12 +6,80 @@
     font-style: normal;
 }
 
+/* Fade-in animation for carousel */
+@keyframes fadeInUp {
+    from { 
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDelayedPrev {
+    0% { 
+        opacity: 0;
+        transform: scale(0.8) translateY(20px) translateX(-40%);
+    }
+    30% {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px) translateX(-40%);
+    }
+    100% { 
+        opacity: 0.5;
+        transform: scale(0.8) translateY(0) translateX(-40%);
+    }
+}
+
+@keyframes fadeInDelayedNext {
+    0% { 
+        opacity: 0;
+        transform: scale(0.8) translateY(20px) translateX(40%);
+    }
+    30% {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px) translateX(40%);
+    }
+    100% { 
+        opacity: 0.5;
+        transform: scale(0.8) translateY(0) translateX(40%);
+    }
+}
+
+.carousel-container.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.carousel-container.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.carousel-container.fade-in {
+    visibility: visible;
+}
+
+.carousel-container.fade-in .carousel-item.active {
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.carousel-container.fade-in .carousel-item.prev {
+    animation: fadeInDelayedPrev 1.3s ease-in-out forwards;
+}
+
+.carousel-container.fade-in .carousel-item.next {
+    animation: fadeInDelayedNext 1.3s ease-in-out forwards;
+}
+
 .projects-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 2rem 0;
+    padding: 4rem 0;
     position: relative;
 }
 

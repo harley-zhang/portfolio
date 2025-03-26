@@ -51,7 +51,26 @@ const projectData = [
 function Projects() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [startX, setStartX] = useState(0);
+  const [allMediaLoaded, setAllMediaLoaded] = useState(false);
+  const [mediaLoadedCount, setMediaLoadedCount] = useState(0);
+  const [initialLoad, setInitialLoad] = useState(true);
   const carouselRef = useRef(null);
+
+  // Handle media load completion
+  const handleMediaLoaded = () => {
+    setMediaLoadedCount(prev => prev + 1);
+  };
+
+  // Check if all media is loaded
+  useEffect(() => {
+    if (mediaLoadedCount === projectData.length) {
+      setAllMediaLoaded(true);
+      // After a delay to let animations complete, mark initial load as done
+      setTimeout(() => {
+        setInitialLoad(false);
+      }, 1500);
+    }
+  }, [mediaLoadedCount]);
 
   // Calculate which items are visible
   const getItemPosition = (index) => {
@@ -111,7 +130,7 @@ function Projects() {
     <section className="projects-section">
       <p className="projects-heading">My work</p>
       <div 
-        className="carousel-container" 
+        className={`carousel-container ${allMediaLoaded && initialLoad ? 'fade-in' : allMediaLoaded ? 'visible' : 'hidden'}`}
         ref={carouselRef}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
@@ -137,7 +156,10 @@ function Projects() {
                   zIndex: position === 'active' ? 10 : position ? 5 : 1
                 }}
               >
-                <ProjectCard project={project} />
+                <ProjectCard 
+                  project={project} 
+                  onMediaLoaded={handleMediaLoaded}
+                />
               </div>
             );
           })}
