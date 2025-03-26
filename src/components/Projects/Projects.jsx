@@ -3,48 +3,59 @@ import { useState, useEffect, useRef } from 'react';
 // import Carousel from 'react-spring-3d-carousel';
 // import { config } from 'react-spring';
 import ProjectCard from './ProjectCard';
+import { IoIosArrowForward, IoIosArrowBack, IoIosClose } from "react-icons/io";
+import { PiArrowUpRight } from "react-icons/pi";
 import './Projects.css';
 
 const projectData = [
   {
     name: "EcoForecast",
     windowType: "web",
-    stack: ["React"],
+    stack: ["Google Earth Engine", "React", "Tailwind"],
     companies: [""],
-    links: ["link"],
+    links: ["https://ecoforecast.vercel.app/", "https://github.com/harley-zhang/ecoforecast_app", "https://esajournals.onlinelibrary.wiley.com/doi/10.1002/ecs2.2394"],
+    linkDesc: ["Launch App", "GitHub", "Read the Paper"],
     mediaType: "video",
     mediaLink: "/assets/Projects/ecoforecast.mov",
-    description: ["text"]
-  },
-  {
-    name: "BeWell",
-    windowType: "phone",
-    stack: ["React"],
-    companies: [""],
-    links: ["link"],
-    mediaType: "video",
-    mediaLink: "/assets/Projects/bewell.mov",
-    description: ["text"]
+    description: ["EcoForecast is a web application that allows users to visualize and analyze future ecological changes in the sagebrush habitat across the United States with climate change scenarios. The app utilizes data generated using the STEPWAT2 simulation model and is built using React and Google Earth Engine JavaScript API.",
+      "The data spans across 14 Western US states, allowing land managers, farmers, foresters, and ranchers to visualize and simulate future dryland plant ecosystem dynamics based on plant functional types, climate scenarios, and land use factors.",
+      "The app was built during my time as a research assistant at the Yale School of the Environment, and received feedback from collaborating researchers at the US Geological Survey, Marshall University, and Utah State University."
+    ]
   },
   {
     name: "Content Deserts",
     windowType: "web",
-    stack: ["React"],
+    stack: ["deck.gl", "React", "Tailwind"],
     companies: [""],
-    links: ["link"],
+    links: [],
+    linkDesc: [],
     mediaType: "image",
     mediaLink: "/assets/Projects/content-deserts.png",
-    description: ["text"]
+    description: ["Content Deserts are areas that are underserved by local news outlets. This app, which is not public due to NDA, simplifies spatial data analysis for local news organizations to help them easily identify areas that are underrepresented.",
+      "The app was built during my time as a research assistant at the Social Technologies Lab at Cornell Tech and was a collaborative effort with Columbia University, and The City."
+    ]
+  },
+  {
+    name: "BeWell",
+    windowType: "phone",
+    stack: ["React Native", "Expo", "Cohere", "Google Cloud", "MongoDB"],
+    companies: [""],
+    links: ["https://devpost.com/software/bewell-x53ypc", "https://github.com/harley-zhang/BeWell"],
+    linkDesc: ["Devpost", "GitHub"],
+    mediaType: "video",
+    mediaLink: "/assets/Projects/bewell.mov",
+    description: ["BeWell is a mobile app that uses AI to give users one personalized, interesting, and uplifting prompt each day to take a photo of. The app was built as part of the 2025 Gen AI Genesis Hackathon in Toronto (did not win)."]
   },
   {
     name: "Conservation Statistics",
     windowType: "web",
-    stack: ["React"],
+    stack: ["R"],
     companies: [""],
-    links: ["link"],
+    links: ["https://github.com/harley-zhang/Conservation_statistics"],
+    linkDesc: ["GitHub"],
     mediaType: "image",
     mediaLink: "/assets/Projects/conservation-statistics.png",
-    description: ["text"]
+    description: ["Open-source R program for Yale researchers to summarize 2022 and 2023 environmental survey statistics for a 172,000-acre conservation area in Colorado. Developed during my time as a Research Assistant at the Yale School of the Environment as part of The Partnership in Forestry and Rangeland Research Program. Uses dplyr, tidyr, and stringr."]
   }
 ];
 
@@ -54,6 +65,10 @@ function Projects() {
   const [allMediaLoaded, setAllMediaLoaded] = useState(false);
   const [mediaLoadedCount, setMediaLoadedCount] = useState(0);
   const [initialLoad, setInitialLoad] = useState(true);
+  const [expandedView, setExpandedView] = useState(false);
+  const [expandedProject, setExpandedProject] = useState(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [expandingOrClosing, setExpandingOrClosing] = useState(false);
   const carouselRef = useRef(null);
 
   // Handle media load completion
@@ -74,6 +89,7 @@ function Projects() {
 
   // Calculate which items are visible
   const getItemPosition = (index) => {
+    if (expandedView && index === activeIndex) return 'active hidden';
     if (index === activeIndex) return 'active';
     if (index === (activeIndex + 1) % projectData.length) return 'next';
     if (index === (activeIndex - 1 + projectData.length) % projectData.length) return 'prev';
@@ -81,11 +97,32 @@ function Projects() {
   };
 
   const handleNext = () => {
-    setActiveIndex((prev) => (prev === projectData.length - 1 ? 0 : prev + 1));
+    if (expandedView) {
+      const nextIndex = (activeIndex + 1) % projectData.length;
+      handleExpandedTransition(nextIndex);
+    } else {
+      setActiveIndex((prev) => (prev === projectData.length - 1 ? 0 : prev + 1));
+    }
   };
 
   const handlePrev = () => {
-    setActiveIndex((prev) => (prev === 0 ? projectData.length - 1 : prev - 1));
+    if (expandedView) {
+      const prevIndex = (activeIndex - 1 + projectData.length) % projectData.length;
+      handleExpandedTransition(prevIndex);
+    } else {
+      setActiveIndex((prev) => (prev === 0 ? projectData.length - 1 : prev - 1));
+    }
+  };
+
+  const handleExpandedTransition = (newIndex) => {
+    setIsTransitioning(true);
+
+    // Simply change the index and project after fade out
+    setTimeout(() => {
+      setActiveIndex(newIndex);
+      setExpandedProject(projectData[newIndex]);
+      setIsTransitioning(false);
+    }, 400);
   };
 
   const handleDotClick = (index) => {
@@ -93,43 +130,99 @@ function Projects() {
   };
 
   const handleTouchStart = (e) => {
-    setStartX(e.touches[0].clientX);
+    if (!expandedView) {
+      setStartX(e.touches[0].clientX);
+    }
   };
 
   const handleTouchEnd = (e) => {
-    const endX = e.changedTouches[0].clientX;
-    const diffX = startX - endX;
-    
-    if (Math.abs(diffX) > 50) { // Minimum swipe distance
-      if (diffX > 0) {
-        handleNext();
-      } else {
-        handlePrev();
+    if (!expandedView) {
+      const endX = e.changedTouches[0].clientX;
+      const diffX = startX - endX;
+
+      if (Math.abs(diffX) > 50) { // Minimum swipe distance
+        if (diffX > 0) {
+          handleNext();
+        } else {
+          handlePrev();
+        }
       }
     }
   };
 
   const handleMouseDown = (e) => {
-    setStartX(e.clientX);
+    if (!expandedView) {
+      setStartX(e.clientX);
+    }
   };
 
   const handleMouseUp = (e) => {
-    const endX = e.clientX;
-    const diffX = startX - endX;
-    
-    if (Math.abs(diffX) > 50) { // Minimum swipe distance
-      if (diffX > 0) {
-        handleNext();
-      } else {
-        handlePrev();
+    if (!expandedView) {
+      const endX = e.clientX;
+      const diffX = startX - endX;
+
+      if (Math.abs(diffX) > 50) { // Minimum swipe distance
+        if (diffX > 0) {
+          handleNext();
+        } else {
+          handlePrev();
+        }
       }
     }
   };
 
+  const openExpandedView = () => {
+    // Immediately hide active item
+    setExpandedView(true);
+    setExpandedProject(projectData[activeIndex]);
+    document.body.style.overflow = 'hidden';
+
+    // Apply transition after a brief delay
+    setTimeout(() => {
+      setExpandingOrClosing(true);
+
+      // Reset after animation completes
+      setTimeout(() => {
+        setExpandingOrClosing(false);
+      }, 400);
+    }, 50);
+  };
+
+  const closeExpandedView = () => {
+    // Start both transitions at the same time - set both states immediately
+    setIsTransitioning(true);
+    setExpandingOrClosing(true);
+
+    // After half the animation duration, allow the card to start fading in
+    // while the expanded view is still fading out
+    setTimeout(() => {
+      setExpandingOrClosing(false);
+    }, 100);
+
+    // After the full animation duration, clean up
+    setTimeout(() => {
+      setExpandedView(false);
+      setIsTransitioning(false);
+      document.body.style.overflow = '';
+    }, 300);
+  };
+
+  // Add ESC key handler for closing expanded view
+  useEffect(() => {
+    const handleEscKey = (e) => {
+      if (e.key === 'Escape' && expandedView) {
+        closeExpandedView();
+      }
+    };
+
+    window.addEventListener('keydown', handleEscKey);
+    return () => window.removeEventListener('keydown', handleEscKey);
+  }, [expandedView]);
+
   return (
     <section className="projects-section">
       <p className="projects-heading">My work</p>
-      <div 
+      <div
         className={`carousel-container ${allMediaLoaded && initialLoad ? 'fade-in' : allMediaLoaded ? 'visible' : 'hidden'}`}
         ref={carouselRef}
         onTouchStart={handleTouchStart}
@@ -140,34 +233,52 @@ function Projects() {
         <div className="carousel-track">
           {projectData.map((project, index) => {
             const position = getItemPosition(index);
+            const isHidingOrShowing = expandingOrClosing && index === activeIndex;
+            const isFadingIn = !expandedView && expandingOrClosing && index === activeIndex;
+            const isActive = position.includes('active') && !position.includes('hidden');
+
             return (
-              <div 
-                key={index} 
-                className={`carousel-item ${position}`}
+              <div
+                key={index}
+                className={`carousel-item ${position} ${isHidingOrShowing && !isFadingIn ? 'fading-opacity' : ''} ${isFadingIn ? 'fading-in' : ''}`}
                 onClick={() => {
-                  if (index !== activeIndex) {
-                    if (position === 'next') handleNext();
-                    else if (position === 'prev') handlePrev();
-                    else setActiveIndex(index);
+                  if (position.includes('next')) {
+                    handleNext();
+                  } else if (position.includes('prev')) {
+                    handlePrev();
+                  } else if (!position.includes('hidden')) {
+                    setActiveIndex(index);
                   }
                 }}
                 style={{
-                  // Set z-index based on position
-                  zIndex: position === 'active' ? 10 : position ? 5 : 1
+                  zIndex: position.includes('active') ? 10 : position ? 5 : 1
                 }}
               >
-                <ProjectCard 
-                  project={project} 
+                <ProjectCard
+                  project={project}
                   onMediaLoaded={handleMediaLoaded}
                 />
+                {isActive && (
+                  <button
+                    className={`open-button ${project.windowType}-open-button ${isHidingOrShowing && !isFadingIn ? 'fade-out' : 'fade-in'
+                      }`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      openExpandedView();
+                    }}
+                  >
+                    View
+                    <PiArrowUpRight size={18} />
+                  </button>
+                )}
               </div>
             );
           })}
         </div>
         <div className="carousel-dots">
           {projectData.map((_, index) => (
-            <button 
-              key={index} 
+            <button
+              key={index}
               className={`carousel-dot ${index === activeIndex ? 'active' : ''}`}
               onClick={() => handleDotClick(index)}
               aria-label={`Go to slide ${index + 1}`}
@@ -175,8 +286,70 @@ function Projects() {
           ))}
         </div>
       </div>
+
+      {/* Expanded View Overlay */}
+      {expandedView && (
+        <div className={`expanded-overlay`}>
+          <div className="expanded-container">
+            <div className="expanded-controls">
+              <div className="expanded-arrows">
+                <button className="arrow-button" onClick={handlePrev} aria-label="Previous project">
+                  <IoIosArrowBack />
+                </button>
+                <button className="arrow-button" onClick={handleNext} aria-label="Next project">
+                  <IoIosArrowForward />
+                </button>
+              </div>
+              <button className="close-button" onClick={closeExpandedView} aria-label="Close">
+                <IoIosClose />
+              </button>
+            </div>
+
+            <div className={`expanded-content ${isTransitioning ? 'transitioning' : ''}`}>
+              <div className="expanded-header">
+                <h2 className="expanded-title">{expandedProject.name}</h2>
+
+                {expandedProject.stack.length > 0 && expandedProject.stack[0] !== "" && (
+                  <div className="expanded-stack">
+                    {expandedProject.stack.join(', ')}
+                  </div>
+                )}
+
+                {expandedProject.companies.length > 0 && expandedProject.companies[0] !== "" && (
+                  <div className="expanded-companies">
+                    {expandedProject.companies.join(', ')}
+                  </div>
+                )}
+
+                {expandedProject.links.length > 0 && expandedProject.links[0] !== "" && (
+                  <div className="expanded-links">
+                    {expandedProject.links.map((link, index) => (
+                      <a href="#" className="project-link" key={index}>
+                        {expandedProject.linkDesc[index]}
+                        <PiArrowUpRight size={18} />
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div className="expanded-card-container">
+                <ProjectCard project={expandedProject} key={`expanded-${expandedProject.name}`} />
+              </div>
+
+              {expandedProject.description.length > 0 && expandedProject.description[0] !== "" && (
+                <div className="expanded-description">
+                  {expandedProject.description.map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
 
-export default Projects; 
+export default Projects;

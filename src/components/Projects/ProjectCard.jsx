@@ -1,5 +1,5 @@
 import './Projects.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { MdOutlineWifi } from "react-icons/md";
 import { TbBatteryFilled } from "react-icons/tb";
 import { LiaSignalSolid } from "react-icons/lia";
@@ -13,6 +13,14 @@ function ProjectCard({ project, onMediaLoaded }) {
   
   // For the time display in EST
   const [time, setTime] = useState('');
+  const videoRef = useRef(null);
+  
+  // Reset video when project changes
+  useEffect(() => {
+    if (isVideo && videoRef.current) {
+      videoRef.current.load();
+    }
+  }, [project, isVideo]);
   
   useEffect(() => {
     const updateTime = () => {
@@ -69,12 +77,14 @@ function ProjectCard({ project, onMediaLoaded }) {
         <div className="media-container">
           {isVideo ? (
             <video 
+              ref={videoRef}
               autoPlay 
               loop 
               muted 
               playsInline
               className="project-media"
               onLoadedData={handleMediaLoad}
+              key={mediaLink}
             >
               <source src={mediaLink} type="video/mp4" />
               Your browser does not support the video tag.
@@ -85,6 +95,7 @@ function ProjectCard({ project, onMediaLoaded }) {
               alt={name} 
               className="project-media"
               onLoad={handleMediaLoad}
+              key={mediaLink}
             />
           )}
         </div>

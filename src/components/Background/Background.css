@@ -48,7 +48,7 @@
   width: 550px;
   top: 10%;
   left: 5%;
-  animation: blobOne 4s infinite ease-in-out;
+  animation: blobOne 3s infinite ease-in-out;
   will-change: transform;
 }
 
@@ -58,7 +58,7 @@
   width: 600px;
   top: 25%;
   right: 5%;
-  animation: blobTwo 5s infinite ease-in-out;
+  animation: blobTwo 4s infinite ease-in-out;
   will-change: transform;
 }
 
@@ -68,7 +68,7 @@
   width: 450px;
   bottom: 5%;
   left: 30%;
-  animation: blobThree 6s infinite ease-in-out;
+  animation: blobThree 5s infinite ease-in-out;
   will-change: transform;
 }
 
