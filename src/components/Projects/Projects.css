@@ -197,7 +197,7 @@
     background-color: #000000;
     border-radius: calc(clamp(265px, 45vw, 580px) * 0.0362);
     z-index: 10;
-    border: 1px solid #333;
+    border: 1px solid #a7a7a7;
     display: flex;
     justify-content: center;
     align-items: center;
