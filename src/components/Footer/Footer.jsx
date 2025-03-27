@@ -14,7 +14,7 @@ function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <a className="footer-meeting" onClick={openCalendly}>
-          Book a 15 Min Chat
+          Setup a 15 Min Chat
           <PiArrowUpRight size={18} />
         </a>
 
