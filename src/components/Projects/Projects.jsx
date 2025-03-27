@@ -221,7 +221,7 @@ function Projects() {
 
   return (
     <section className="projects-section">
-      <p className="projects-heading">My work</p>
+      <p className="projects-heading">My Work</p>
       <div
         className={`carousel-container ${allMediaLoaded && initialLoad ? 'fade-in' : allMediaLoaded ? 'visible' : 'hidden'}`}
         ref={carouselRef}
