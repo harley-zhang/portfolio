@@ -17,7 +17,7 @@ function About() {
       
       <div className="action-container">
         <div className="chat-button" onClick={openCalendly}>
-          Book a 15 Min Chat
+          Setup a 15 Min Chat
           <PiArrowUpRight size={18} />
         </div>
         
