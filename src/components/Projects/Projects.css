@@ -369,13 +369,34 @@ button:active {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     overflow-y: auto;
     animation: fadeIn 0.4s ease forwards;
+}
+
+.expanded-overlay.transitioning {
+    animation: none;
+}
+
+/* Add a new keyframe for the blur fade transition */
+@keyframes blurFadeIn {
+    from { 
+        opacity: 0;
+        backdrop-filter: blur(0px);
+    }
+    to { 
+        opacity: 1;
+        backdrop-filter: blur(10px);
+    }
+}
+
+.expanded-overlay {
+    animation: blurFadeIn 0.4s ease forwards;
 }
 
 .expanded-overlay.transitioning {
@@ -405,7 +426,7 @@ button:active {
 .arrow-button, .close-button {
     background: none;
     border: none;
-    color: white;
+    color: #cacaca;
     font-size: 1.5rem;
     cursor: pointer;
     display: flex;
@@ -477,14 +498,13 @@ button:active {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: white;
     text-decoration: none;
     position: relative;
     transition: all 0.2s ease;
 }
 
 .project-link svg {
-    color: #999;
+    color: #cacaca;
     transition: transform 0.2s ease;
 }
 
