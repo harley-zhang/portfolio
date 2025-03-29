@@ -30,7 +30,7 @@ function ProjectCard({ project, onMediaLoaded }) {
       setUseFallback(false);
       videoTimeoutRef.current = setTimeout(() => {
         setUseFallback(true);
-      }, 5000); // 5 second timeout
+      }, 3000); // 5 second timeout
     }
     
     return () => {
