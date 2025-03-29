@@ -4,6 +4,9 @@ import { MdOutlineWifi } from "react-icons/md";
 import { TbBatteryFilled } from "react-icons/tb";
 import { LiaSignalSolid } from "react-icons/lia";
 
+// Store video loading state globally
+const videoLoadingStatus = {};
+
 function ProjectCard({ project, onMediaLoaded }) {
   const { name, windowType, mediaType, mediaLink } = project;
   
@@ -14,23 +17,25 @@ function ProjectCard({ project, onMediaLoaded }) {
   // For the time display in EST
   const [time, setTime] = useState('');
   const videoRef = useRef(null);
-  const [useFallback, setUseFallback] = useState(false);
+  const [useFallback, setUseFallback] = useState(() => {
+    // Check if we already know this video failed to load
+    return videoLoadingStatus[mediaLink] === false;
+  });
   const videoTimeoutRef = useRef(null);
+  const initialLoadAttemptMade = useRef(false);
   
-  // Reset video when project changes
+  // Only attempt to load video on initial component mount
   useEffect(() => {
-    if (isVideo && videoRef.current) {
-      videoRef.current.load();
+    if (isVideo && !initialLoadAttemptMade.current) {
+      initialLoadAttemptMade.current = true;
       
-      // Set up fallback timeout
-      if (videoTimeoutRef.current) {
-        clearTimeout(videoTimeoutRef.current);
+      // Only set timeout if we haven't already determined this video can't load
+      if (videoLoadingStatus[mediaLink] === undefined) {
+        videoTimeoutRef.current = setTimeout(() => {
+          setUseFallback(true);
+          videoLoadingStatus[mediaLink] = false;
+        }, 3000);
       }
-      
-      setUseFallback(false);
-      videoTimeoutRef.current = setTimeout(() => {
-        setUseFallback(true);
-      }, 3000); // 5 second timeout
     }
     
     return () => {
@@ -38,7 +43,7 @@ function ProjectCard({ project, onMediaLoaded }) {
         clearTimeout(videoTimeoutRef.current);
       }
     };
-  }, [project, isVideo]);
+  }, [isVideo, mediaLink]);
   
   useEffect(() => {
     const updateTime = () => {
@@ -67,6 +72,7 @@ function ProjectCard({ project, onMediaLoaded }) {
   const handleMediaLoad = () => {
     if (isVideo && videoTimeoutRef.current) {
       clearTimeout(videoTimeoutRef.current);
+      videoLoadingStatus[mediaLink] = true; // Mark this video as successfully loaded
     }
     if (onMediaLoaded) {
       onMediaLoaded();
