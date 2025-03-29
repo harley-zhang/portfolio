@@ -13,6 +13,7 @@ function ProjectCard({ project, onMediaLoaded }) {
   
   // For the time display in EST
   const [time, setTime] = useState('');
+  const [mediaLoaded, setMediaLoaded] = useState(false);
   const videoRef = useRef(null);
   
   // Reset video when project changes
@@ -21,6 +22,16 @@ function ProjectCard({ project, onMediaLoaded }) {
       videoRef.current.load();
     }
   }, [project, isVideo]);
+  
+  // Force media loaded event after timeout as fallback
+  useEffect(() => {
+    if (!mediaLoaded) {
+      const timer = setTimeout(() => {
+        handleMediaLoad();
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [mediaLoaded]);
   
   useEffect(() => {
     const updateTime = () => {
@@ -47,8 +58,11 @@ function ProjectCard({ project, onMediaLoaded }) {
   }, []);
 
   const handleMediaLoad = () => {
-    if (onMediaLoaded) {
-      onMediaLoaded();
+    if (!mediaLoaded) {
+      setMediaLoaded(true);
+      if (onMediaLoaded) {
+        onMediaLoaded();
+      }
     }
   };
   
@@ -84,6 +98,7 @@ function ProjectCard({ project, onMediaLoaded }) {
               playsInline
               className="project-media"
               onLoadedData={handleMediaLoad}
+              onError={handleMediaLoad}
               key={mediaLink}
             >
               <source src={mediaLink} type="video/mp4" />
@@ -95,6 +110,7 @@ function ProjectCard({ project, onMediaLoaded }) {
               alt={name} 
               className="project-media"
               onLoad={handleMediaLoad}
+              onError={handleMediaLoad}
               key={mediaLink}
             />
           )}
