@@ -13,25 +13,32 @@ function ProjectCard({ project, onMediaLoaded }) {
   
   // For the time display in EST
   const [time, setTime] = useState('');
-  const [mediaLoaded, setMediaLoaded] = useState(false);
   const videoRef = useRef(null);
+  const [useFallback, setUseFallback] = useState(false);
+  const videoTimeoutRef = useRef(null);
   
   // Reset video when project changes
   useEffect(() => {
     if (isVideo && videoRef.current) {
       videoRef.current.load();
+      
+      // Set up fallback timeout
+      if (videoTimeoutRef.current) {
+        clearTimeout(videoTimeoutRef.current);
+      }
+      
+      setUseFallback(false);
+      videoTimeoutRef.current = setTimeout(() => {
+        setUseFallback(true);
+      }, 5000); // 5 second timeout
     }
+    
+    return () => {
+      if (videoTimeoutRef.current) {
+        clearTimeout(videoTimeoutRef.current);
+      }
+    };
   }, [project, isVideo]);
-  
-  // Force media loaded event after timeout as fallback
-  useEffect(() => {
-    if (!mediaLoaded) {
-      const timer = setTimeout(() => {
-        handleMediaLoad();
-      }, 1000);
-      return () => clearTimeout(timer);
-    }
-  }, [mediaLoaded]);
   
   useEffect(() => {
     const updateTime = () => {
@@ -58,12 +65,16 @@ function ProjectCard({ project, onMediaLoaded }) {
   }, []);
 
   const handleMediaLoad = () => {
-    if (!mediaLoaded) {
-      setMediaLoaded(true);
-      if (onMediaLoaded) {
-        onMediaLoaded();
-      }
+    if (isVideo && videoTimeoutRef.current) {
+      clearTimeout(videoTimeoutRef.current);
     }
+    if (onMediaLoaded) {
+      onMediaLoaded();
+    }
+  };
+
+  const getFallbackImageUrl = () => {
+    return mediaLink.replace('.mov', '.png');
   };
   
   return (
@@ -89,7 +100,7 @@ function ProjectCard({ project, onMediaLoaded }) {
           </div>
         )}
         <div className="media-container">
-          {isVideo ? (
+          {isVideo && !useFallback ? (
             <video 
               ref={videoRef}
               autoPlay 
@@ -98,7 +109,6 @@ function ProjectCard({ project, onMediaLoaded }) {
               playsInline
               className="project-media"
               onLoadedData={handleMediaLoad}
-              onError={handleMediaLoad}
               key={mediaLink}
             >
               <source src={mediaLink} type="video/mp4" />
@@ -106,12 +116,11 @@ function ProjectCard({ project, onMediaLoaded }) {
             </video>
           ) : (
             <img 
-              src={mediaLink} 
+              src={isVideo ? getFallbackImageUrl() : mediaLink} 
               alt={name} 
               className="project-media"
               onLoad={handleMediaLoad}
-              onError={handleMediaLoad}
-              key={mediaLink}
+              key={isVideo ? getFallbackImageUrl() : mediaLink}
             />
           )}
         </div>

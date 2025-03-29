@@ -70,17 +70,6 @@ function Projects() {
   const [expandingOrClosing, setExpandingOrClosing] = useState(false);
   const carouselRef = useRef(null);
 
-  // Force show content after timeout as fallback
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setAllMediaLoaded(true);
-      setTimeout(() => {
-        setInitialLoad(false);
-      }, 1000);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
-
   // Handle media load completion
   const handleMediaLoaded = () => {
     setMediaLoadedCount(prev => prev + 1);
@@ -88,7 +77,7 @@ function Projects() {
 
   // Check if all media is loaded
   useEffect(() => {
-    if (mediaLoadedCount >= projectData.length) {
+    if (mediaLoadedCount === projectData.length) {
       setAllMediaLoaded(true);
       // After a delay to let animations complete, mark initial load as done
       setTimeout(() => {
