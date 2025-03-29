@@ -4,8 +4,10 @@ import { MdOutlineWifi } from "react-icons/md";
 import { TbBatteryFilled } from "react-icons/tb";
 import { LiaSignalSolid } from "react-icons/lia";
 
-// Store video loading state globally
-const videoLoadingStatus = {};
+// Create a global state to track which videos failed to load
+const failedVideos = new Set();
+let globalVideoTimeoutActive = false;
+let globalVideoTimeout = null;
 
 function ProjectCard({ project, onMediaLoaded }) {
   const { name, windowType, mediaType, mediaLink } = project;
@@ -17,33 +19,40 @@ function ProjectCard({ project, onMediaLoaded }) {
   // For the time display in EST
   const [time, setTime] = useState('');
   const videoRef = useRef(null);
-  const [useFallback, setUseFallback] = useState(() => {
-    // Check if we already know this video failed to load
-    return videoLoadingStatus[mediaLink] === false;
-  });
-  const videoTimeoutRef = useRef(null);
-  const initialLoadAttemptMade = useRef(false);
+  const [useFallback, setUseFallback] = useState(isVideo && failedVideos.has(mediaLink));
   
-  // Only attempt to load video on initial component mount
+  // Reset video when project changes
   useEffect(() => {
-    if (isVideo && !initialLoadAttemptMade.current) {
-      initialLoadAttemptMade.current = true;
+    if (isVideo && videoRef.current) {
+      videoRef.current.load();
       
-      // Only set timeout if we haven't already determined this video can't load
-      if (videoLoadingStatus[mediaLink] === undefined) {
-        videoTimeoutRef.current = setTimeout(() => {
-          setUseFallback(true);
-          videoLoadingStatus[mediaLink] = false;
+      // Only set up the timeout once for the whole app
+      if (!globalVideoTimeoutActive && !failedVideos.has(mediaLink)) {
+        globalVideoTimeoutActive = true;
+        
+        if (globalVideoTimeout) {
+          clearTimeout(globalVideoTimeout);
+        }
+        
+        globalVideoTimeout = setTimeout(() => {
+          // If video hasn't loaded by now, mark it as failed
+          if (!videoRef.current.readyState >= 3) {
+            failedVideos.add(mediaLink);
+            setUseFallback(true);
+          }
+          globalVideoTimeoutActive = false;
         }, 3000);
       }
     }
     
     return () => {
-      if (videoTimeoutRef.current) {
-        clearTimeout(videoTimeoutRef.current);
+      // Only clear the timeout on unmount if we're the one who set it
+      if (globalVideoTimeoutActive && globalVideoTimeout) {
+        clearTimeout(globalVideoTimeout);
+        globalVideoTimeoutActive = false;
       }
     };
-  }, [isVideo, mediaLink]);
+  }, [project, isVideo, mediaLink]);
   
   useEffect(() => {
     const updateTime = () => {
@@ -70,18 +79,38 @@ function ProjectCard({ project, onMediaLoaded }) {
   }, []);
 
   const handleMediaLoad = () => {
-    if (isVideo && videoTimeoutRef.current) {
-      clearTimeout(videoTimeoutRef.current);
-      videoLoadingStatus[mediaLink] = true; // Mark this video as successfully loaded
+    if (isVideo && !useFallback) {
+      // Video loaded successfully
+      if (globalVideoTimeout) {
+        clearTimeout(globalVideoTimeout);
+        globalVideoTimeoutActive = false;
+      }
     }
     if (onMediaLoaded) {
       onMediaLoaded();
     }
   };
 
+  const handleVideoError = () => {
+    if (isVideo) {
+      failedVideos.add(mediaLink);
+      setUseFallback(true);
+      if (onMediaLoaded) {
+        onMediaLoaded();
+      }
+    }
+  };
+
   const getFallbackImageUrl = () => {
     return mediaLink.replace('.mov', '.png');
   };
+  
+  // If this video has already failed, use fallback
+  useEffect(() => {
+    if (isVideo && failedVideos.has(mediaLink)) {
+      setUseFallback(true);
+    }
+  }, [isVideo, mediaLink]);
   
   return (
     <div className={`project-card ${windowType}-card`}>
@@ -115,6 +144,7 @@ function ProjectCard({ project, onMediaLoaded }) {
               playsInline
               className="project-media"
               onLoadedData={handleMediaLoad}
+              onError={handleVideoError}
               key={mediaLink}
             >
               <source src={mediaLink} type="video/mp4" />
