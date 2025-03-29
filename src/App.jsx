@@ -1,4 +1,5 @@
 import './App.css';
+import { Analytics } from '@vercel/analytics/react';
 import Background from './components/Background/Background';
 import About from './components/About/About';
 import ExpEdu from './components/ExpEdu/ExpEdu';
@@ -15,6 +16,7 @@ function App() {
         <ExpEdu />
       </main>
       <Footer />
+      <Analytics />
     </>
   );
 }
