@@ -37,7 +37,7 @@ const projectData = [
   {
     name: "BeWell",
     windowType: "phone",
-    stack: ["React Native", "Expo", "Cohere", "Google Cloud", "MongoDB"],
+    stack: ["Cohere", "React Native", "Expo", "Google Cloud", "MongoDB"],
     companies: [""],
     links: ["https://devpost.com/software/bewell-x53ypc", "https://github.com/harley-zhang/BeWell"],
     linkDesc: ["Devpost", "GitHub"],
