@@ -274,7 +274,7 @@ button:active {
 
 /* Phone Card Styles */
 .projects-section .phone-card .card-content {
-    border-radius: calc(clamp(240px, 60vw, 580px) * 0.064);
+    border-radius: calc(clamp(240px, 60vw, 580px) * 0.075);
     background-color: rgba(255, 255, 255, 0.6);
     border: calc(clamp(240px, 60vw, 580px) * 0.012) solid rgba(255, 255, 255, 0);
     padding: 0;
@@ -306,7 +306,7 @@ button:active {
 .projects-section .phone-card .phone-status-icons {
     height: calc(clamp(240px, 60vw, 580px) * 0.016);
     object-fit: contain;
-    padding-right: calc(clamp(240px, 60vw, 580px) * 0.035);
+    padding-right: calc(clamp(240px, 60vw, 580px) * 0.037);
 }
 
 /* Empty dynamic island without status content */
@@ -342,7 +342,7 @@ button:active {
 }
 
 .projects-section .phone-card .project-media {
-    border-radius: calc(clamp(240px, 60vw, 580px) * 0.0552);
+    border-radius: calc(clamp(240px, 60vw, 580px) * 0.066);
     height: 100%;
 }
 
