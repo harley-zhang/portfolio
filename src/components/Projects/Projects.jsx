@@ -68,6 +68,7 @@ function Projects() {
   const [expandedProject, setExpandedProject] = useState(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [expandingOrClosing, setExpandingOrClosing] = useState(false);
+  const [isNavigationLocked, setIsNavigationLocked] = useState(true);
   const carouselRef = useRef(null);
 
   // Handle media load completion
@@ -82,6 +83,7 @@ function Projects() {
       // After a delay to let animations complete, mark initial load as done
       setTimeout(() => {
         setInitialLoad(false);
+        setIsNavigationLocked(false);
       }, 1500);
     }
   }, [mediaLoadedCount]);
@@ -96,20 +98,34 @@ function Projects() {
   };
 
   const handleNext = () => {
+    if (isNavigationLocked) return;
+    
+    setIsNavigationLocked(true);
     if (expandedView) {
       const nextIndex = (activeIndex + 1) % projectData.length;
       handleExpandedTransition(nextIndex);
     } else {
       setActiveIndex((prev) => (prev === projectData.length - 1 ? 0 : prev + 1));
+      // Unlock navigation after transition animation completes
+      setTimeout(() => {
+        setIsNavigationLocked(false);
+      }, 400);
     }
   };
 
   const handlePrev = () => {
+    if (isNavigationLocked) return;
+    
+    setIsNavigationLocked(true);
     if (expandedView) {
       const prevIndex = (activeIndex - 1 + projectData.length) % projectData.length;
       handleExpandedTransition(prevIndex);
     } else {
       setActiveIndex((prev) => (prev === 0 ? projectData.length - 1 : prev - 1));
+      // Unlock navigation after transition animation completes
+      setTimeout(() => {
+        setIsNavigationLocked(false);
+      }, 400);
     }
   };
 
@@ -121,11 +137,19 @@ function Projects() {
       setActiveIndex(newIndex);
       setExpandedProject(projectData[newIndex]);
       setIsTransitioning(false);
+      setIsNavigationLocked(false);
     }, 400);
   };
 
   const handleDotClick = (index) => {
+    if (isNavigationLocked || index === activeIndex) return;
+    
+    setIsNavigationLocked(true);
     setActiveIndex(index);
+    // Unlock navigation after transition animation completes
+    setTimeout(() => {
+      setIsNavigationLocked(false);
+    }, 400);
   };
 
   const handleTouchStart = (e) => {
@@ -135,7 +159,7 @@ function Projects() {
   };
 
   const handleTouchEnd = (e) => {
-    if (!expandedView) {
+    if (!expandedView && !isNavigationLocked) {
       const endX = e.changedTouches[0].clientX;
       const diffX = startX - endX;
 
@@ -156,7 +180,7 @@ function Projects() {
   };
 
   const handleMouseUp = (e) => {
-    if (!expandedView) {
+    if (!expandedView && !isNavigationLocked) {
       const endX = e.clientX;
       const diffX = startX - endX;
 
@@ -171,6 +195,9 @@ function Projects() {
   };
 
   const openExpandedView = () => {
+    if (isNavigationLocked) return;
+    
+    setIsNavigationLocked(true);
     // Immediately hide active item
     setExpandedView(true);
     setExpandedProject(projectData[activeIndex]);
@@ -183,11 +210,15 @@ function Projects() {
       // Reset after animation completes
       setTimeout(() => {
         setExpandingOrClosing(false);
+        setIsNavigationLocked(false);
       }, 400);
     }, 50);
   };
 
   const closeExpandedView = () => {
+    if (isNavigationLocked) return;
+    
+    setIsNavigationLocked(true);
     // Start both transitions at the same time - set both states immediately
     setIsTransitioning(true);
     setExpandingOrClosing(true);
@@ -203,20 +234,28 @@ function Projects() {
       setExpandedView(false);
       setIsTransitioning(false);
       document.body.style.overflow = '';
+      setIsNavigationLocked(false);
     }, 300);
   };
 
   // Add ESC key handler for closing expanded view
   useEffect(() => {
-    const handleEscKey = (e) => {
+    const handleKeyDown = (e) => {
       if (e.key === 'Escape' && expandedView) {
         closeExpandedView();
       }
+      
+      // Handle arrow keys for navigation
+      if (e.key === 'ArrowRight' && !isNavigationLocked) {
+        handleNext();
+      } else if (e.key === 'ArrowLeft' && !isNavigationLocked) {
+        handlePrev();
+      }
     };
 
-    window.addEventListener('keydown', handleEscKey);
-    return () => window.removeEventListener('keydown', handleEscKey);
-  }, [expandedView]);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [expandedView, isNavigationLocked]);
 
   return (
     <section className="projects-section">
