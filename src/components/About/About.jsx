@@ -2,6 +2,8 @@ import './About.css';
 import { PiArrowUpRight } from "react-icons/pi";
 
 function About() {
+  const currentLocation = "Waterloo";
+  
   const openCalendly = () => {
     if (window.Calendly) {
       window.Calendly.initPopupWidget({
@@ -13,6 +15,7 @@ function About() {
   return (
     <section className="about-section">
       <h1 className="logo-text">Harley Zhang</h1>
+      <div className="location-indicator">CURRENTLY IN <span>{currentLocation.toUpperCase()}</span></div>
       <p className="intro-text">I'm an engineering student passionate about creating solutions that solve problems. If you have ideas or questions about anything, I would love to chat.</p>
       
       <div className="action-container">

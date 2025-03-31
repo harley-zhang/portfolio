@@ -27,10 +27,19 @@
 .logo-text {
   font-family: 'Recoleta', serif;
   font-size: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   user-select: none;
   cursor: default;
   letter-spacing: -0.03em;
+}
+
+.location-indicator {
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.location-indicator span {
+  font-weight: 600;
 }
 
 .action-container {
@@ -115,5 +124,9 @@
   
   .email-link {
     align-self: center;
+  }
+
+  .location-indicator {
+    font-size: 0.7rem;
   }
 } 
