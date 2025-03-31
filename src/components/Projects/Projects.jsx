@@ -305,7 +305,7 @@ function Projects() {
                       openExpandedView();
                     }}
                   >
-                    View
+                    {project.name}
                     <PiArrowUpRight size={18} />
                   </button>
                 )}

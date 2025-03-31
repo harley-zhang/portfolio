@@ -225,7 +225,7 @@ button:active {
 
 /* Project Card Styles */
 .projects-section .project-card {
-    border-radius: 12px;
+    border-radius: calc(clamp(240px, 60vw, 580px) * 0.03);
     overflow: hidden;
     box-shadow: none;
     background-color: transparent;
@@ -246,7 +246,7 @@ button:active {
 .projects-section .web-card .window-controls {
     position: absolute;
     top: 10px;
-    left: 8px;
+    left: calc(clamp(240px, 60vw, 580px) * 0.03);
     display: flex;
     gap: 6px;
     z-index: 5;
@@ -563,18 +563,6 @@ button:active {
 /* Fix for window controls in expanded view */
 .expanded-card-container .project-card {
     position: relative;
-}
-
-.expanded-card-container .web-card .window-controls {
-    position: absolute;
-    top: 10px;
-    left: 8px;
-    z-index: 20;
-}
-
-.expanded-card-container .phone-card .dynamic-island {
-    position: absolute;
-    z-index: 20;
 }
 
 @media (max-width: 768px) {
