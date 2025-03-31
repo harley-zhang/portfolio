@@ -1,7 +1,6 @@
-/* Adding font-face for SF-Pro */
 @font-face {
-    font-family: 'SF-Pro-Text';
-    src: url('/assets/fonts/SF-Pro-Text-Regular.otf') format('opentype');
+    font-family: 'SF-Pro';
+    src: url('/assets/fonts/SF-Pro-Text-Medium.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -165,6 +164,7 @@
     z-index: 10;
     position: relative;
     pointer-events: auto;
+    filter: drop-shadow(0 0 25px rgba(0, 0, 0, 0.10));
 }
 
 .carousel-item.prev {
@@ -236,11 +236,11 @@ button:active {
 .projects-section .web-card .card-content {
     border-radius: 12px;
     background-color: rgba(255, 255, 255, 0.6);
-    border: 8px solid rgba(255, 255, 255, 0);
+    border: calc(clamp(240px, 60vw, 580px) * 0.015) solid rgba(255, 255, 255, 0);
     border-top-width: 30px;
     padding: 0;
     width: auto;
-    height: clamp(265px, 45vw, 580px);
+    height: clamp(240px, 60vw, 580px);
 }
 
 .projects-section .web-card .window-controls {
@@ -274,61 +274,53 @@ button:active {
 
 /* Phone Card Styles */
 .projects-section .phone-card .card-content {
-    border-radius: calc(clamp(265px, 45vw, 580px) * 0.0552 + 6px);
+    border-radius: calc(clamp(240px, 60vw, 580px) * 0.064);
     background-color: rgba(255, 255, 255, 0.6);
-    border: 6px solid rgba(255, 255, 255, 0);
+    border: calc(clamp(240px, 60vw, 580px) * 0.012) solid rgba(255, 255, 255, 0);
     padding: 0;
     position: relative;
     width: auto;
-    height: clamp(265px, 45vw, 580px);
+    height: clamp(240px, 60vw, 580px);
 }
 
-.projects-section .phone-card .dynamic-island {
+/* Phone status bar - positioned at the top of the screen */
+.projects-section .phone-card .phone-status-bar {
     position: absolute;
-    top: 7px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(clamp(265px, 45vw, 580px) * 0.1345);
-    height: calc(clamp(265px, 45vw, 580px) * 0.0362);
-    background-color: #000000;
-    border-radius: calc(clamp(265px, 45vw, 580px) * 0.0362);
-    z-index: 10;
-    border: 1px solid #a7a7a7;
+    top: calc(clamp(240px, 60vw, 580px) * 0.017);
+    left: 0;
+    right: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-}
-
-.projects-section .phone-card .phone-status {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    color: #b4b4b4;
+    color: #fff;
     mix-blend-mode: difference;
-    font-size: calc(clamp(275px, 45vw, 580px) * 0.018);
-    margin-left: calc(clamp(275px, 45vw, 580px) * 0.036);
-    gap: calc(clamp(265px, 45vw, 580px) * 0.2);
+    z-index: 15;
 }
 
 .projects-section .phone-card .phone-time {
-    font-family: 'SF-Pro-Text', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: calc(clamp(265px, 45vw, 580px) * 0.026);
+    font-family: 'SF-Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: calc(clamp(240px, 60vw, 580px) * 0.023);
+    padding-left: calc(clamp(240px, 60vw, 580px) * 0.06);
 }
 
-.projects-section .phone-card .phone-icons {
-    display: flex;
-    align-items: center;
-    gap: calc(clamp(265px, 45vw, 580px) * 0.008);
+.projects-section .phone-card .phone-status-icons {
+    height: calc(clamp(240px, 60vw, 580px) * 0.016);
+    object-fit: contain;
+    padding-right: calc(clamp(240px, 60vw, 580px) * 0.035);
 }
 
-.projects-section .phone-card .phone-icon {
-    font-size: calc(clamp(265px, 45vw, 580px) * 0.026);
-}
-
-.projects-section .phone-card .phone-icon.battery {
-    font-size: calc(clamp(265px, 45vw, 580px) * 0.034);
+/* Empty dynamic island without status content */
+.projects-section .phone-card .dynamic-island {
+    position: absolute;
+    top: calc(clamp(240px, 60vw, 580px) * 0.015);
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(clamp(240px, 60vw, 580px) * 0.132);
+    height: calc(clamp(240px, 60vw, 580px) * 0.038);
+    background-color: #000000;
+    border-radius: calc(clamp(240px, 60vw, 580px) * 0.0362);
+    z-index: 10;
+    border: 1px solid #a7a7a7;
 }
 
 .projects-section .media-container {
@@ -346,11 +338,11 @@ button:active {
 }
 
 .projects-section .web-card .project-media {
-    border-radius: 9px;
+    border-radius: calc(clamp(240px, 60vw, 580px) * 0.02);
 }
 
 .projects-section .phone-card .project-media {
-    border-radius: calc(clamp(265px, 45vw, 580px) * 0.0552);
+    border-radius: calc(clamp(240px, 60vw, 580px) * 0.0552);
     height: 100%;
 }
 
@@ -613,7 +605,6 @@ button:active {
     border: none;
     border-radius: 6px;
     padding: 12px 24px;
-    font-size: 14px;
     cursor: pointer;
     transition: 0.3s ease;
     z-index: 20;

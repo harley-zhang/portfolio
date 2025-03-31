@@ -1,8 +1,5 @@
 import './Projects.css';
 import { useState, useEffect, useRef } from 'react';
-import { MdOutlineWifi } from "react-icons/md";
-import { TbBatteryFilled } from "react-icons/tb";
-import { LiaSignalSolid } from "react-icons/lia";
 
 // Create a global state to track which videos failed to load
 const failedVideos = new Set();
@@ -73,7 +70,7 @@ function ProjectCard({ project, onMediaLoaded }) {
     };
     
     updateTime();
-    const interval = setInterval(updateTime, 60000); // Update every minute
+    const interval = setInterval(updateTime, 5000); // Update every minute
     
     return () => clearInterval(interval);
   }, []);
@@ -123,16 +120,13 @@ function ProjectCard({ project, onMediaLoaded }) {
           </div>
         )}
         {isPhone && (
-          <div className="dynamic-island">
-            <div className="phone-status">
+          <>
+            <div className="phone-status-bar">
               <span className="phone-time">{time}</span>
-              <div className="phone-icons">
-                <LiaSignalSolid className="phone-icon" />
-                <MdOutlineWifi className="phone-icon" />
-                <TbBatteryFilled className="phone-icon battery" />
-              </div>
+              <img src="/assets/Projects/iphone-status-icons.png" className="phone-status-icons" alt="Status icons" />
             </div>
-          </div>
+            <div className="dynamic-island"></div>
+          </>
         )}
         <div className="media-container">
           {isVideo && !useFallback ? (
