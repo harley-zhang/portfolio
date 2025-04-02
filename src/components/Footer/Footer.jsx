@@ -2,21 +2,14 @@ import './Footer.css';
 import { PiArrowUpRight } from "react-icons/pi";
 
 function Footer() {
-  const openCalendly = () => {
-    if (window.Calendly) {
-      window.Calendly.initPopupWidget({
-        url: 'https://calendly.com/harleyzhang06/15-min-chat'
-      });
-    }
-  };
-
+  const currentLocation = "Waterloo";
+  
   return (
     <footer className="footer">
       <div className="footer-content">
-        <a className="footer-meeting" onClick={openCalendly}>
-          Setup a 15 Min Chat
-          <PiArrowUpRight size={18} />
-        </a>
+        <div className="current-location">
+          CURRENTLY IN <span>{currentLocation.toUpperCase()}</span>
+        </div>
 
         <h2 className="footer-name">Harley Zhang</h2>
 

@@ -18,28 +18,19 @@
   margin-bottom: 50px;
 }
 
-.intro-text {
-  text-align: center;
-  max-width: 600px;
-  margin-bottom: 2rem;
-}
-
 .logo-text {
   font-family: 'Recoleta', serif;
   font-size: 3rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   user-select: none;
   cursor: default;
   letter-spacing: -0.03em;
 }
 
-.location-indicator {
-  font-size: 0.8rem;
+.intro-text {
+  text-align: center;
+  max-width: 600px;
   margin-bottom: 1.5rem;
-}
-
-.location-indicator span {
-  font-weight: 600;
 }
 
 .action-container {
@@ -49,7 +40,7 @@
   margin-top: 1rem;
 }
 
-.chat-button {
+.email-button {
   background-color: #000;
   color: white;
   border: none;
@@ -62,47 +53,13 @@
   transition: all 0.2s ease;
 }
 
-.chat-button svg {
+.email-button svg {
   color: #999;
   transition: transform 0.2s ease;
 }
 
-.chat-button:hover svg {
+.email-button:hover svg {
   transform: translateY(-3px);
-}
-
-.email-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: inherit;
-  text-decoration: none;
-  position: relative;
-  width: fit-content;
-}
-
-.email-link svg {
-  color: #999;
-  transition: transform 0.2s ease;
-}
-
-.email-link:hover svg {
-  transform: translateY(-3px);
-}
-
-.email-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: currentColor;
-  transition: width 0.3s ease;
-}
-
-.email-link:hover::after {
-  width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -117,16 +74,8 @@
     gap: 1rem;
   }
   
-  .chat-button {
+  .email-button {
     width: 100%;
     justify-content: center;
-  }
-  
-  .email-link {
-    align-self: center;
-  }
-
-  .location-indicator {
-    font-size: 0.7rem;
   }
 } 

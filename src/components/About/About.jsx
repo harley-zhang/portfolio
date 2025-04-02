@@ -2,29 +2,13 @@ import './About.css';
 import { PiArrowUpRight } from "react-icons/pi";
 
 function About() {
-  const currentLocation = "Waterloo";
-  
-  const openCalendly = () => {
-    if (window.Calendly) {
-      window.Calendly.initPopupWidget({
-        url: 'https://calendly.com/harleyzhang06/15-min-chat'
-      });
-    }
-  };
-
   return (
     <section className="about-section">
       <h1 className="logo-text">Harley Zhang</h1>
-      <div className="location-indicator">CURRENTLY IN <span>{currentLocation.toUpperCase()}</span></div>
-      <p className="intro-text">I'm an engineering student passionate about creating solutions that solve problems. If you have ideas or questions about anything, I would love to chat.</p>
+      <p className="intro-text">Most of my work involves software engineering, machine learning, and data analysis. If you have any ideas or questions, please reach out.</p>
       
       <div className="action-container">
-        <div className="chat-button" onClick={openCalendly}>
-          Setup a 15 Min Chat
-          <PiArrowUpRight size={18} />
-        </div>
-        
-        <a href="mailto:harley.zhang@uwaterloo.ca" className="email-link">
+        <a href="mailto:harley.zhang@uwaterloo.ca" className="email-button">
           harley.zhang@uwaterloo.ca
           <PiArrowUpRight size={18} />
         </a>
