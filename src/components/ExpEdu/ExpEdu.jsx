@@ -44,7 +44,12 @@ const education = [
 function ExpEdu() {
     const ExperienceItem = ({ role, company, logo, date, location }) => (
         <div className="exp-item">
-            <img src={logo} alt={company} className="exp-logo" />
+            <img 
+                src={logo} 
+                alt={company} 
+                className="exp-logo" 
+                onContextMenu={(e) => e.preventDefault()}
+            />
             <div className="exp-details">
                 <div className="exp-main">
                     <div className="exp-info">

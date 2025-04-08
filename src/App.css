@@ -26,12 +26,12 @@ body {
 }
 
 ::selection {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(118, 180, 255, 0.3);
   color: inherit;
 }
 
 ::-moz-selection {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(118, 180, 255, 0.3);
   color: inherit;
 }
 

@@ -335,6 +335,14 @@ button:active {
     max-height: 100%;
     max-width: 100%;
     display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+}
+
+/* Allow pointer events specifically for video controls if needed in future */
+.projects-section .project-media:is(video) {
+    pointer-events: auto;
 }
 
 .projects-section .web-card .project-media {

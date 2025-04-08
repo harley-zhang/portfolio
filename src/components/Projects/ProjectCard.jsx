@@ -139,6 +139,7 @@ function ProjectCard({ project, onMediaLoaded }) {
               className="project-media"
               onLoadedData={handleMediaLoad}
               onError={handleVideoError}
+              onContextMenu={(e) => e.preventDefault()}
               key={mediaLink}
             >
               <source src={mediaLink} type="video/mp4" />
@@ -150,6 +151,7 @@ function ProjectCard({ project, onMediaLoaded }) {
               alt={name} 
               className="project-media"
               onLoad={handleMediaLoad}
+              onContextMenu={(e) => e.preventDefault()}
               key={isVideo ? getFallbackImageUrl() : mediaLink}
             />
           )}

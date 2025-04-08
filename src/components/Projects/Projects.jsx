@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 // Removing carousel imports for now
 // import Carousel from 'react-spring-3d-carousel';
 // import { config } from 'react-spring';
@@ -7,8 +8,21 @@ import { IoIosArrowForward, IoIosArrowBack, IoIosClose } from "react-icons/io";
 import { PiArrowUpRight } from "react-icons/pi";
 import './Projects.css';
 
+// Utility function to create URL-friendly slugs
+const slugify = (text) => {
+  return text
+    .toString()
+    .toLowerCase()
+    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(/[^\w-]+/g, '') // Remove all non-word chars
+    .replace(/--+/g, '-') // Replace multiple - with single -
+    .replace(/^-+/, '') // Trim - from start of text
+    .replace(/-+$/, ''); // Trim - from end of text
+};
+
 const projectData = [
   {
+    id: slugify("EcoForecast"),
     name: "EcoForecast",
     windowType: "web",
     stack: ["Google Earth Engine", "React", "Tailwind"],
@@ -22,6 +36,7 @@ const projectData = [
     ]
   },
   {
+    id: slugify("Content Deserts"),
     name: "Content Deserts",
     windowType: "web",
     stack: ["deck.gl", "React", "Tailwind"],
@@ -35,6 +50,7 @@ const projectData = [
     ]
   },
   {
+    id: slugify("BeWell"),
     name: "BeWell",
     windowType: "phone",
     stack: ["Cohere", "React Native", "Expo", "Google Cloud", "MongoDB"],
@@ -46,6 +62,7 @@ const projectData = [
     description: ["BeWell is a mental health social media app that uses AI to give users one personalized, interesting, and uplifting prompt each day to take a photo of based on a weekly survey. The app was built as part of the 2025 Gen AI Genesis hackathon in Toronto (did not win)."]
   },
   {
+    id: slugify("Conservation Statistics"),
     name: "Conservation Statistics",
     windowType: "web",
     stack: ["R"],
@@ -59,6 +76,8 @@ const projectData = [
 ];
 
 function Projects() {
+  const { projectName } = useParams();
+  const navigate = useNavigate();
   const [activeIndex, setActiveIndex] = useState(0);
   const [startX, setStartX] = useState(0);
   const [allMediaLoaded, setAllMediaLoaded] = useState(false);
@@ -70,25 +89,51 @@ function Projects() {
   const [expandingOrClosing, setExpandingOrClosing] = useState(false);
   const [isNavigationLocked, setIsNavigationLocked] = useState(true);
   const carouselRef = useRef(null);
+  const initialLoadDoneRef = useRef(false);
 
-  // Handle media load completion
+  useEffect(() => {
+    const initialProjectName = projectName;
+    if (initialProjectName && projectData.length > 0) {
+      const projectIndex = projectData.findIndex(p => p.id === initialProjectName);
+      if (projectIndex !== -1) {
+        setActiveIndex(projectIndex);
+      } else {
+        navigate('/', { replace: true });
+      }
+    }
+  }, [projectName, navigate]);
+
+  useEffect(() => {
+    if (allMediaLoaded && !initialLoadDoneRef.current) {
+      const initialProjectName = projectName;
+      if (initialProjectName) {
+        const projectIndex = projectData.findIndex(p => p.id === initialProjectName);
+        if (projectIndex !== -1 && projectIndex === activeIndex) {
+          setTimeout(() => openExpandedView(projectIndex, false), 100);
+        }
+      }
+      initialLoadDoneRef.current = true;
+    }
+  }, [allMediaLoaded, projectName, activeIndex]);
+
   const handleMediaLoaded = () => {
     setMediaLoadedCount(prev => prev + 1);
+    setTimeout(() => {
+      setInitialLoad(false);
+    }, 1500);
   };
 
-  // Check if all media is loaded
   useEffect(() => {
     if (mediaLoadedCount === projectData.length) {
       setAllMediaLoaded(true);
-      // After a delay to let animations complete, mark initial load as done
       setTimeout(() => {
-        setInitialLoad(false);
-        setIsNavigationLocked(false);
+        if (!projectName) {
+          setIsNavigationLocked(false);
+        }
       }, 1500);
     }
-  }, [mediaLoadedCount]);
+  }, [mediaLoadedCount, projectName]);
 
-  // Calculate which items are visible
   const getItemPosition = (index) => {
     if (expandedView && index === activeIndex) return 'active hidden';
     if (index === activeIndex) return 'active';
@@ -106,7 +151,6 @@ function Projects() {
       handleExpandedTransition(nextIndex);
     } else {
       setActiveIndex((prev) => (prev === projectData.length - 1 ? 0 : prev + 1));
-      // Unlock navigation after transition animation completes
       setTimeout(() => {
         setIsNavigationLocked(false);
       }, 400);
@@ -122,7 +166,6 @@ function Projects() {
       handleExpandedTransition(prevIndex);
     } else {
       setActiveIndex((prev) => (prev === 0 ? projectData.length - 1 : prev - 1));
-      // Unlock navigation after transition animation completes
       setTimeout(() => {
         setIsNavigationLocked(false);
       }, 400);
@@ -131,8 +174,9 @@ function Projects() {
 
   const handleExpandedTransition = (newIndex) => {
     setIsTransitioning(true);
+    const nextProjectSlug = projectData[newIndex].id;
+    navigate(`/${nextProjectSlug}`, { replace: true });
 
-    // Simply change the index and project after fade out
     setTimeout(() => {
       setActiveIndex(newIndex);
       setExpandedProject(projectData[newIndex]);
@@ -146,7 +190,6 @@ function Projects() {
     
     setIsNavigationLocked(true);
     setActiveIndex(index);
-    // Unlock navigation after transition animation completes
     setTimeout(() => {
       setIsNavigationLocked(false);
     }, 400);
@@ -163,7 +206,7 @@ function Projects() {
       const endX = e.changedTouches[0].clientX;
       const diffX = startX - endX;
 
-      if (Math.abs(diffX) > 50) { // Minimum swipe distance
+      if (Math.abs(diffX) > 50) {
         if (diffX > 0) {
           handleNext();
         } else {
@@ -184,7 +227,7 @@ function Projects() {
       const endX = e.clientX;
       const diffX = startX - endX;
 
-      if (Math.abs(diffX) > 50) { // Minimum swipe distance
+      if (Math.abs(diffX) > 50) {
         if (diffX > 0) {
           handleNext();
         } else {
@@ -194,23 +237,30 @@ function Projects() {
     }
   };
 
-  const openExpandedView = () => {
-    if (isNavigationLocked) return;
-    
-    setIsNavigationLocked(true);
-    // Immediately hide active item
+  const openExpandedView = (indexToOpen = activeIndex, shouldNavigate = true) => {
+    if (isNavigationLocked && shouldNavigate) return;
+
+    const projectToExpand = projectData[indexToOpen];
+
+    if (shouldNavigate) {
+      setIsNavigationLocked(true);
+      navigate(`/${projectToExpand.id}`);
+    }
+
+    if (indexToOpen !== activeIndex) {
+      setActiveIndex(indexToOpen);
+    }
+
     setExpandedView(true);
-    setExpandedProject(projectData[activeIndex]);
+    setExpandedProject(projectToExpand);
     document.body.style.overflow = 'hidden';
 
-    // Apply transition after a brief delay
     setTimeout(() => {
       setExpandingOrClosing(true);
 
-      // Reset after animation completes
       setTimeout(() => {
         setExpandingOrClosing(false);
-        setIsNavigationLocked(false);
+        if (shouldNavigate) setIsNavigationLocked(false);
       }, 400);
     }, 50);
   };
@@ -219,17 +269,14 @@ function Projects() {
     if (isNavigationLocked) return;
     
     setIsNavigationLocked(true);
-    // Start both transitions at the same time - set both states immediately
+    navigate('/');
     setIsTransitioning(true);
     setExpandingOrClosing(true);
 
-    // After half the animation duration, allow the card to start fading in
-    // while the expanded view is still fading out
     setTimeout(() => {
       setExpandingOrClosing(false);
     }, 100);
 
-    // After the full animation duration, clean up
     setTimeout(() => {
       setExpandedView(false);
       setIsTransitioning(false);
@@ -238,14 +285,12 @@ function Projects() {
     }, 300);
   };
 
-  // Add ESC key handler for closing expanded view
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape' && expandedView) {
         closeExpandedView();
       }
       
-      // Handle arrow keys for navigation
       if (e.key === 'ArrowRight' && !isNavigationLocked) {
         handleNext();
       } else if (e.key === 'ArrowLeft' && !isNavigationLocked) {
@@ -255,7 +300,7 @@ function Projects() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [expandedView, isNavigationLocked]);
+  }, [expandedView, isNavigationLocked, navigate, activeIndex, projectData]);
 
   return (
     <section className="projects-section">
@@ -325,7 +370,6 @@ function Projects() {
         </div>
       </div>
 
-      {/* Expanded View Overlay */}
       {expandedView && (
         <div className={`expanded-overlay`}>
           <div className="expanded-container">
@@ -362,7 +406,7 @@ function Projects() {
                 {expandedProject.links.length > 0 && expandedProject.links[0] !== "" && (
                   <div className="expanded-links">
                     {expandedProject.links.map((link, index) => (
-                      <a href="#" className="project-link" key={index}>
+                      <a href={link} target="_blank" rel="noopener noreferrer" className="project-link" key={index}>
                         {expandedProject.linkDesc[index]}
                         <PiArrowUpRight size={18} />
                       </a>
