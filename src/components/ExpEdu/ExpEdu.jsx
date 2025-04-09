@@ -5,28 +5,28 @@ const experiences = [
         role: "Software Engineering Intern",
         company: "Shopify",
         logo: "assets/ExpEdu/shopify-logo.png",
-        date: "May — Aug 2025",
+        date: "May—Aug 2025",
         location: "Toronto"
     },
     {
         role: "Software Research Assistant",
         company: "Cornell Tech",
         logo: "assets/ExpEdu/cornell-tech-logo.png",
-        date: "Jul — Dec 2024",
+        date: "Jul—Dec 2024",
         location: "New York City"
     },
     {
         role: "Software & Data Research Assistant",
         company: "Yale University",
         logo: "assets/ExpEdu/yale-logo.png",
-        date: "Mar 2021 — Jun 2024",
+        date: "Mar 2021—Jun 2024",
         location: "New Haven"
     },
     {
         role: "Machine Learning Research Assistant",
         company: "University of Toronto",
         logo: "assets/ExpEdu/utoronto-logo.png",
-        date: "Jul — Dec 2024",
+        date: "Jul—Dec 2024",
         location: "Toronto"
     },
 ];
