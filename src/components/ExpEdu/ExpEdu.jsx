@@ -2,7 +2,7 @@ import './ExpEdu.css';
 
 const experiences = [
     {
-        role: "Engineering Intern",
+        role: "Software Engineering Intern",
         company: "Shopify",
         logo: "assets/ExpEdu/shopify-logo.png",
         date: "May — Aug 2025",
