@@ -1,56 +1,25 @@
 import './App.css';
-import { Analytics } from '@vercel/analytics/react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Background from './components/Background/Background';
-import About from './components/About/About';
-import ExpEdu from './components/ExpEdu/ExpEdu';
-import Projects from './components/Projects/Projects';
-import Footer from './components/Footer/Footer';
-import { useEffect } from 'react';
+import Home from './components/Home.jsx';
 
-function App() {
-  useEffect(() => {
-    // Disable right click
-    const handleContextMenu = (e) => e.preventDefault();
-    window.addEventListener('contextmenu', handleContextMenu);
-    
-    // Disable keyboard shortcuts
-    const handleKeyDown = (e) => {
-      if ((e.ctrlKey || e.metaKey) && 
-          (e.key === 'u' || e.key === 's' || e.key === 'i' || 
-           e.key === 'c' || e.key === 'v' || e.key === 'j')) {
-        e.preventDefault();
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      window.removeEventListener('contextmenu', handleContextMenu);
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, []);
-
+function Pdf() {
   return (
-    <Router>
-      <div className="maintenance-overlay">be back soon</div>
-      <Background />
-      <Routes>
-        <Route path="/:projectName?" element={<MainLayout />} />
-      </Routes>
-      <Footer />
-      <Analytics />
-    </Router>
+    <iframe
+      src="/sagebrush.pdf"
+      title="sagebrush"
+      style={{ width: '100%', height: '100vh', border: 'none' }}
+    />
   );
 }
 
-// Create a layout component to hold the main content
-function MainLayout() {
+function App() {
   return (
-    <main className="app-container">
-      <About />
-      <Projects />
-      <ExpEdu />
-    </main>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/sagebrush.pdf" element={<Pdf />} />
+      </Routes>
+    </Router>
   );
 }
 
