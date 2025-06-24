@@ -8,6 +8,7 @@ body {
   font-family: Verdana, sans-serif;
   line-height: 1.5;
   color: #000;
+  overflow-x: hidden;
 }
 
 a {
@@ -16,4 +17,8 @@ a {
 
 ul {
   padding-left: 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
 }

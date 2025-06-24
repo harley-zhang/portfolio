@@ -54,7 +54,6 @@ small {
   max-width: 640px;
   margin: 0 auto;
   padding: 1rem;
-  text-align: center;
 }
 
 .container ul {
@@ -74,4 +73,21 @@ small {
   width: 80px;
   height: auto;
   margin-right: 12px;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+.container p,
+.container li,
+.container small {
+  text-align: left;
+}
+
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.95rem;
 }
