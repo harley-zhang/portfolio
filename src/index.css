@@ -1,11 +1,11 @@
 /* reset previously heavy styles */
 :root {
-  font-family: Verdana, sans-serif;
+  font-family: "Chivo Mono", monospace;
 }
 
 body {
   margin: 0;
-  font-family: Verdana, sans-serif;
+  font-weight: 300;
   line-height: 1.5;
   color: #000;
   overflow-x: hidden;
