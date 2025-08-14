@@ -6,7 +6,7 @@ function Intro() {
     <>
       <h1>Harley Zhang</h1>
       <p>
-        I'm a detail oriented-engineer interested in AI, UX, and product. I'm a currently studying Software Engineering at the University of Waterloo. I'm originally from Toronto.
+        I'm a detail-oriented engineer interested in ML and product. I'm currently studying Software Engineering at the University of Waterloo. I grew up in Toronto.
       </p>
       <h2>[Work]</h2>
       <p>
