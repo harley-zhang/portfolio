@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Sohne';
+  src: url('/Sohne-Buch.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #root {
   width: 100%;
   margin: 0 auto;
@@ -7,41 +14,48 @@
   overflow-x: hidden;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
 body {
   margin: 0;
   color: #000;
+  background-color: #fff;
+  font-family: 'Sohne', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  letter-spacing: -0.015em;
+}
+
+body.theme-loaded {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  color: #fff;
+  background-color: #0a0a0a;
 }
 
 ::selection {
-  background: rgba(118, 180, 255, 0.3);
+  background: #34B989;
   color: inherit;
 }
 
 ::-moz-selection {
-  background: rgba(118, 180, 255, 0.3);
+  background: #34B989;
   color: inherit;
 }
 
 h1 {
-  font-size: 0.95rem;
+  font-size: 1.6rem;
   margin-bottom: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   text-align: left;
+  font-family: 'Sohne', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  letter-spacing: -0.015em;
 }
 
 h2 {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   margin: 2rem 0 0.75rem;
-  font-weight: 500;
+  font-weight: 300;
   text-align: left;
+  font-family: 'Chivo Mono', monospace;
 }
 
 p,
@@ -66,16 +80,14 @@ small {
 .yale-project {
   display: flex;
   align-items: center;
-  border: 1px solid #000;
-  border-radius: 8px;
-  padding: 8px;
+  border: 1.5px dashed #d6d6d6;
+  border-radius: 4px;
+  padding: 12px;
   margin-top: 8px;
 }
 
-.yale-project img {
-  width: 80px;
-  height: auto;
-  margin-right: 12px;
+.dark .yale-project {
+  border-color: #444;
 }
 
 h1,
@@ -87,7 +99,43 @@ h2 {
 .container li,
 .container small {
   text-align: left;
-  margin-left: 1rem;
+  margin-left: 1.5rem;
+  font-weight: 300;
+  letter-spacing: -0.015em;
+}
+
+.yale-project small {
+  margin-left: 0;
+}
+
+.authors {
+  font-size: 0.75rem !important;
+  text-transform: uppercase;
+  font-family: 'Chivo Mono', monospace;
+}
+
+.footer-button {
+  font-family: 'Chivo Mono', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: inherit;
+  text-decoration: none;
+  background-color: #f5f5f5;
+  padding: 5px 8px;
+  border-radius: 2px;
+  margin-right: 0;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+}
+
+.dark .footer-button {
+  background-color: #333;
+}
+
+.footer-button:hover,
+.footer-button:focus {
+  background-color: #34B989;
 }
 
 .container li {
@@ -98,8 +146,33 @@ h2 {
   margin-top: 2rem;
   text-align: left;
   font-size: 0.95rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
 }
 
 .footer a {
-  margin-right: 1rem;
+  margin: 0;
+}
+
+.container a:not(.footer-button) {
+  font-weight: 400;
+  text-decoration: none;
+  position: relative;
+  color: #666;
+  background-image: linear-gradient(#666, #666);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  transition: background-size 0.25s ease, color 0.3s ease;
+}
+
+.dark .container a:not(.footer-button) {
+  color: #bbb;
+  background-image: linear-gradient(#bbb, #bbb);
+}
+
+.container a:not(.footer-button):hover,
+.container a:not(.footer-button):focus {
+  background-size: 0% 1px;
 }

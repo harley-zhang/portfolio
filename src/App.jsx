@@ -1,5 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 function Intro() {
   return (
@@ -8,7 +9,7 @@ function Intro() {
       <p>
         I'm a detail-oriented engineer interested in ML and product. I'm currently studying Software Engineering at Waterloo. I grew up in Toronto.
       </p>
-      <h2>[Work]</h2>
+      <h2>/ Work</h2>
       <p>
         I was previously an engineer at{" "}
         <a href="http://shopify.com/" target="_blank" rel="noopener noreferrer">
@@ -31,83 +32,45 @@ function Intro() {
 function ResearchSection() {
   return (
     <section>
-      <h2>[Research]</h2>
+      <h2>/ Research</h2>
       <ul>
+        <li>[Cornell Tech] LLM geocoding and mapping</li>
+        <li>[University of California, Berkeley] 3D brain viewing models</li>
         <li>
-          <a href="https://tech.cornell.edu" target="_blank" rel="noopener noreferrer">
-            Cornell Tech
-          </a>{" "}
-          – LLM geocoding and mapping for news data
-        </li>
-        <li>
-          <a href="https://www.berkeley.edu" target="_blank" rel="noopener noreferrer">
-            University of California, Berkeley
-          </a>{" "}
-          – 3D brain viewing models from scans
-        </li>
-        <li>
-          <a href="https://www.yale.edu" target="_blank" rel="noopener noreferrer">
-            Yale University
-          </a>{" "}
-          – Climate and vegetation simulation modelling
+          [Yale University] Climate simulation modelling
           <div className="yale-project">
-            <img src="/graphs.png" alt="graphs" />
             <div>
               <a
                 href="/sagebrush.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: "blue" }}
               >
                 Computational Modeling of Climate Change Impacts on Sagebrush Ecosystems
               </a>
               <br />
-              <small>Ryan Dougherty, Harley Zhang</small>
+              <small className="authors">RYAN DOUGHERTY, HARLEY ZHANG</small>
             </div>
           </div>
         </li>
-        <li>
-          <a href="https://www.utoronto.ca" target="_blank" rel="noopener noreferrer">
-            University of Toronto
-          </a>{" "}
-          – Machine learning for land cover classification
-        </li>
+        <li>[University of Toronto] ML classification for satellite imagery</li>
       </ul>
     </section>
   );
 }
 
-function Home() {
+function Home({ isDark }) {
   return (
-    <main className="container">
+    <main className={`container ${isDark ? 'dark' : ''}`}>
       <Intro />
       <ResearchSection />
       <section>
-        <h2>[Contact]</h2>
+        <h2>/ Contact</h2>
         <p>harley.zhang (at) uwaterloo (dot) ca</p>
       </section>
       <footer className="footer">
-        <a
-          href="https://github.com/harley-zhang"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>{" "}
-        <a
-          href="https://www.linkedin.com/in/harley-zhang/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn
-        </a>{" "}
-        <a
-          href="https://x.com/HarleyZhang06"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          X
-        </a>
+        <a href="https://github.com/harley-zhang" target="_blank" rel="noopener noreferrer" className="footer-button">[G] GITHUB</a>
+        <a href="https://www.linkedin.com/in/harley-zhang/" target="_blank" rel="noopener noreferrer" className="footer-button">[L] LINKEDIN</a>
+        <a href="https://x.com/harleyhzhang" target="_blank" rel="noopener noreferrer" className="footer-button">[X] TWITTER</a>
       </footer>
     </main>
   );
@@ -124,10 +87,36 @@ function Pdf() {
 }
 
 function App() {
+  const [isDark, setIsDark] = useState(() => {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  });
+  const [themeLoaded, setThemeLoaded] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    const handleChange = (e) => {
+      setIsDark(e.matches);
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+    setThemeLoaded(true);
+    
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
+  useEffect(() => {
+    const classes = [];
+    if (isDark) classes.push('dark');
+    if (themeLoaded) classes.push('theme-loaded');
+    
+    document.body.className = classes.join(' ');
+  }, [isDark, themeLoaded]);
+
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home isDark={isDark} />} />
         <Route path="/sagebrush.pdf" element={<Pdf />} />
       </Routes>
     </Router>
