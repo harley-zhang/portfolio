@@ -65,7 +65,7 @@ function Home({ isDark }) {
       <ResearchSection />
       <section>
         <h2>/ Contact</h2>
-        <p>harley.zhang (at) uwaterloo (dot) ca</p>
+        <p>harleyzhang06 (at) gmail (dot) com</p>
       </section>
       <footer className="footer">
         <a href="https://github.com/harley-zhang" target="_blank" rel="noopener noreferrer" className="footer-button">[G] GITHUB</a>
