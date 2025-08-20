@@ -34,10 +34,10 @@ function ResearchSection() {
     <section>
       <h2>/ Research</h2>
       <ul>
-        <li>[Cornell Tech] LLM geocoding and mapping</li>
-        <li>[University of California, Berkeley] 3D brain viewing models</li>
+        <li>[ Cornell Tech ] LLM geocoding and mapping</li>
+        <li>[ University of California, Berkeley ] 3D brain viewing models</li>
         <li>
-          [Yale University] Climate simulation modelling
+          [ Yale University ] Climate simulation modelling
           <div className="yale-project">
             <div>
               <a
@@ -52,7 +52,7 @@ function ResearchSection() {
             </div>
           </div>
         </li>
-        <li>[University of Toronto] ML classification for satellite imagery</li>
+        <li>[ University of Toronto ] ML classification for satellite imagery</li>
       </ul>
     </section>
   );
@@ -91,6 +91,7 @@ function App() {
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
   });
   const [themeLoaded, setThemeLoaded] = useState(false);
+  const [appLoaded, setAppLoaded] = useState(false);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -102,7 +103,25 @@ function App() {
     mediaQuery.addEventListener('change', handleChange);
     setThemeLoaded(true);
     
-    return () => mediaQuery.removeEventListener('change', handleChange);
+    const loadApp = async () => {
+      await new Promise(resolve => {
+        if (document.readyState === 'complete') {
+          resolve();
+        } else {
+          window.addEventListener('load', resolve, { once: true });
+        }
+      });
+      
+      await new Promise(resolve => requestAnimationFrame(resolve));
+      
+      setAppLoaded(true);
+    };
+    
+    loadApp();
+    
+    return () => {
+      mediaQuery.removeEventListener('change', handleChange);
+    };
   }, []);
 
   useEffect(() => {
@@ -114,12 +133,14 @@ function App() {
   }, [isDark, themeLoaded]);
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home isDark={isDark} />} />
-        <Route path="/sagebrush.pdf" element={<Pdf />} />
-      </Routes>
-    </Router>
+    <div className={`app-container ${appLoaded ? 'loaded' : ''}`}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home isDark={isDark} />} />
+          <Route path="/sagebrush.pdf" element={<Pdf />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
