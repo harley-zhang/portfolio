@@ -155,6 +155,9 @@ h2 {
   margin-top: 2rem;
   text-align: left;
   font-size: 0.95rem;
+}
+
+.footer-buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 2px;
@@ -184,4 +187,17 @@ h2 {
 .container a:not(.footer-button):hover,
 .container a:not(.footer-button):focus {
   background-size: 0% 1px;
+}
+
+.webring-link {
+  display: block;
+  margin-top: 16px !important;
+  text-decoration: none !important;
+  background-image: none !important;
+}
+
+.webring-logo {
+  width: 60px;
+  height: 60px;
+  opacity: 0.08;
 }

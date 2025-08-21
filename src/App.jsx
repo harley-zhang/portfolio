@@ -68,9 +68,14 @@ function Home({ isDark }) {
         <p>harleyzhang06 (at) gmail (dot) com</p>
       </section>
       <footer className="footer">
-        <a href="https://github.com/harley-zhang" target="_blank" rel="noopener noreferrer" className="footer-button">[G] GITHUB</a>
-        <a href="https://www.linkedin.com/in/harley-zhang/" target="_blank" rel="noopener noreferrer" className="footer-button">[L] LINKEDIN</a>
-        <a href="https://x.com/harleyhzhang" target="_blank" rel="noopener noreferrer" className="footer-button">[X] TWITTER</a>
+        <div className="footer-buttons">
+          <a href="https://github.com/harley-zhang" target="_blank" rel="noopener noreferrer" className="footer-button">[G] GITHUB</a>
+          <a href="https://www.linkedin.com/in/harley-zhang/" target="_blank" rel="noopener noreferrer" className="footer-button">[L] LINKEDIN</a>
+          <a href="https://x.com/harleyhzhang" target="_blank" rel="noopener noreferrer" className="footer-button">[X] TWITTER</a>
+        </div>
+        <a href="https://se-webring.xyz/" target="_blank" rel="noopener noreferrer" className="webring-link">
+          <img src="/webring-logo.svg" alt="SE Webring" className="webring-logo" />
+        </a>
       </footer>
     </main>
   );
