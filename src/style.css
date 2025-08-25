@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('/Sohne-Buch.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('/sohne/TestSohne-Leicht-BF663d89cd4952e.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('/sohne/TestSohne-Buch-BF663d89cd32e6a.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('/sohne/TestSohne-Halbfett-BF663d89cd2d67b.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SohneMono';
+  src: url('/sohne/TestSohneMono-Extraleicht-BF663d89cd32fa2.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  color: #000;
+  background-color: #fff;
+  font-family: 'Sohne', ui-sans-serif;
+  letter-spacing: -0.03em;
+}
+
+body.theme-loaded {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  color: #fff;
+  background-color: #0a0a0a;
+}
+
+::selection {
+  background: #34B989;
+  color: inherit;
+}
+
+::-moz-selection {
+  background: #34B989;
+  color: inherit;
+}
