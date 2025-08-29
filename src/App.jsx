@@ -1,6 +1,7 @@
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Analytics } from '@vercel/analytics/react';
 
 function Intro() {
   return (
@@ -162,6 +163,7 @@ function App() {
           <Route path="/sagebrush.pdf" element={<Pdf />} />
         </Routes>
       </Router>
+      <Analytics />
     </div>
   );
 }
