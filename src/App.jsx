@@ -6,16 +6,16 @@ import { Analytics } from '@vercel/analytics/react';
 function Intro() {
   return (
     <>
-      <h1 className="text-[2rem] mb-5 font-normal text-left font-['Sohne',ui-sans-serif] " style={{letterSpacing: '-0.06em'}}>
+      <h1 className="text-[2rem] mb-8 font-normal text-left font-['Sohne',ui-sans-serif] " style={{letterSpacing: '-0.06em'}}>
         Harley Zhang
       </h1>
       <p className="text-[0.95rem] leading-[1.7] font-light text-left ml-6 ">
         I'm a detail-oriented engineer interested in ML and product. I'm currently studying Software Engineering at Waterloo. I grew up in Toronto.
       </p>
-              <h2 className="text-xs mt-12 mb-3 font-light text-left font-['SohneMono'] uppercase" style={{letterSpacing: '-0.3px'}}>/ Work</h2>
+              <h2 className="text-xs mt-12 mb-3 font-light text-left font-['SohneMono'] uppercase" style={{letterSpacing: '0'}}>/ Work</h2>
       <p className="text-[0.95rem] leading-[1.7] font-light text-left ml-6 ">
         I was previously an engineer at{" "}
-        <a href="http://shopify.com/" target="_blank" rel="noopener noreferrer" className="font-normal no-underline relative text-[#666] dark:text-[#bbb] bg-gradient-to-r from-[#666] to-[#666] dark:from-[#bbb] dark:to-[#bbb] bg-no-repeat bg-[length:100%_1px] bg-[position:0%_100%] transition-[background-size] duration-[0.25s] ease-in-out hover:bg-[length:0%_1px]">
+        <a href="http://shopify.com/" target="_blank" rel="noopener noreferrer" className="font-normal no-underline relative text-[#666] dark:text-[#bbb] bg-gradient-to-r from-[#666] to-[#666] dark:from-[#bbb] dark:to-[#bbb] bg-no-repeat bg-[length:100%_1px] bg-[position:100%_100%] transition-[background-size] duration-[0.25s] ease-in-out hover:bg-[length:0%_1px]">
           Shopify
         </a>{" "}
         and{" "}
@@ -23,7 +23,7 @@ function Intro() {
           href="http://thirdlayer.inc/"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-light no-underline relative text-[#666] dark:text-[#bbb] bg-gradient-to-r from-[#666] to-[#666] dark:from-[#bbb] dark:to-[#bbb] bg-no-repeat bg-[length:100%_1px] bg-[position:0%_100%] transition-[background-size] duration-[0.25s] ease-in-out hover:bg-[length:0%_1px]"
+          className="font-light no-underline relative text-[#666] dark:text-[#bbb] bg-gradient-to-r from-[#666] to-[#666] dark:from-[#bbb] dark:to-[#bbb] bg-no-repeat bg-[length:100%_1px] bg-[position:100%_100%] transition-[background-size] duration-[0.25s] ease-in-out hover:bg-[length:0%_1px]"
         >
           ThirdLayer, Inc.
         </a>
@@ -36,7 +36,7 @@ function Intro() {
 function ResearchSection() {
   return (
     <section>
-      <h2 className="text-xs mt-12 mb-3 font-light text-left font-['SohneMono'] uppercase" style={{letterSpacing: '-0.3px'}}>/ Research</h2>
+      <h2 className="text-xs mt-12 mb-3 font-light text-left font-['SohneMono'] uppercase" style={{letterSpacing: '0'}}>/ Research</h2>
       <ul className="text-left list-none pl-0">
                   <li className="mb-5 text-[0.95rem] leading-[1.7] font-light text-left ml-6 ">
             <span className="font-normal">[ Cornell Tech ]</span> LLM geocoding and mapping
@@ -52,12 +52,12 @@ function ResearchSection() {
                 href="/sagebrush.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-normal no-underline relative text-[#666] dark:text-[#bbb] bg-gradient-to-r from-[#666] to-[#666] dark:from-[#bbb] dark:to-[#bbb] bg-no-repeat bg-[length:100%_1px] bg-[position:0%_100%] transition-[background-size] duration-[0.25s] ease-in-out hover:bg-[length:0%_1px]"
+                className="font-normal no-underline relative text-[#666] dark:text-[#bbb] bg-gradient-to-r from-[#666] to-[#666] dark:from-[#bbb] dark:to-[#bbb] bg-no-repeat bg-[length:100%_1px] bg-[position:100%_100%] transition-[background-size] duration-[0.25s] ease-in-out hover:bg-[length:0%_1px]"
               >
                 Computational Modeling of Climate Change Impacts on Sagebrush Ecosystems
               </a>
               <br />
-              <small className="text-xs font-light font-['SohneMono'] ml-0" style={{letterSpacing: '-0.3px'}}>
+              <small className="text-xs font-light font-['SohneMono'] ml-0" style={{letterSpacing: '0'}}>
                 RYAN DOUGHERTY, HARLEY ZHANG
               </small>
             </div>
@@ -73,24 +73,24 @@ function ResearchSection() {
 
 function Home({ isDark }) {
   return (
-    <main className={`max-w-[640px] mx-auto mt-[clamp(0rem,5vw,10rem)] p-4 ${isDark ? 'dark' : ''}`}>
+    <main className={`max-w-[640px] mx-auto mt-[clamp(-2rem,10vw,10rem)] p-4 ${isDark ? 'dark' : ''}`}>
       <Intro />
       <ResearchSection />
       <section>
-        <h2 className="text-xs mt-12 mb-3 font-light text-left font-['SohneMono'] uppercase" style={{letterSpacing: '-0.3px'}}>/ Contact</h2>
+        <h2 className="text-xs mt-12 mb-3 font-light text-left font-['SohneMono'] uppercase" style={{letterSpacing: '0'}}>/ Contact</h2>
         <p className="text-[0.95rem] leading-[1.7] font-light text-left ml-6 ">
           harleyzhang06 (at) gmail (dot) com
         </p>
       </section>
-      <footer className="mt-12 text-left text-[0.95rem]">
+      <footer className="fixed bottom-4 left-4 right-4 z-50">
         <div className="flex flex-wrap gap-[2px]">
-          <a href="https://github.com/harley-zhang" target="_blank" rel="noopener noreferrer" className="font-['SohneMono'] text-xs font-light text-inherit no-underline bg-[#f5f5f5] dark:bg-[#333] py-[5px] px-2 rounded-[2px] mr-0 inline-block transition-colors duration-200 hover:bg-[#34B989] uppercase" style={{letterSpacing: '-0.3px'}}>
+          <a href="https://github.com/harley-zhang" target="_blank" rel="noopener noreferrer" className="font-['SohneMono'] text-xs font-light text-inherit no-underline bg-black/10 dark:bg-white/10 backdrop-blur-md py-[5px] px-2 rounded-[2px] mr-0 inline-block transition-all duration-200 hover:bg-[#34B989] hover:bg-opacity-100 uppercase" style={{letterSpacing: '0'}}>
             [G] GITHUB
           </a>
-          <a href="https://www.linkedin.com/in/harley-zhang/" target="_blank" rel="noopener noreferrer" className="font-['SohneMono'] text-xs font-light text-inherit no-underline bg-[#f5f5f5] dark:bg-[#333] py-[5px] px-2 rounded-[2px] mr-0 inline-block transition-colors duration-200 hover:bg-[#34B989] uppercase" style={{letterSpacing: '-0.3px'}}>
+          <a href="https://www.linkedin.com/in/harley-zhang/" target="_blank" rel="noopener noreferrer" className="font-['SohneMono'] text-xs font-light text-inherit no-underline bg-black/10 dark:bg-white/10 backdrop-blur-md py-[5px] px-2 rounded-[2px] mr-0 inline-block transition-all duration-200 hover:bg-[#34B989] hover:bg-opacity-100 uppercase" style={{letterSpacing: '0'}}>
             [L] LINKEDIN
           </a>
-          <a href="https://x.com/harleyhzhang" target="_blank" rel="noopener noreferrer" className="font-['SohneMono'] text-xs font-light text-inherit no-underline bg-[#f5f5f5] dark:bg-[#333] py-[5px] px-2 rounded-[2px] mr-0 inline-block transition-colors duration-200 hover:bg-[#34B989] uppercase" style={{letterSpacing: '-0.3px'}}>
+          <a href="https://x.com/harleyhzhang" target="_blank" rel="noopener noreferrer" className="font-['SohneMono'] text-xs font-light text-inherit no-underline bg-black/10 dark:bg-white/10 backdrop-blur-md py-[5px] px-2 rounded-[2px] mr-0 inline-block transition-all duration-200 hover:bg-[#34B989] hover:bg-opacity-100 uppercase" style={{letterSpacing: '0'}}>
             [X] TWITTER
           </a>
         </div>
