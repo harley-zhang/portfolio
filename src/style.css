@@ -52,6 +52,11 @@ body.dark {
   background-color: #0a0a0a;
 }
 
+:root {
+  --cursor-rect-width: 2px;
+  --cursor-rect-radius: 0.25px;
+}
+
 ::selection {
   background: #34B989;
   color: inherit;
@@ -61,3 +66,97 @@ body.dark {
   background: #34B989;
   color: inherit;
 }
+
+html, body {
+  cursor: none;
+}
+
+a, button, input, textarea, select, label, [role="button"] {
+  cursor: none;
+}
+
+.custom-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 10px; /* small square default */
+  height: 10px;
+  border-radius: var(--cursor-rect-radius);
+  pointer-events: none;
+  z-index: 9999;
+  background: rgba(255,255,255,0.001); /* tiny alpha required for backdrop-filter to render */
+  -webkit-backdrop-filter: invert(1);
+  backdrop-filter: invert(1);
+  transition: width 140ms ease, height 140ms ease, border-radius 140ms ease, opacity 120ms ease;
+  opacity: 0.95;
+  will-change: transform, width, height, border-radius, opacity;
+}
+
+.custom-cursor.is-text {
+  width: var(--cursor-rect-width);
+  height: 22px;
+  border-radius: var(--cursor-rect-radius);
+}
+
+.custom-cursor.is-hidden {
+  opacity: 0;
+}
+
+.custom-cursor.is-visible {
+  opacity: 0.95;
+}
+
+/* Fallback for browsers without backdrop-filter support */
+@supports not ((backdrop-filter: invert(1)) or (-webkit-backdrop-filter: invert(1))) {
+  .custom-cursor {
+    background: #ffffff;
+    mix-blend-mode: difference;
+  }
+}
+
+/* --- Corner Focus Overlay --- */
+.focus-corners {
+  position: relative;
+  cursor: none;
+}
+
+.focus-corners * {
+  cursor: none !important;
+}
+
+.focus-corners::after {
+  content: "";
+  position: absolute;
+  inset: var(--corner-inset, 0); /* allow per-element offset to sit on outer border */
+  pointer-events: none;
+  z-index: 2;
+  --corner-color: #34B989;
+  --corner-length: 10px;
+  --corner-thickness: var(--cursor-rect-width);
+  --corner-radius: var(--cursor-rect-radius);
+  border-radius: var(--corner-radius);
+  background:
+    linear-gradient(var(--corner-color), var(--corner-color)) left top / var(--corner-length) var(--corner-thickness) no-repeat,
+    linear-gradient(var(--corner-color), var(--corner-color)) left top / var(--corner-thickness) var(--corner-length) no-repeat,
+    linear-gradient(var(--corner-color), var(--corner-color)) right top / var(--corner-length) var(--corner-thickness) no-repeat,
+    linear-gradient(var(--corner-color), var(--corner-color)) right top / var(--corner-thickness) var(--corner-length) no-repeat,
+    linear-gradient(var(--corner-color), var(--corner-color)) left bottom / var(--corner-length) var(--corner-thickness) no-repeat,
+    linear-gradient(var(--corner-color), var(--corner-color)) left bottom / var(--corner-thickness) var(--corner-length) no-repeat,
+    linear-gradient(var(--corner-color), var(--corner-color)) right bottom / var(--corner-length) var(--corner-thickness) no-repeat,
+    linear-gradient(var(--corner-color), var(--corner-color)) right bottom / var(--corner-thickness) var(--corner-length) no-repeat;
+  opacity: 0;
+  transition: opacity 140ms ease;
+}
+
+.focus-corners:hover::after {
+  opacity: 1;
+}
+
+/* Expand inline link hit area without shifting layout */
+.link-hit {
+  position: relative;
+  display: inline-block;
+  padding: 6px 10px;
+  margin: -6px -10px;
+}
+
