@@ -75,26 +75,32 @@ a, button, input, textarea, select, label, [role="button"] {
   cursor: none;
 }
 
+html, body, img, a, svg, canvas, video, input, textarea {
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
 .custom-cursor {
   position: fixed;
   left: 0;
   top: 0;
-  width: 10px; /* small square default */
+  width: 10px;
   height: 10px;
   border-radius: var(--cursor-rect-radius);
   pointer-events: none;
   z-index: 9999;
-  background: rgba(255,255,255,0.001); /* tiny alpha required for backdrop-filter to render */
-  -webkit-backdrop-filter: invert(1);
-  backdrop-filter: invert(1);
+  background: rgba(255,255,255,0.001);
+  -webkit-backdrop-filter: invert(1) grayscale(1);
+  backdrop-filter: invert(1) grayscale(1);
   transition: width 140ms ease, height 140ms ease, border-radius 140ms ease, opacity 120ms ease;
   opacity: 0.95;
   will-change: transform, width, height, border-radius, opacity;
 }
 
 .custom-cursor.is-text {
-  width: var(--cursor-rect-width);
-  height: 22px;
+  width: 1px;
+  height: 24px;
   border-radius: var(--cursor-rect-radius);
 }
 
@@ -106,7 +112,6 @@ a, button, input, textarea, select, label, [role="button"] {
   opacity: 0.95;
 }
 
-/* Fallback for browsers without backdrop-filter support */
 @supports not ((backdrop-filter: invert(1)) or (-webkit-backdrop-filter: invert(1))) {
   .custom-cursor {
     background: #ffffff;
@@ -114,7 +119,19 @@ a, button, input, textarea, select, label, [role="button"] {
   }
 }
 
-/* --- Corner Focus Overlay --- */
+@supports ((backdrop-filter: invert(1)) or (-webkit-backdrop-filter: invert(1))) {
+  .custom-cursor::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: #34B989;
+    opacity: 0.45;
+    mix-blend-mode: color;
+  }
+}
+
 .focus-corners {
   position: relative;
   cursor: none;
@@ -127,7 +144,7 @@ a, button, input, textarea, select, label, [role="button"] {
 .focus-corners::after {
   content: "";
   position: absolute;
-  inset: var(--corner-inset, 0); /* allow per-element offset to sit on outer border */
+  inset: var(--corner-inset, 0);
   pointer-events: none;
   z-index: 2;
   --corner-color: #34B989;
@@ -152,7 +169,17 @@ a, button, input, textarea, select, label, [role="button"] {
   opacity: 1;
 }
 
-/* Expand inline link hit area without shifting layout */
+.focus-corners::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--hit-top, 0px) * -1);
+  right: calc(var(--hit-right, 0px) * -1);
+  bottom: calc(var(--hit-bottom, 0px) * -1);
+  left: calc(var(--hit-left, 0px) * -1);
+  pointer-events: auto;
+  z-index: 1;
+}
+
 .link-hit {
   position: relative;
   display: inline-block;

@@ -16,17 +16,17 @@ function Intro() {
               <h2 className="text-xs mt-12 mb-3 font-light text-left font-['SohneMono'] uppercase" style={{letterSpacing: '0'}}>/ Work</h2>
       <p className="text-[0.95rem] leading-[1.7] font-light text-left ml-6 ">
         I was previously an engineer at{" "}
-        <span onClick={() => window.open('http://shopify.com/', '_blank', 'noopener,noreferrer')} className="font-normal no-underline relative text-[#666] dark:text-[#bbb] cursor-pointer focus-corners link-hit">
+        <span onClick={() => window.open('http://shopify.com/', '_blank', 'noopener,noreferrer')} className="font-normal no-underline relative text-[#666] dark:text-[#bbb] cursor-pointer focus-corners link-hit" style={{"--hit-top": '1rem', "--hit-right": '1rem', "--hit-bottom": '1rem', "--hit-left": '1rem'}}>
           Shopify
         </span>{" "}
         and{" "}
         <span
           onClick={() => window.open('http://thirdlayer.inc/', '_blank', 'noopener,noreferrer')}
-          className="font-light no-underline relative text-[#666] dark:text-[#bbb] cursor-pointer focus-corners link-hit"
+          className="font-light no-underline relative text-[#666] dark:text-[#bbb] cursor-pointer focus-corners link-hit" style={{"--hit-top": '1rem', "--hit-right": '1rem', "--hit-bottom": '1rem', "--hit-left": '1rem'}}
         >
           ThirdLayer
         </span>
-        , where I was the first employee.
+        , where I was the first engineer.
       </p>
     </>
   );
@@ -45,7 +45,7 @@ function ResearchSection() {
         </li>
         <li className="mb-5 text-[0.95rem] leading-[1.7] font-light text-left ml-6 ">
           <span className="font-normal">[ Yale University ]</span> Climate simulation modelling
-          <div className="inline-flex items-center border-[1.5px] border-dashed border-[#d6d6d6] dark:border-[#444] rounded-[2px] py-[6px] px-3 mt-2 focus-corners cursor-pointer" style={{"--corner-inset": "-1.5px"}}
+          <div className="inline-flex items-center border-[1.5px] border-dashed border-[#d6d6d6] dark:border-[#444] rounded-[2px] py-[6px] px-3 mt-2 focus-corners cursor-pointer" style={{"--corner-inset": "-1.5px", "--hit-top": '1rem', "--hit-right": '1rem', "--hit-bottom": '1rem', "--hit-left": '1rem'}}
             onClick={() => window.open('/sagebrush.pdf', '_blank', 'noopener,noreferrer')}
           >
             <div>
@@ -80,13 +80,13 @@ function Home({ isDark }) {
       </section>
       <footer className="fixed bottom-4 left-4 right-4 z-50">
         <div className="flex flex-wrap gap-[2px]">
-          <div onClick={() => window.open('https://github.com/harley-zhang', '_blank', 'noopener,noreferrer')} className="font-['SohneMono'] text-xs font-light text-inherit no-underline bg-black/10 dark:bg-white/10 backdrop-blur-md py-[5px] px-2 rounded-[2px] mr-0 inline-block transition-all duration-200 uppercase cursor-pointer focus-corners" style={{letterSpacing: '0'}}>
+          <div onClick={() => window.open('https://github.com/harley-zhang', '_blank', 'noopener,noreferrer')} className="font-['SohneMono'] text-xs font-light text-inherit no-underline bg-black/10 dark:bg-white/10 backdrop-blur-md py-[5px] px-2 rounded-[2px] mr-0 inline-block transition-all duration-200 uppercase cursor-pointer focus-corners" style={{letterSpacing: '0', "--hit-top": '1rem', "--hit-left": '1rem', "--hit-bottom": '1rem'}}>
             [G] GITHUB
           </div>
-          <div onClick={() => window.open('https://www.linkedin.com/in/harley-zhang/', '_blank', 'noopener,noreferrer')} className="font-['SohneMono'] text-xs font-light text-inherit no-underline bg-black/10 dark:bg-white/10 backdrop-blur-md py-[5px] px-2 rounded-[2px] mr-0 inline-block transition-all duration-200 uppercase cursor-pointer focus-corners" style={{letterSpacing: '0'}}>
+          <div onClick={() => window.open('https://www.linkedin.com/in/harley-zhang/', '_blank', 'noopener,noreferrer')} className="font-['SohneMono'] text-xs font-light text-inherit no-underline bg-black/10 dark:bg-white/10 backdrop-blur-md py-[5px] px-2 rounded-[2px] mr-0 inline-block transition-all duration-200 uppercase cursor-pointer focus-corners" style={{letterSpacing: '0', "--hit-top": '1rem', "--hit-bottom": '1rem'}}>
             [L] LINKEDIN
           </div>
-          <div onClick={() => window.open('https://x.com/harleyhzhang', '_blank', 'noopener,noreferrer')} className="font-['SohneMono'] text-xs font-light text-inherit no-underline bg-black/10 dark:bg-white/10 backdrop-blur-md py-[5px] px-2 rounded-[2px] mr-0 inline-block transition-all duration-200 uppercase cursor-pointer focus-corners" style={{letterSpacing: '0'}}>
+          <div onClick={() => window.open('https://x.com/harleyhzhang', '_blank', 'noopener,noreferrer')} className="font-['SohneMono'] text-xs font-light text-inherit no-underline bg-black/10 dark:bg-white/10 backdrop-blur-md py-[5px] px-2 rounded-[2px] mr-0 inline-block transition-all duration-200 uppercase cursor-pointer focus-corners" style={{letterSpacing: '0', "--hit-top": '1rem', "--hit-right": '1rem', "--hit-bottom": '1rem'}}>
             [X] TWITTER
           </div>
         </div>
@@ -113,6 +113,26 @@ function App() {
   const [appLoaded, setAppLoaded] = useState(false);
 
   useEffect(() => {
+    const preventDefault = (e) => e.preventDefault();
+    const blockKeyZoom = (e) => {
+      if (e.ctrlKey || e.metaKey) {
+        const key = e.key.toLowerCase();
+        if (key === '+' || key === '-' || key === '=' || key === '_' || key === '0') {
+          e.preventDefault();
+        }
+      }
+    };
+    const blockWheelZoom = (e) => {
+      if (e.ctrlKey) e.preventDefault();
+    };
+
+    document.addEventListener('gesturestart', preventDefault, { passive: false });
+    document.addEventListener('gesturechange', preventDefault, { passive: false });
+    document.addEventListener('gestureend', preventDefault, { passive: false });
+    window.addEventListener('keydown', blockKeyZoom, { passive: false });
+    window.addEventListener('wheel', blockWheelZoom, { passive: false });
+    document.addEventListener('dragstart', preventDefault, { passive: false });
+
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     
     const handleChange = (e) => {
@@ -140,6 +160,12 @@ function App() {
     
     return () => {
       mediaQuery.removeEventListener('change', handleChange);
+      document.removeEventListener('gesturestart', preventDefault);
+      document.removeEventListener('gesturechange', preventDefault);
+      document.removeEventListener('gestureend', preventDefault);
+      window.removeEventListener('keydown', blockKeyZoom);
+      window.removeEventListener('wheel', blockWheelZoom);
+      document.removeEventListener('dragstart', preventDefault);
     };
   }, []);
 
