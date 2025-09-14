@@ -15,7 +15,11 @@ function Intro() {
       </p>
               <h2 className="text-xs mt-12 mb-3 font-light text-left font-['SohneMono'] uppercase" style={{letterSpacing: '0'}}>/ Work</h2>
       <p className="text-[0.95rem] leading-[1.7] font-light text-left ml-6 ">
-        I was previously an engineer at{" "}
+        I'm currently at{" "}
+        <span onClick={() => window.open('https://polymarket.com/', '_blank', 'noopener,noreferrer')} className="font-normal no-underline relative text-[#666] dark:text-[#bbb] cursor-pointer focus-corners link-hit" style={{"--hit-top": '1rem', "--hit-right": '1rem', "--hit-bottom": '1rem', "--hit-left": '1rem'}}>
+          Polymarket
+        </span>
+        . I previously worked at engineer at{" "}
         <span onClick={() => window.open('http://shopify.com/', '_blank', 'noopener,noreferrer')} className="font-normal no-underline relative text-[#666] dark:text-[#bbb] cursor-pointer focus-corners link-hit" style={{"--hit-top": '1rem', "--hit-right": '1rem', "--hit-bottom": '1rem', "--hit-left": '1rem'}}>
           Shopify
         </span>{" "}
