@@ -130,11 +130,24 @@ function App() {
       if (e.ctrlKey) e.preventDefault();
     };
 
+    const handleShortcutKeys = (e) => {
+      if (e.repeat || e.ctrlKey || e.metaKey || e.altKey) return;
+      const key = e.key.toLowerCase();
+      if (key === 'g') {
+        window.open('https://github.com/harley-zhang', '_blank', 'noopener,noreferrer');
+      } else if (key === 'l') {
+        window.open('https://www.linkedin.com/in/harley-zhang/', '_blank', 'noopener,noreferrer');
+      } else if (key === 'x') {
+        window.open('https://x.com/harleyhzhang', '_blank', 'noopener,noreferrer');
+      }
+    };
+
     document.addEventListener('gesturestart', preventDefault, { passive: false });
     document.addEventListener('gesturechange', preventDefault, { passive: false });
     document.addEventListener('gestureend', preventDefault, { passive: false });
     window.addEventListener('keydown', blockKeyZoom, { passive: false });
     window.addEventListener('wheel', blockWheelZoom, { passive: false });
+    window.addEventListener('keydown', handleShortcutKeys);
     document.addEventListener('dragstart', preventDefault, { passive: false });
 
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -169,6 +182,7 @@ function App() {
       document.removeEventListener('gestureend', preventDefault);
       window.removeEventListener('keydown', blockKeyZoom);
       window.removeEventListener('wheel', blockWheelZoom);
+      window.removeEventListener('keydown', handleShortcutKeys);
       document.removeEventListener('dragstart', preventDefault);
     };
   }, []);
