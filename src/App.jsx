@@ -11,7 +11,7 @@ function Intro() {
         Harley Zhang
       </h1>
       <p className="text-[0.95rem] leading-[1.7] font-light text-left ml-6 ">
-        I'm a detail-oriented engineer interested in ML and product. I'm currently studying Software Engineering at Waterloo. I grew up in Toronto.
+        I'm a detail-oriented engineer interested in ML and product. Software Engineering major at Waterloo. I grew up in Toronto.
       </p>
               <h2 className="text-xs mt-12 mb-3 font-light text-left font-['SohneMono'] uppercase" style={{letterSpacing: '0'}}>/ Work</h2>
       <p className="text-[0.95rem] leading-[1.7] font-light text-left ml-6 ">
@@ -19,7 +19,7 @@ function Intro() {
         <span onClick={() => window.open('https://polymarket.com/', '_blank', 'noopener,noreferrer')} className="font-normal no-underline relative text-[#666] dark:text-[#bbb] cursor-pointer focus-corners link-hit" style={{"--hit-top": '1rem', "--hit-right": '1rem', "--hit-bottom": '1rem', "--hit-left": '1rem'}}>
           Polymarket
         </span>
-        . I previously worked at engineer at{" "}
+        . I previously worked at{" "}
         <span onClick={() => window.open('http://shopify.com/', '_blank', 'noopener,noreferrer')} className="font-normal no-underline relative text-[#666] dark:text-[#bbb] cursor-pointer focus-corners link-hit" style={{"--hit-top": '1rem', "--hit-right": '1rem', "--hit-bottom": '1rem', "--hit-left": '1rem'}}>
           Shopify
         </span>{" "}
