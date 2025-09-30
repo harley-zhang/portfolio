@@ -42,13 +42,13 @@ function ResearchSection() {
       <h2 className="text-xs mt-12 mb-3 font-light text-left font-['SohneMono'] uppercase" style={{letterSpacing: '0'}}>/ Research</h2>
       <ul className="text-left list-none pl-0">
                   <li className="mb-5 text-[0.95rem] leading-[1.7] font-light text-left ml-6 ">
-            <span className="font-normal">[ Cornell Tech ]</span> LLM geocoding and mapping
+            <span className="font-normal">Cornell Tech</span> — LLM geocoding and mapping
           </li>
         <li className="mb-5 text-[0.95rem] leading-[1.7] font-light text-left ml-6 ">
-          <span className="font-normal">[ University of California, Berkeley ]</span> 3D brain viewing models
+          <span className="font-normal">University of California, Berkeley</span> — 3D brain viewing models
         </li>
         <li className="mb-5 text-[0.95rem] leading-[1.7] font-light text-left ml-6 ">
-          <span className="font-normal">[ Yale University ]</span> Climate simulation modelling
+          <span className="font-normal">Yale University</span> — Climate simulation modelling
           <div className="inline-flex items-center border-0 rounded-[2px] py-[6px] px-3 mt-2 focus-corners cursor-pointer" style={{"--corner-inset": "0", "--hit-top": '1rem', "--hit-right": '1rem', "--hit-bottom": '1rem', "--hit-left": '1rem'}}
             onClick={() => window.open('/sagebrush.pdf', '_blank', 'noopener,noreferrer')}
           >
@@ -64,7 +64,7 @@ function ResearchSection() {
           </div>
         </li>
         <li className="mb-5 text-[0.95rem] leading-[1.7] font-light text-left ml-6 ">
-          <span className="font-normal">[ University of Toronto ]</span> ML classification for satellite imagery
+          <span className="font-normal">University of Toronto</span> — ML classification for satellite imagery
         </li>
       </ul>
     </section>
