@@ -38,17 +38,34 @@ function CustomCursor() {
       setIsText(!overFocusBox && overText);
     };
 
-    const handleMouseEnter = () => setIsVisible(true);
-    const handleMouseLeave = () => setIsVisible(false);
+    // Hide cursor when mouse leaves the document/viewport
+    const handleMouseLeaveDocument = (event) => {
+      // Check if the mouse is actually leaving the document
+      if (!event.relatedTarget || event.relatedTarget.nodeName === 'HTML') {
+        setIsVisible(false);
+      }
+    };
+
+    const handleMouseEnterDocument = () => {
+      setIsVisible(true);
+    };
+
+    // Hide cursor when the window/tab loses focus, show it again on focus
+    const handleWindowBlur = () => setIsVisible(false);
+    const handleWindowFocus = () => setIsVisible(true);
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    window.addEventListener('mouseenter', handleMouseEnter);
-    window.addEventListener('mouseleave', handleMouseLeave);
+    document.documentElement.addEventListener('mouseenter', handleMouseEnterDocument);
+    document.documentElement.addEventListener('mouseleave', handleMouseLeaveDocument);
+    window.addEventListener('blur', handleWindowBlur);
+    window.addEventListener('focus', handleWindowFocus);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseenter', handleMouseEnter);
-      window.removeEventListener('mouseleave', handleMouseLeave);
+      document.documentElement.removeEventListener('mouseenter', handleMouseEnterDocument);
+      document.documentElement.removeEventListener('mouseleave', handleMouseLeaveDocument);
+      window.removeEventListener('blur', handleWindowBlur);
+      window.removeEventListener('focus', handleWindowFocus);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
   }, []);

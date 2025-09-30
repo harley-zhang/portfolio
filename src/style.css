@@ -114,7 +114,7 @@ html, body, img, a, svg, canvas, video, input, textarea {
 
 @supports not ((backdrop-filter: invert(1)) or (-webkit-backdrop-filter: invert(1))) {
   .custom-cursor {
-    background: #ffffff;
+    background: #34B989;
     mix-blend-mode: difference;
   }
 }
@@ -127,7 +127,7 @@ html, body, img, a, svg, canvas, video, input, textarea {
     border-radius: inherit;
     pointer-events: none;
     background: #34B989;
-    opacity: 0.45;
+    opacity: 0.6;
     mix-blend-mode: color;
   }
 }

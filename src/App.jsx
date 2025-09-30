@@ -49,7 +49,7 @@ function ResearchSection() {
         </li>
         <li className="mb-5 text-[0.95rem] leading-[1.7] font-light text-left ml-6 ">
           <span className="font-normal">[ Yale University ]</span> Climate simulation modelling
-          <div className="inline-flex items-center border-[1.5px] border-dashed border-[#d6d6d6] dark:border-[#444] rounded-[2px] py-[6px] px-3 mt-2 focus-corners cursor-pointer" style={{"--corner-inset": "-1.5px", "--hit-top": '1rem', "--hit-right": '1rem', "--hit-bottom": '1rem', "--hit-left": '1rem'}}
+          <div className="inline-flex items-center border-0 rounded-[2px] py-[6px] px-3 mt-2 focus-corners cursor-pointer" style={{"--corner-inset": "0", "--hit-top": '1rem', "--hit-right": '1rem', "--hit-bottom": '1rem', "--hit-left": '1rem'}}
             onClick={() => window.open('/sagebrush.pdf', '_blank', 'noopener,noreferrer')}
           >
             <div>
