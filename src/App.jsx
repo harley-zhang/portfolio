@@ -73,7 +73,7 @@ function ResearchSection() {
 
 function Home({ isDark }) {
   return (
-    <main className={`max-w-[640px] mx-auto mt-[clamp(-2rem,10vw,10rem)] p-4 pb-24 ${isDark ? 'dark' : ''}`}>
+    <main className={`max-w-[640px] mx-auto mt-[clamp(-2rem,5vw,4rem)] p-4 pb-24 ${isDark ? 'dark' : ''}`}>
       <Intro />
       <ResearchSection />
       <section>
