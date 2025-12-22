@@ -11,7 +11,7 @@ function Intro() {
         Harley Zhang
       </h1>
       <p className="text-[0.95rem] leading-[1.7] font-light text-left ml-6 ">
-        I'm a detail-oriented engineer interested in ML and product. Software Engineering major at Waterloo. I grew up in Toronto.
+        I'm a detail-oriented engineer interested in consumer and AI. Software Engineering major at Waterloo. I grew up in Toronto.
       </p>
               <h2 className="text-xs mt-12 mb-3 font-light text-left font-['SohneMono'] uppercase" style={{letterSpacing: '0'}}>/ Work</h2>
       <p className="text-[0.95rem] leading-[1.7] font-light text-left ml-6 ">
@@ -73,7 +73,7 @@ function ResearchSection() {
 
 function Home({ isDark }) {
   return (
-    <main className={`max-w-[640px] mx-auto mt-[clamp(-2rem,5vw,4rem)] p-4 pb-24 ${isDark ? 'dark' : ''}`}>
+    <main className={`max-w-[640px] w-full mx-auto p-4 pt-[clamp(4rem,20vh,10rem)] pb-24 ${isDark ? 'dark' : ''}`}>
       <Intro />
       <ResearchSection />
       <section>
@@ -196,7 +196,7 @@ function App() {
   }, [isDark, themeLoaded]);
 
   return (
-    <div className={`${appLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-[0.6s] ease-in-out`}>
+    <div className={`flex-1 flex flex-col ${appLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-[0.6s] ease-in-out`}>
       <Router>
         <Routes>
           <Route path="/" element={<Home isDark={isDark} />} />
