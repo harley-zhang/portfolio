@@ -1,0 +1,13 @@
+{
+  "pages": {},
+  "app": {
+    "[project]/app/page": [
+      "static/media/TestSohne_Buch_BF663d89cd32e6a-s.p.6aaee341.otf",
+      "static/media/TestSohne_Leicht_BF663d89cd4952e-s.p.07387e3f.otf",
+      "static/media/TestSohne_Halbfett_BF663d89cd2d67b-s.p.08dd8f83.otf",
+      "static/media/TestSohneMono_Extraleicht_BF663d89cd32fa2-s.p.2215b1d2.otf"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pagesUsingSizeAdjust": false
+}

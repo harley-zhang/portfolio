@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  color: #000;
+  background-color: #fff;
+  letter-spacing: -0.03em;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #fff;
+    background-color: #0a0a0a;
+  }
+}
+
+:root {
+  --cursor-rect-width: 2px;
+  --cursor-rect-radius: 0.25px;
+}
+
+::selection {
+  background: #34B989;
+  color: inherit;
+}
+
+::-moz-selection {
+  background: #34B989;
+  color: inherit;
+}
+
+html, body {
+  cursor: none;
+}
+
+a, button, input, textarea, select, label, [role="button"] {
+  cursor: none;
+}
+
+html, body, img, a, svg, canvas, video, input, textarea {
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.custom-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: var(--cursor-rect-radius);
+  pointer-events: none;
+  z-index: 9999;
+  background: rgba(255,255,255,0.001);
+  -webkit-backdrop-filter: invert(1) grayscale(1);
+  backdrop-filter: invert(1) grayscale(1);
+  transition: width 140ms ease, height 140ms ease, border-radius 140ms ease, opacity 120ms ease;
+  opacity: 0.95;
+  will-change: transform, width, height, border-radius, opacity;
+}
+
+.custom-cursor.is-text {
+  width: 1px;
+  height: 24px;
+  border-radius: var(--cursor-rect-radius);
+}
+
+.custom-cursor.is-hidden {
+  opacity: 0;
+}
+
+.custom-cursor.is-visible {
+  opacity: 0.95;
+}
+
+@supports not ((backdrop-filter: invert(1)) or (-webkit-backdrop-filter: invert(1))) {
+  .custom-cursor {
+    background: #34B989;
+    mix-blend-mode: difference;
+  }
+}
+
+@supports ((backdrop-filter: invert(1)) or (-webkit-backdrop-filter: invert(1))) {
+  .custom-cursor::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: #34B989;
+    opacity: 0.6;
+    mix-blend-mode: color;
+  }
+}
+
+.focus-corners {
+  position: relative;
+  cursor: none;
+}
+
+.focus-corners * {
+  cursor: none !important;
+}
+
+.focus-corners::after {
+  content: "";
+  position: absolute;
+  inset: var(--corner-inset, 0);
+  pointer-events: none;
+  z-index: 2;
+  --corner-color: #34B989;
+  --corner-length: 10px;
+  --corner-thickness: var(--cursor-rect-width);
+  --corner-radius: var(--cursor-rect-radius);
+  border-radius: var(--corner-radius);
+  background:
+    linear-gradient(var(--corner-color), var(--corner-color)) left top / var(--corner-length) var(--corner-thickness) no-repeat,
+    linear-gradient(var(--corner-color), var(--corner-color)) left top / var(--corner-thickness) var(--corner-length) no-repeat,
+    linear-gradient(var(--corner-color), var(--corner-color)) right top / var(--corner-length) var(--corner-thickness) no-repeat,
+    linear-gradient(var(--corner-color), var(--corner-color)) right top / var(--corner-thickness) var(--corner-length) no-repeat,
+    linear-gradient(var(--corner-color), var(--corner-color)) left bottom / var(--corner-length) var(--corner-thickness) no-repeat,
+    linear-gradient(var(--corner-color), var(--corner-color)) left bottom / var(--corner-thickness) var(--corner-length) no-repeat,
+    linear-gradient(var(--corner-color), var(--corner-color)) right bottom / var(--corner-length) var(--corner-thickness) no-repeat,
+    linear-gradient(var(--corner-color), var(--corner-color)) right bottom / var(--corner-thickness) var(--corner-length) no-repeat;
+  opacity: 0;
+  transition: opacity 140ms ease;
+}
+
+.focus-corners:hover::after {
+  opacity: 1;
+}
+
+.focus-corners::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--hit-top, 0px) * -1);
+  right: calc(var(--hit-right, 0px) * -1);
+  bottom: calc(var(--hit-bottom, 0px) * -1);
+  left: calc(var(--hit-left, 0px) * -1);
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.link-hit {
+  position: relative;
+  display: inline-block;
+  padding: 6px 10px;
+  margin: -6px -10px;
+}

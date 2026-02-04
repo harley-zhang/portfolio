@@ -4,28 +4,32 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "typecheck": "tsc --noEmit",
+    "check": "biome check --write .",
+    "knip": "knip"
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
+    "next": "^16.1.6",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-router-dom": "^7.5.0"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.3.14",
     "@eslint/js": "^9.21.0",
-    "@tailwindcss/vite": "^4.1.12",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@types/node": "^25.2.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
+    "knip": "^5.83.0",
     "tailwindcss": "^4.1.12",
-    "vite": "^6.2.0"
+    "typescript": "^5.9.3"
   }
 }
