@@ -11,17 +11,15 @@ export default function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null)
   const rafRef = useRef<number | null>(null)
   const positionRef = useRef({ x: 0, y: 0 })
+  const hasMovedRef = useRef(false)
   const [isText, setIsText] = useState(false)
-  const [isVisible, setIsVisible] = useState(() => {
-    if (typeof window === 'undefined') return true
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
     if (isTouchDevice === null) {
       isTouchDevice =
         'ontouchstart' in window || (navigator.maxTouchPoints ?? 0) > 0
     }
-    return !isTouchDevice
-  })
-
-  useEffect(() => {
     if (isTouchDevice) return
 
     const handleMouseMove = (event: MouseEvent) => {
@@ -41,6 +39,7 @@ export default function CustomCursor() {
       const overFocusBox = Boolean(target?.closest?.('.focus-corners'))
       const overText = Boolean(target?.closest?.(TEXT_LIKE_SELECTORS))
 
+      hasMovedRef.current = true
       setIsVisible(!overFocusBox)
       setIsText(!overFocusBox && overText)
     }
@@ -55,11 +54,13 @@ export default function CustomCursor() {
     }
 
     const handleMouseEnterDocument = () => {
-      setIsVisible(true)
+      if (hasMovedRef.current) setIsVisible(true)
     }
 
     const handleWindowBlur = () => setIsVisible(false)
-    const handleWindowFocus = () => setIsVisible(true)
+    const handleWindowFocus = () => {
+      if (hasMovedRef.current) setIsVisible(true)
+    }
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true })
     document.documentElement.addEventListener(

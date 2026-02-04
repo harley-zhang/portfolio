@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://harleyzhang.com'),
   title: { default: 'Harley Zhang', template: '%s | Harley Zhang' },
   description:
-    "I'm a Software Engineering undergraduate at the University of Waterloo. Most of my work involves software engineering, machine learning, and data science.",
+    "I'm a product focused software and design engineer. I go to Waterloo and study Software Engineering.",
   openGraph: {
     type: 'website',
     title: 'Harley Zhang',
     description:
-      "I'm a Software Engineering undergraduate at the University of Waterloo. Most of my work involves software engineering, machine learning, and data science.",
+      "I'm a product focused software and design engineer. I go to Waterloo and study Software Engineering.",
     url: 'https://harleyzhang.com',
     siteName: 'Harley Zhang',
     locale: 'en_US',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Harley Zhang',
     description:
-      "I'm a Software Engineering undergraduate at the University of Waterloo. Most of my work involves software engineering, machine learning, and data science.",
+      "I'm a product focused software and design engineer. I go to Waterloo and study Software Engineering.",
   },
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
@@ -36,8 +36,6 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
   viewportFit: 'cover',
 }
 
@@ -70,12 +68,22 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <link rel="dns-prefetch" href="https://github.com" />
+        <link rel="dns-prefetch" href="https://www.linkedin.com" />
+        <link rel="dns-prefetch" href="https://x.com" />
+        <link rel="dns-prefetch" href="https://polymarket.com" />
+        <link rel="preconnect" href="https://github.com" />
+        <link rel="preconnect" href="https://www.linkedin.com" />
+        <link rel="preconnect" href="https://x.com" />
+        <link rel="preconnect" href="https://polymarket.com" />
+        <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-sans min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col" style={{ fontFamily: 'var(--font-sohne), system-ui, sans-serif' }}>
         {children}
         <CustomCursor />
         <Analytics />

@@ -16,6 +16,9 @@ dist-ssr
 .next
 out
 
+# TypeScript
+*.tsbuildinfo
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

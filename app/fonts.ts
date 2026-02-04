@@ -3,17 +3,17 @@ import localFont from 'next/font/local'
 export const sohne = localFont({
   src: [
     {
-      path: '../public/sohne/TestSohne-Buch-BF663d89cd32e6a.otf',
+      path: '../public/sohne/sohne-regular.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../public/sohne/TestSohne-Leicht-BF663d89cd4952e.otf',
+      path: '../public/sohne/sohne-light.woff2',
       weight: '300',
       style: 'normal',
     },
     {
-      path: '../public/sohne/TestSohne-Halbfett-BF663d89cd2d67b.otf',
+      path: '../public/sohne/sohne-medium.woff2',
       weight: '500',
       style: 'normal',
     },
@@ -26,7 +26,7 @@ export const sohne = localFont({
 export const sohneMono = localFont({
   src: [
     {
-      path: '../public/sohne/TestSohneMono-Extraleicht-BF663d89cd32fa2.otf',
+      path: '../public/sohne/sohne-mono-light.woff2',
       weight: '300',
       style: 'normal',
     },
