@@ -1,9 +1,0 @@
-{
-  "[project]/node_modules/@vercel/analytics/dist/react/index.mjs [app-client] (ecmascript, next/dynamic entry)": {
-    "id": "[project]/node_modules/@vercel/analytics/dist/react/index.mjs [app-client] (ecmascript, next/dynamic entry)",
-    "files": [
-      "static/chunks/node_modules_@vercel_analytics_dist_react_index_mjs_66dc400e._.js",
-      "static/chunks/node_modules_@vercel_analytics_dist_react_index_mjs_aa00add8._.js"
-    ]
-  }
-}

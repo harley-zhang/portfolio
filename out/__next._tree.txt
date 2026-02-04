@@ -1,6 +1,0 @@
-:HL["/_next/static/chunks/b8d7a3d98ca6c226.css","style"]
-:HL["/_next/static/media/TestSohneMono_Extraleicht_BF663d89cd32fa2-s.p.2215b1d2.otf","font",{"crossOrigin":"","type":"font/otf"}]
-:HL["/_next/static/media/TestSohne_Buch_BF663d89cd32e6a-s.p.6aaee341.otf","font",{"crossOrigin":"","type":"font/otf"}]
-:HL["/_next/static/media/TestSohne_Halbfett_BF663d89cd2d67b-s.p.08dd8f83.otf","font",{"crossOrigin":"","type":"font/otf"}]
-:HL["/_next/static/media/TestSohne_Leicht_BF663d89cd4952e-s.p.07387e3f.otf","font",{"crossOrigin":"","type":"font/otf"}]
-0:{"buildId":"1Mh3y_EysHmpdEaRDN8vm","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
