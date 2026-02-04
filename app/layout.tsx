@@ -68,14 +68,6 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <link rel="dns-prefetch" href="https://github.com" />
-        <link rel="dns-prefetch" href="https://www.linkedin.com" />
-        <link rel="dns-prefetch" href="https://x.com" />
-        <link rel="dns-prefetch" href="https://polymarket.com" />
-        <link rel="preconnect" href="https://github.com" />
-        <link rel="preconnect" href="https://www.linkedin.com" />
-        <link rel="preconnect" href="https://x.com" />
-        <link rel="preconnect" href="https://polymarket.com" />
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
         <script
