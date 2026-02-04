@@ -19,8 +19,8 @@ function Intro() {
         Harley Zhang
       </h1>
       <p className="text-[0.95rem] leading-[1.7] font-light text-left ml-6">
-        I'm a product focused software and design engineer. I go to Waterloo
-        and study Software Engineering.
+        I'm a product-focused software and design engineer. I go to Waterloo
+        and study Software Engineering. I'm originally from Toronto.
       </p>
       <h2
         className="text-xs mt-12 mb-3 font-light text-left font-['SohneMono'] uppercase"
