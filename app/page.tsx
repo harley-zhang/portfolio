@@ -111,7 +111,7 @@ function ContactSection() {
 
 export default function Home() {
   return (
-    <main className="max-w-[640px] w-full mx-auto p-4 pt-[clamp(4rem,20vh,10rem)] pb-24">
+    <main className="max-w-[640px] w-full mx-auto p-4 pt-[clamp(2rem,15vw,8rem)] pb-24">
       <Intro />
       <ResearchSection />
       <ContactSection />

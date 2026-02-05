@@ -1,9 +1,9 @@
-import Link from 'next/link'
 import Footer from './components/Footer'
+import Button from './components/Button'
 
 export default function NotFound() {
   return (
-    <main className="max-w-[640px] w-full mx-auto p-4 pt-[clamp(4rem,20vh,10rem)] pb-24 flex flex-col items-center justify-center min-h-[70vh]">
+    <main className="max-w-[640px] w-full mx-auto p-4 pt-[clamp(2rem,15vw,8rem)] pb-24 flex flex-col items-center justify-center min-h-[70vh]">
       <div className="flex items-center justify-center mb-8 select-none">
         <span
           className="text-[6rem] font-medium leading-none font-['Sohne',ui-sans-serif]"
@@ -28,13 +28,7 @@ export default function NotFound() {
         </span>
       </div>
 
-      <Link
-        href="/"
-        className="font-['SohneMono'] text-xs font-light text-inherit no-underline bg-black/10 dark:bg-white/10 backdrop-blur-md py-[5px] px-2 rounded-[2px] inline-block transition-all duration-200 uppercase focus-corners"
-        style={{ letterSpacing: '0' }}
-      >
-        ← BACK TO HOME
-      </Link>
+      <Button href="/">← BACK TO HOME</Button>
 
       <Footer />
     </main>
