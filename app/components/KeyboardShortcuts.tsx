@@ -1,12 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-
-const LINKS = {
-  github: 'https://github.com/harley-zhang',
-  linkedin: 'https://www.linkedin.com/in/harley-zhang/',
-  twitter: 'https://x.com/harleyhzhang',
-} as const
+import { LINKS } from '../lib/constants'
 
 export default function KeyboardShortcuts() {
   useEffect(() => {

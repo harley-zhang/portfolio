@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import type { Metadata, Viewport } from 'next'
 import { sohne, sohneMono } from './fonts'
 import './globals.css'
@@ -59,7 +60,7 @@ const jsonLd = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: ReactNode
 }) {
   return (
     <html

@@ -1,11 +1,6 @@
-import Button from './Button'
+import { LINKS } from '../lib/constants'
+import Button from './ui/Button'
 import KeyboardShortcuts from './KeyboardShortcuts'
-
-const LINKS = {
-  github: 'https://github.com/harley-zhang',
-  linkedin: 'https://www.linkedin.com/in/harley-zhang/',
-  twitter: 'https://x.com/harleyhzhang',
-} as const
 
 export default function Footer() {
   return (

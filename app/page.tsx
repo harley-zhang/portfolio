@@ -1,13 +1,18 @@
-import ExternalLink from './components/ExternalLink'
+import type { CSSProperties } from 'react'
+import { WORK, RESEARCH, CONTACT } from './lib/constants'
 import Footer from './components/Footer'
-import ResearchPaper from './components/ResearchPaper'
+import Link from './components/ui/Link'
+import Section from './components/ui/Section'
 
 const linkStyle = {
   '--hit-top': '1rem',
   '--hit-right': '1rem',
   '--hit-bottom': '1rem',
   '--hit-left': '1rem',
-} as React.CSSProperties
+} as CSSProperties
+
+const bodyTextClass = 'text-[0.95rem] leading-[1.7] font-light text-left ml-6'
+const inlineLinkClass = 'font-normal no-underline relative text-[#666] dark:text-[#bbb] focus-corners link-hit'
 
 function Intro() {
   return (
@@ -18,94 +23,95 @@ function Intro() {
       >
         Harley Zhang
       </h1>
-      <p className="text-[0.95rem] leading-[1.7] font-light text-left ml-6">
+      <p className={bodyTextClass}>
         I'm a product-focused software and design engineer. I go to Waterloo
         and study Software Engineering. I'm originally from Toronto.
-      </p>
-      <h2
-        className="text-xs mt-12 mb-3 font-light text-left font-['SohneMono'] uppercase"
-        style={{ letterSpacing: '0' }}
-      >
-        / Work
-      </h2>
-      <p className="text-[0.95rem] leading-[1.7] font-light text-left ml-6">
-        I'm currently at{' '}
-        <ExternalLink
-          href="https://polymarket.com/"
-          className="font-normal no-underline relative text-[#666] dark:text-[#bbb] focus-corners link-hit"
-          style={linkStyle}
-        >
-          Polymarket
-        </ExternalLink>
-        . I previously worked at{' '}
-        <ExternalLink
-          href="http://shopify.com/"
-          className="font-normal no-underline relative text-[#666] dark:text-[#bbb] focus-corners link-hit"
-          style={linkStyle}
-        >
-          Shopify
-        </ExternalLink>{' '}
-        and{' '}
-        <ExternalLink
-          href="http://thirdlayer.inc/"
-          className="font-light no-underline relative text-[#666] dark:text-[#bbb] focus-corners link-hit"
-          style={linkStyle}
-        >
-          ThirdLayer
-        </ExternalLink>
-        , where I was the first engineer.
       </p>
     </>
   )
 }
 
+function WorkSection() {
+  const [current, ...previous] = WORK
+
+  return (
+    <Section title="Work">
+      <p className={bodyTextClass}>
+        I'm currently at{' '}
+        <Link href={current.href} external className={inlineLinkClass} style={linkStyle}>
+          {current.name}
+        </Link>
+        . I previously worked at{' '}
+        {previous.map((job, i) => (
+          <span key={job.name}>
+            <Link
+              href={job.href}
+              external
+              className={job.note ? 'font-light no-underline relative text-[#666] dark:text-[#bbb] focus-corners link-hit' : inlineLinkClass}
+              style={linkStyle}
+            >
+              {job.name}
+            </Link>
+            {job.note && `, where I was the ${job.note}`}
+            {i < previous.length - 1 ? ' and ' : '.'}
+          </span>
+        ))}
+      </p>
+    </Section>
+  )
+}
+
 function ResearchSection() {
   return (
-    <section>
-      <h2
-        className="text-xs mt-12 mb-3 font-light text-left font-['SohneMono'] uppercase"
-        style={{ letterSpacing: '0' }}
-      >
-        / Research
-      </h2>
+    <Section title="Research">
       <ul className="text-left list-none pl-0">
-        <li className="mb-5 text-[0.95rem] leading-[1.7] font-light text-left ml-6">
-          <span className="font-normal">Cornell Tech</span> — LLM geocoding and
-          mapping
-        </li>
-        <li className="mb-5 text-[0.95rem] leading-[1.7] font-light text-left ml-6">
-          <span className="font-normal">
-            University of California, Berkeley
-          </span>{' '}
-          — 3D brain viewing models
-        </li>
-        <li className="mb-5 text-[0.95rem] leading-[1.7] font-light text-left ml-6">
-          <span className="font-normal">Yale University</span> — Climate
-          simulation modelling
-          <ResearchPaper />
-        </li>
-        <li className="mb-5 text-[0.95rem] leading-[1.7] font-light text-left ml-6">
-          <span className="font-normal">University of Toronto</span> — ML
-          classification for satellite imagery
-        </li>
+        {RESEARCH.map((item) => (
+          <li key={item.institution} className={`mb-5 ${bodyTextClass}`}>
+            <span className="font-normal">{item.institution}</span> — {item.topic}
+            {item.paper && <ResearchPaper href={item.paper} />}
+          </li>
+        ))}
       </ul>
-    </section>
+    </Section>
+  )
+}
+
+function ResearchPaper({ href }: { href: string }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center border-0 rounded-[2px] py-[6px] px-3 mt-2 focus-corners"
+      style={{
+        '--corner-inset': '0',
+        '--hit-top': '1rem',
+        '--hit-right': '1rem',
+        '--hit-bottom': '1rem',
+        '--hit-left': '1rem',
+      } as CSSProperties}
+    >
+      <div>
+        <span className="font-normal no-underline relative text-[#666] dark:text-[#bbb]">
+          Computational Modeling of Climate Change Impacts on Sagebrush Ecosystems
+        </span>
+        <br />
+        <small
+          className="text-xs font-light font-['SohneMono'] ml-0"
+          style={{ letterSpacing: '0' }}
+        >
+          RYAN DOUGHERTY, HARLEY ZHANG
+        </small>
+      </div>
+    </a>
   )
 }
 
 function ContactSection() {
   return (
-    <section>
-      <h2
-        className="text-xs mt-12 mb-3 font-light text-left font-['SohneMono'] uppercase"
-        style={{ letterSpacing: '0' }}
-      >
-        / Contact
-      </h2>
-      <p className="text-[0.95rem] leading-[1.7] font-light text-left ml-6">
-        harleyzhang06 (at) gmail (dot) com
-      </p>
-    </section>
+    <Section title="Contact">
+      <p className={bodyTextClass}>{CONTACT.email}</p>
+    </Section>
   )
 }
 
@@ -113,6 +119,7 @@ export default function Home() {
   return (
     <main className="max-w-[640px] w-full mx-auto p-4 pt-[clamp(2rem,15vw,8rem)] pb-24">
       <Intro />
+      <WorkSection />
       <ResearchSection />
       <ContactSection />
       <Footer />

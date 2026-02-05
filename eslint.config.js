@@ -7,6 +7,17 @@ import tsparser from '@typescript-eslint/parser'
 export default [
   { ignores: ['dist', '.next', 'out', 'node_modules'] },
   {
+    files: ['**/*.config.{ts,js,mjs}'],
+    languageOptions: {
+      parser: tsparser,
+      ecmaVersion: 2020,
+      globals: globals.node,
+      parserOptions: {
+        sourceType: 'module',
+      },
+    },
+  },
+  {
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
       parser: tsparser,
