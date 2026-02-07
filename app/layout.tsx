@@ -1,13 +1,9 @@
 import type { ReactNode } from 'react'
 import type { Metadata, Viewport } from 'next'
-import dynamic from 'next/dynamic'
 import { sohne, sohneMono } from './fonts'
 import './globals.css'
 import Analytics from './components/Analytics'
-
-const CustomCursor = dynamic(() => import('./components/CustomCursor'), {
-  ssr: false,
-})
+import CustomCursor from './components/CustomCursor'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://harleyzhang.com'),
