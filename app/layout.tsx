@@ -6,7 +6,7 @@ import Analytics from './components/Analytics'
 import CustomCursor from './components/CustomCursor'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://harleyzhang.com'),
+  metadataBase: new URL('https://harleyzhang.me'),
   title: { default: 'Harley Zhang', template: '%s | Harley Zhang' },
   description:
     "I'm a product focused software and design engineer. I go to Waterloo and study Software Engineering.",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: 'Harley Zhang',
     description:
       "I'm a product focused software and design engineer. I go to Waterloo and study Software Engineering.",
-    url: 'https://harleyzhang.com',
+    url: 'https://harleyzhang.me',
     siteName: 'Harley Zhang',
     locale: 'en_US',
     images: [
@@ -53,7 +53,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Harley Zhang',
-  url: 'https://harleyzhang.com',
+  url: 'https://harleyzhang.me',
   jobTitle: 'Software Engineer',
   alumniOf: {
     '@type': 'CollegeOrUniversity',

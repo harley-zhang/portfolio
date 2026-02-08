@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://harleyzhang.com/sitemap.xml',
+    sitemap: 'https://harleyzhang.me/sitemap.xml',
   }
 }
