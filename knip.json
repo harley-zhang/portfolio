@@ -3,5 +3,5 @@
   "entry": ["app/**/*.{ts,tsx}"],
   "project": ["app/**/*.{ts,tsx}"],
   "ignore": [".next/**", "out/**"],
-  "ignoreDependencies": ["postcss"]
+  "ignoreDependencies": ["postcss", "critters"]
 }
