@@ -9,7 +9,7 @@ export default function Section({ title, children }: SectionProps) {
   return (
     <section>
       <h2
-        className="text-xs mt-12 mb-3 font-light text-left font-['SohneMono'] uppercase"
+        className="text-xs mt-12 mb-3 font-light text-left font-[family-name:var(--font-sohne-mono)] uppercase"
         style={{ letterSpacing: '0' }}
       >
         / {title}

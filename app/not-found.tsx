@@ -6,7 +6,7 @@ export default function NotFound() {
     <main className="max-w-[640px] w-full mx-auto p-4 pt-[clamp(2rem,15vw,8rem)] pb-24 flex flex-col items-center justify-center min-h-[70vh]">
       <div className="flex items-center justify-center mb-8 select-none">
         <span
-          className="text-[6rem] font-medium leading-none font-['Sohne',ui-sans-serif]"
+          className="text-[6rem] font-medium leading-none font-[family-name:var(--font-sohne)]"
           style={{ letterSpacing: '-0.06em' }}
         >
           4
@@ -21,7 +21,7 @@ export default function NotFound() {
           <circle cx="32" cy="32" r="28" fill="#34B989" />
         </svg>
         <span
-          className="text-[6rem] font-medium leading-none font-['Sohne',ui-sans-serif]"
+          className="text-[6rem] font-medium leading-none font-[family-name:var(--font-sohne)]"
           style={{ letterSpacing: '-0.06em' }}
         >
           4

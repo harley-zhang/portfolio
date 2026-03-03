@@ -21,6 +21,7 @@ export const sohne = localFont({
   variable: '--font-sohne',
   display: 'swap',
   fallback: ['system-ui', 'sans-serif'],
+  adjustFontFallback: 'Arial',
 })
 
 export const sohneMono = localFont({
@@ -34,4 +35,5 @@ export const sohneMono = localFont({
   variable: '--font-sohne-mono',
   display: 'swap',
   fallback: ['ui-monospace', 'monospace'],
+  adjustFontFallback: false,
 })

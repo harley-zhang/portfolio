@@ -18,7 +18,7 @@ function Intro() {
   return (
     <>
       <h1
-        className="text-[2rem] mb-8 font-normal text-left font-['Sohne',ui-sans-serif]"
+        className="text-[2rem] mb-8 font-normal text-left font-[family-name:var(--font-sohne)]"
         style={{ letterSpacing: '-0.06em' }}
       >
         Harley Zhang
@@ -97,7 +97,7 @@ function ResearchPaper({ href }: { href: string }) {
         </span>
         <br />
         <small
-          className="text-xs font-light font-['SohneMono'] ml-0"
+          className="text-xs font-light font-[family-name:var(--font-sohne-mono)] ml-0"
           style={{ letterSpacing: '0' }}
         >
           RYAN DOUGHERTY, HARLEY ZHANG
